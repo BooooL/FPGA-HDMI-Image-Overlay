@@ -1,0 +1,129 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "adv7511_hs",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_vs",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_clk",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[4]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[5]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[6]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[7]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[8]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[9]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[10]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[11]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[16]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[17]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[18]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[19]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[20]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[21]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[22]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[23]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[28]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[29]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[30]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[31]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[32]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[33]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[34]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_d[35]",
+					"strict" : false
+				},
+				{
+					"name" : "adv7511_de",
+					"strict" : false
+				},
+				{
+					"name" : "clk_in",
+					"strict" : false
+				},
+				{
+					"name" : "resetb",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
