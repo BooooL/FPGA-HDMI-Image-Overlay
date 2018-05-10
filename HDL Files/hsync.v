@@ -1,11 +1,11 @@
 //Horizontal Sync Module
 
-module hsync
+module hsync #( parameter busWidth = 11 )
 (
-	input [10:0] 	resHorizontal,		//Horizontal Resolution e.g. 1920, 11 bits = 2047 max
-	input [10:0]	counterVal,			//Counter value to tell hsync when to pulse e.g. every 1920 pixels
-	input				clock,
-	output 			hSyncPulse			//Output H Sync pulse
+	input [ (busWidth - 1) : 0] 	resHorizontal,		//Horizontal Resolution e.g. 1920, 11 bits = 2047 max
+	input [ (busWidth - 1) : 0] 	counterVal,			//Counter value to tell hsync when to pulse e.g. every 1920 pixels
+	input							clock,
+	output 							hSyncPulse			//Output H Sync pulse
 );
 
 	//Define Registers

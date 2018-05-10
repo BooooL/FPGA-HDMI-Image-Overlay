@@ -42,6 +42,7 @@ module HDMIOverlay (
 	
 	//Define the bus widths used for counting the horizontal and vertical pixels.
 	//12 bits is 4096 x 4096 maximum.
+	//11 bits is 1920 x 1080
 	parameter hBusWidth = 12;
 	parameter vBusWidth = 12;
 	
@@ -65,7 +66,7 @@ module HDMIOverlay (
 	);
 	
 	//Vertical pixel counter, vBusWidth bits long.
-	counter #( hBusWidth )
+	counter #( vBusWidth )
 	(
 		.clock				( clock_50 ),	//Clock input clock
 		.D					( 1'b0 ),		//Set the data input to 0 always. No preloading of the counter.
@@ -75,7 +76,23 @@ module HDMIOverlay (
 		.Q					( vCount )		//The vertical counter value.
 	);
 	
-	
+	//Horizontal sync module
+	hsync #( hBusWidth )
+	(
+		.resHorizontal(11'b11110000000),	//1920 pixels wide
+		.counterVal(hCount),				//Send horizontal counter value to the hsync counterVal
+		.clock(clock_50),					//Clock input clock
+		.hSyncPulse(HSYNC)					//hSync pulse goes to HSYNC output, which is tied to a pin
+	);
+
+	//Vertical sync module
+	vsync #( vBusWidth )
+	(
+		.resVertical(11'10000111000),		//1080 pixels wide
+		.counterVal(vCount),				//Send vertical counter value to the vsync counterVal
+		.clock(clock_50),					//Clock input clock
+		.vSyncPulse(VSYNC)					//vSync pulse goes to VSYNC output, which is tied to a pin
+	);
 		
 	
 endmodule
