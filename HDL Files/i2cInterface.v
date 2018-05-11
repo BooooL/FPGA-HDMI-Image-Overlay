@@ -8,65 +8,106 @@ module i2cInterface
 //Parameters used for passing variables
 
 #( 
-	parameter [7:0] data			= 2'hFF,	//Data used for communcations
-	parameter [7:0] slaveAddress	= 2'hFF,	//Address used for the I2C slave
-	parameter [7:0] dataAddress		= 2'hFF 	//Address used for writing to a particular register
+	input parameter [7:0] data			= 8'hFF,	//Data used for communcations
+	input parameter [7:0] slaveAddress	= 8'hFF,	//Address used for the I2C slave
+	input parameter [7:0] dataAddress	= 8'hFF 	//Address used for writing to a particular register
 )
 
 (
 	input i2cStart,		//Input to start communications
-	//input reset_n,		//Active low reset
-	inout SCL,			//I2C input communications reference clock. 400kHz
-	inout SDA			//I2C input data for communcations.
+	input reset_n,		//Active low reset
+	input clockIn,		//Input clock to the controller. Double the speed of SCL.
+	input reg sdaIn,	//I2C input data from master.
+	output reg sdaOut,	//I2C output data to slave.
+	output reg scl		//I2C input communications reference clock. 400kHz
 );
 
 	localparam bitLength	= 8;		//Local parameter holding the bit length of communications.
 	
 	reg currentState;
 	reg nextState;
-	reg clockEnable;					//Register used for enabling the clock to pulse.
-	reg i2cClock;
-	reg i2cData;
+	reg ackOK;			//Register for state machine telling if the acknowledge bit is correct.
+	reg endOK;			//Register for state machine telling if the i2c communcation is correct.
+	reg counter;		//Counter for storing the 
 	
-	assign SCL = i2cClock;
-	assign SDA = i2cData;
+	//assign SCL = i2cClock;
+	//assign SDA = i2cData;
 	
 	localparam idleState		= 0;
-	localparam identifyState 	= 1;
-	localparam dataState 		= 2;
-	localparam acknowledgeState	= 3;
+	localparam idleWait			= 1;
+	localparam i2cInitialise	= 1;
+	localparam i2cGo			= 1;
+	localparam dataState	 	= 1;
+	localparam clockState		= 1;
+	
 		
 	//Logic to handle the currentState -> nextState transition.
 	//Sensitivity list based on the SDA transition.
-	always @( SDA, SCL, i2cStart )
+	always @( negedge( reset_n ) or posedge( clockIn ) )
 		begin: currentStateLogic
 			currentState = nextState;	
 		end
 		
 	//Logic handling which state will transition into which.
-	always @( * )
+	always @( negedge( reset_n ) or posedge( clockIn ) )
 		begin: nextStateLogic
-			case( currentState )
+		
+			if( reset_n == 1'b0 )
+				begin
+					nextState = idleState;
+				end
+			else
 			
-				idleState:
-					begin
-						//If SDA transitions to low, while SCL is high, go to the identifyState
-						if( SDA == 1'b0 && SCL == 1'b1)
-							begin
-								nextState = identifyState;
-							end
-						//Else stay in the idle state.
-						else
-							begin
-								nextState = currentState;
-							end
-					end
+				case( currentState )
+					idleState:
+						begin
+							//If the i2c interface gets a start signal, go to the idleWait state.
+							if( i2cStart == 1'b1 )
+								begin
+									nextState = idleWait;
+								end
+							//Else stay in the idle state.
+							else
+								begin
+									nextState = currentState;
+								end
+						end
+						
+					idleWait:
+						begin
+							//If the i2c start signal goes low, then go to the i2cIntialise
+							if ( i2cStart == 1'b0 )
+								begin
+									nextState = i2cInitialise;
+								end
+							else
+								begin
+									nextState = currentState;
+								end
+						end
+						
+					i2cInitialise:
+						begin
+							//Go to the identify state
+							nextState = i2cGo;
+						end
+						
+					i2cGo:
+						begin
+							//Go to the identifyData state
+							nextState = identifyData;
+						end
+						
+					dataState:
+						begin
+						
+						end
+						
+					clockState:
 					
-				identifyState:
-					begin
-						//Start sending out the device ID information. Starting with bit 7.
-					end
-			endcase
+					
+					
+				endcase
 		end//nextStateLogic
 		
 	always @( * )
@@ -75,23 +116,48 @@ module i2cInterface
 				
 				idleState:
 					begin
-						i2cData = 1'b1;
-						i2cClock = 1'b1;
-						clockEnable = 1'b0;
+						//Idle, keep both SDA and SCL high.
+						sdaOut	= 1'b1;
+						scl		= 1'b1;
+						ackOK	= 1'b0;
+						endOK	= 1'b0;
 					end
 					
-				identifyState:
+				idleWait:
 					begin
-						clockEnable = 1'b1;
+						//Idle, keep both SDA and SCL high. Waiting for i2cStart to go low. 
+						sdaOut	= 1'b1;
+						scl		= 1'b1;
+						ackOK	= 1'b0;
+						endOK	= 1'b0;
 					end
 					
-				acknowledgeState:
+				i2cInitialise
 					begin
+						//Set SDA low while SCL is high to signalise the start of i2c communications.
+						sdaOut	= 1'b0;
+						scl		= 1'b1;
+						ackOK	= 1'b0;
+						endOK	= 1'b0;
 					end
-					
+				
+				i2cGo:
+					begin
+						//Set SDA and SCL low to signal the upcoming communications.
+						sdaOut 	= 1'b0;
+						scl		= 1'b0;
+						ackOK	= 1'b0;
+						endOK	= 1'b0;
+					end
+
 				dataState:
 					begin
 					end
+					
+				clockState:
+					begin
+					end
+					
 			endcase
 		end
 		
