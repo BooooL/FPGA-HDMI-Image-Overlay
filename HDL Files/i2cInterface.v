@@ -17,8 +17,7 @@ module i2cInterface
 	input i2cStart,		//Input to start communications
 	input reset_n,		//Active low reset
 	input clockIn,		//Input clock to the controller. Double the speed of SCL.
-	input reg sdaIn,	//I2C input data from master.
-	output reg sdaOut,	//I2C output data to slave.
+	inout reg sda,		//I2C SDA
 	output reg scl		//I2C input communications reference clock. 400kHz
 );
 
@@ -26,19 +25,21 @@ module i2cInterface
 	
 	reg currentState;
 	reg nextState;
-	reg ackOK;			//Register for state machine telling if the acknowledge bit is correct.
-	reg endOK;			//Register for state machine telling if the i2c communcation is correct.
-	reg counter;		//Counter for storing the 
+	reg ackOK;						//Register for state machine telling if the acknowledge bit is correct.
+	reg endOK;						//Register for state machine telling if the i2c communcation is correct.
+	reg counterValue	= 0;		//Counter for storing the 
+	reg bytes 			= 2'b11;	//3 bytes. 1st is slave address, 2nd is register address, 3rd is register data.
+	reg writeData;					//Value holding the address and data to be written. 
 	
-	//assign SCL = i2cClock;
-	//assign SDA = i2cData;
 	
 	localparam idleState		= 0;
 	localparam idleWait			= 1;
 	localparam i2cInitialise	= 1;
 	localparam i2cGo			= 1;
 	localparam dataState	 	= 1;
-	localparam clockState		= 1;
+	localparam clockHighState	= 1;
+	localparam clockLowState	= 1;
+	localparam acknowledgeState	= 1;
 	
 		
 	//Logic to handle the currentState -> nextState transition.
@@ -100,10 +101,35 @@ module i2cInterface
 						
 					dataState:
 						begin
-						
+							//Go to the clockHigh state
+							nextState = clockHighState;
 						end
 						
-					clockState:
+					clockHighState:
+						begin
+							//Go to the clock Low state
+							nextState = clockLowState;
+						end
+					
+					clockLowState:
+						begin
+							//If the counter is zero, read an acknowledge bit
+							if( counterValue == 1'b0 ) 
+								begin
+									nextState = acknowledgeState;
+								end
+							//Else write the next bit of data
+							else
+								begin
+									nextState = dataState;
+								end
+						end
+					
+					acknowledgeState:
+						begin
+							//If SDA is low
+							if (
+						end
 					
 					
 					
@@ -117,46 +143,62 @@ module i2cInterface
 				idleState:
 					begin
 						//Idle, keep both SDA and SCL high.
-						sdaOut	= 1'b1;
-						scl		= 1'b1;
-						ackOK	= 1'b0;
-						endOK	= 1'b0;
+						sda			<= 1'b1;
+						scl			<= 1'b1;
+						ackOK		<= 1'b0;
+						endOK		<= 1'b0;
+						writeData	<= 0;
+						
 					end
 					
 				idleWait:
 					begin
 						//Idle, keep both SDA and SCL high. Waiting for i2cStart to go low. 
-						sdaOut	= 1'b1;
-						scl		= 1'b1;
-						ackOK	= 1'b0;
-						endOK	= 1'b0;
+						sda			<= 1'b1;
+						scl			<= 1'b1;
+						ackOK		<= 1'b0;
+						endOK		<= 1'b0;
+						writeData 	<= 0;
 					end
 					
 				i2cInitialise
 					begin
 						//Set SDA low while SCL is high to signalise the start of i2c communications.
-						sdaOut	= 1'b0;
-						scl		= 1'b1;
-						ackOK	= 1'b0;
-						endOK	= 1'b0;
+						sda			<= 1'b0;
+						scl			<= 1'b1;
+						ackOK		<= 1'b0;
+						endOK		<= 1'b0;
+						writeData 	<= slaveAddress & 1'b0;	//Set to write always.
 					end
 				
 				i2cGo:
 					begin
 						//Set SDA and SCL low to signal the upcoming communications.
-						sdaOut 	= 1'b0;
-						scl		= 1'b0;
-						ackOK	= 1'b0;
-						endOK	= 1'b0;
+						sda		<= 1'b0;
+						scl		<= 1'b0;
 					end
 
 				dataState:
 					begin
+						//Transition the data without changing the clock
+						sda 			<= writeData[ ( bitlength - counterValue ) ];
+						//Increment the counterValue
+						counterValue 	<= counterValue + 1'b1;
 					end
 					
-				clockState:
+				clockHighState:
 					begin
+						//Transition sclOut to high.
+						scl		<= 1'b1;
 					end
+				
+				clockLowState:
+					begin
+						//Transition sclOut to low.
+						scl		<= 1'b0;
+					end
+				
+				
 					
 			endcase
 		end
