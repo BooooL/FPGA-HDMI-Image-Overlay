@@ -1,0 +1,35 @@
+# do rom_example.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:21:07 on May 14,2018
+# vlog -work work rom_example.vo 
+# -- Compiling module lookupTLE
+# 
+# Top level modules:
+# 	lookupTLE
+# End time: 16:21:07 on May 14,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:21:07 on May 14,2018
+# vlog -work work simulation.vwf.vt 
+# -- Compiling module lookupTLE_vlg_vec_tst
+# 
+# Top level modules:
+# 	lookupTLE_vlg_vec_tst
+# End time: 16:21:07 on May 14,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.lookupTLE_vlg_vec_tst 
+# Start time: 16:21:07 on May 14,2018
+# Loading work.lookupTLE_vlg_vec_tst
+# Loading work.lookupTLE
+# Loading sv_std.std
+# Loading altera_lnsim_ver.generic_m10k
+# Loading altera_lnsim_ver.altera_lnsim_functions
+# Loading altera_lnsim_ver.common_28nm_ram_block
+# Loading altera_lnsim_ver.common_28nm_ram_register
+# Loading altera_lnsim_ver.common_28nm_ram_pulse_generator
+# after#25
+# ** Note: $finish    : simulation.vwf.vt(46)
+#    Time: 1 us  Iteration: 0  Instance: /lookupTLE_vlg_vec_tst
+# End time: 16:21:08 on May 14,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

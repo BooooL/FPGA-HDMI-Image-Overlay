@@ -30,7 +30,8 @@ module HDMIOverlay (
 	
 	output DE,		//Data enable
 	output VSYNC,	//Vertical sync
-	output HSYNC	//Horizontal sync
+	output HSYNC,	//Horizontal sync
+	output [23:0] data //Data output bus
 );
 	
 	//Define resolution. Default 1920x1080.
@@ -53,6 +54,12 @@ module HDMIOverlay (
 	//Registers used for resetting the horizontal and vertical counters.
 	reg hReset_n = 1'b0;
 	reg vReset_n = 1'b0;
+
+	//Register Definitions
+	reg [23:0] dataReg; //Create 24 bit data register
+
+	//Register Assignments
+	assign data = dataReg; //Assign data register to data output
 	
 	//Horizontal pixel counter, hBusWidth bits long.
 	counter #( hBusWidth )
@@ -104,6 +111,12 @@ module HDMIOverlay (
 		.resVertical 		( vPixels ),	//Vertical pixel count (1080)
 		.vCount 			( vCount ), 	//Vertical pixel counter
 		.deOut 				( DE )			//DE signal output
+	);
+
+	dataWrite dataWrite_module
+	(
+		.clock 				( clock_50 ), 	//Input clock
+		.dataOutput 		( dataReg ) 	//Data output
 	);
 		
 	

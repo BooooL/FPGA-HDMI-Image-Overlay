@@ -1,0 +1,144 @@
+Determining the location of the ModelSim executable...
+
+Using: c:/intelfpga_lite/17.1/modelsim_ase/win32aloem/
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-Altera will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off rom_example -c rom_example --vector_source="C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/simulation.vwf" --testbench_file="C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/simulation/qsim/simulation.vwf.vt"
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Copyright (C) 2017  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details.
+    Info: Processing started: Mon May 14 16:21:04 2018
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off rom_example -c rom_example --vector_source="C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/simulation.vwf" --testbench_file="C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/simulation/qsim/simulation.vwf.vt"
+Info (119006): Selected device 5CSEBA6U23I7DK for design "rom_example"
+Warning (18550): Found RAM instances implemented as ROM because the write logic is disabled. One instance is listed below as an example.
+    Info (119043): Atom "lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated|ram_block1a0" is instantiated as RAM, but it is actually implemented as ROM function because the write logic is always disabled
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+
+Completed successfully. 
+
+Completed successfully. 
+
+**** Generating the functional simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/simulation/qsim/" rom_example -c rom_example
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Copyright (C) 2017  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details.
+    Info: Processing started: Mon May 14 16:21:05 2018
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/simulation/qsim/" rom_example -c rom_example
+Info (119006): Selected device 5CSEBA6U23I7DK for design "rom_example"
+Warning (18550): Found RAM instances implemented as ROM because the write logic is disabled. One instance is listed below as an example.
+    Info (119043): Atom "lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated|ram_block1a0" is instantiated as RAM, but it is actually implemented as ROM function because the write logic is always disabled
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (204019): Generated file rom_example.vo in folder "C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/simulation/qsim//" for EDA simulation tool
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 635 megabytes
+    Info: Processing ended: Mon May 14 16:21:06 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/simulation/qsim/rom_example.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+c:/intelfpga_lite/17.1/modelsim_ase/win32aloem//vsim -c -do rom_example.do
+
+Reading C:/intelFPGA_lite/17.1/modelsim_ase/tcl/vsim/pref.tcl
+
+# 10.5b
+
+
+# do rom_example.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:21:07 on May 14,2018
+# vlog -work work rom_example.vo 
+
+# -- Compiling module lookupTLE
+# 
+# Top level modules:
+# 	lookupTLE
+# End time: 16:21:07 on May 14,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:21:07 on May 14,2018
+# vlog -work work simulation.vwf.vt 
+
+# -- Compiling module lookupTLE_vlg_vec_tst
+# 
+# Top level modules:
+# 	lookupTLE_vlg_vec_tst
+# End time: 16:21:07 on May 14,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+
+# vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.lookupTLE_vlg_vec_tst 
+# Start time: 16:21:07 on May 14,2018
+# Loading work.lookupTLE_vlg_vec_tst
+# Loading work.lookupTLE
+# Loading sv_std.std
+# Loading altera_lnsim_ver.generic_m10k
+# Loading altera_lnsim_ver.altera_lnsim_functions
+# Loading altera_lnsim_ver.common_28nm_ram_block
+# Loading altera_lnsim_ver.common_28nm_ram_register
+# Loading altera_lnsim_ver.common_28nm_ram_pulse_generator
+# after#25
+# ** Note: $finish    : simulation.vwf.vt(46)
+#    Time: 1 us  Iteration: 0  Instance: /lookupTLE_vlg_vec_tst
+# End time: 16:21:08 on May 14,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/simulation.vwf...
+
+Reading C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/simulation/qsim/rom_example.msim.vcd...
+
+Processing channel transitions... 
+
+Writing the resulting VWF to C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/simulation/qsim/rom_example_20180514162108.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.

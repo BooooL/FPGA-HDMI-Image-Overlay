@@ -1,0 +1,89 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "romData[0]",
+					"strict" : false
+				},
+				{
+					"name" : "romData[1]",
+					"strict" : false
+				},
+				{
+					"name" : "romData[2]",
+					"strict" : false
+				},
+				{
+					"name" : "romData[3]",
+					"strict" : false
+				},
+				{
+					"name" : "romData[4]",
+					"strict" : false
+				},
+				{
+					"name" : "romData[5]",
+					"strict" : false
+				},
+				{
+					"name" : "romData[6]",
+					"strict" : false
+				},
+				{
+					"name" : "romData[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "romAddress[0]",
+					"strict" : false
+				},
+				{
+					"name" : "romAddress[1]",
+					"strict" : false
+				},
+				{
+					"name" : "romAddress[2]",
+					"strict" : false
+				},
+				{
+					"name" : "romAddress[3]",
+					"strict" : false
+				},
+				{
+					"name" : "romAddress[4]",
+					"strict" : false
+				},
+				{
+					"name" : "romAddress[5]",
+					"strict" : false
+				},
+				{
+					"name" : "romAddress[6]",
+					"strict" : false
+				},
+				{
+					"name" : "romAddress[7]",
+					"strict" : false
+				},
+				{
+					"name" : "romAddress[8]",
+					"strict" : false
+				},
+				{
+					"name" : "romAddress[9]",
+					"strict" : false
+				},
+				{
+					"name" : "romAddress[10]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

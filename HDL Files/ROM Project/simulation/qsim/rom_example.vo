@@ -1,0 +1,777 @@
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition"
+
+// DATE "05/14/2018 16:21:06"
+
+// 
+// Device: Altera 5CSEBA6U23I7DK Package UFBGA672
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module lookupTLE (
+	romAddress,
+	clock,
+	romData);
+input 	[10:0] romAddress;
+input 	clock;
+output 	[7:0] romData;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \clock~input_o ;
+wire \~GND~combout ;
+wire \romAddress[0]~input_o ;
+wire \romAddress[1]~input_o ;
+wire \romAddress[2]~input_o ;
+wire \romAddress[3]~input_o ;
+wire \romAddress[4]~input_o ;
+wire \romAddress[5]~input_o ;
+wire \romAddress[6]~input_o ;
+wire \romAddress[7]~input_o ;
+wire \romAddress[8]~input_o ;
+wire \romAddress[9]~input_o ;
+wire \romAddress[10]~input_o ;
+wire [7:0] \romLookup|altsyncram_component|auto_generated|q_a ;
+
+wire [0:0] \romLookup|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus ;
+wire [0:0] \romLookup|altsyncram_component|auto_generated|ram_block1a1_PORTADATAOUT_bus ;
+wire [0:0] \romLookup|altsyncram_component|auto_generated|ram_block1a2_PORTADATAOUT_bus ;
+wire [0:0] \romLookup|altsyncram_component|auto_generated|ram_block1a3_PORTADATAOUT_bus ;
+wire [0:0] \romLookup|altsyncram_component|auto_generated|ram_block1a4_PORTADATAOUT_bus ;
+wire [0:0] \romLookup|altsyncram_component|auto_generated|ram_block1a5_PORTADATAOUT_bus ;
+wire [0:0] \romLookup|altsyncram_component|auto_generated|ram_block1a6_PORTADATAOUT_bus ;
+wire [0:0] \romLookup|altsyncram_component|auto_generated|ram_block1a7_PORTADATAOUT_bus ;
+
+assign \romLookup|altsyncram_component|auto_generated|q_a [0] = \romLookup|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [0];
+
+assign \romLookup|altsyncram_component|auto_generated|q_a [1] = \romLookup|altsyncram_component|auto_generated|ram_block1a1_PORTADATAOUT_bus [0];
+
+assign \romLookup|altsyncram_component|auto_generated|q_a [2] = \romLookup|altsyncram_component|auto_generated|ram_block1a2_PORTADATAOUT_bus [0];
+
+assign \romLookup|altsyncram_component|auto_generated|q_a [3] = \romLookup|altsyncram_component|auto_generated|ram_block1a3_PORTADATAOUT_bus [0];
+
+assign \romLookup|altsyncram_component|auto_generated|q_a [4] = \romLookup|altsyncram_component|auto_generated|ram_block1a4_PORTADATAOUT_bus [0];
+
+assign \romLookup|altsyncram_component|auto_generated|q_a [5] = \romLookup|altsyncram_component|auto_generated|ram_block1a5_PORTADATAOUT_bus [0];
+
+assign \romLookup|altsyncram_component|auto_generated|q_a [6] = \romLookup|altsyncram_component|auto_generated|ram_block1a6_PORTADATAOUT_bus [0];
+
+assign \romLookup|altsyncram_component|auto_generated|q_a [7] = \romLookup|altsyncram_component|auto_generated|ram_block1a7_PORTADATAOUT_bus [0];
+
+cyclonev_io_obuf \romData[0]~output (
+	.i(\romLookup|altsyncram_component|auto_generated|q_a [0]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(romData[0]),
+	.obar());
+// synopsys translate_off
+defparam \romData[0]~output .bus_hold = "false";
+defparam \romData[0]~output .open_drain_output = "false";
+defparam \romData[0]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \romData[1]~output (
+	.i(\romLookup|altsyncram_component|auto_generated|q_a [1]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(romData[1]),
+	.obar());
+// synopsys translate_off
+defparam \romData[1]~output .bus_hold = "false";
+defparam \romData[1]~output .open_drain_output = "false";
+defparam \romData[1]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \romData[2]~output (
+	.i(\romLookup|altsyncram_component|auto_generated|q_a [2]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(romData[2]),
+	.obar());
+// synopsys translate_off
+defparam \romData[2]~output .bus_hold = "false";
+defparam \romData[2]~output .open_drain_output = "false";
+defparam \romData[2]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \romData[3]~output (
+	.i(\romLookup|altsyncram_component|auto_generated|q_a [3]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(romData[3]),
+	.obar());
+// synopsys translate_off
+defparam \romData[3]~output .bus_hold = "false";
+defparam \romData[3]~output .open_drain_output = "false";
+defparam \romData[3]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \romData[4]~output (
+	.i(\romLookup|altsyncram_component|auto_generated|q_a [4]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(romData[4]),
+	.obar());
+// synopsys translate_off
+defparam \romData[4]~output .bus_hold = "false";
+defparam \romData[4]~output .open_drain_output = "false";
+defparam \romData[4]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \romData[5]~output (
+	.i(\romLookup|altsyncram_component|auto_generated|q_a [5]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(romData[5]),
+	.obar());
+// synopsys translate_off
+defparam \romData[5]~output .bus_hold = "false";
+defparam \romData[5]~output .open_drain_output = "false";
+defparam \romData[5]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \romData[6]~output (
+	.i(\romLookup|altsyncram_component|auto_generated|q_a [6]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(romData[6]),
+	.obar());
+// synopsys translate_off
+defparam \romData[6]~output .bus_hold = "false";
+defparam \romData[6]~output .open_drain_output = "false";
+defparam \romData[6]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \romData[7]~output (
+	.i(\romLookup|altsyncram_component|auto_generated|q_a [7]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(romData[7]),
+	.obar());
+// synopsys translate_off
+defparam \romData[7]~output .bus_hold = "false";
+defparam \romData[7]~output .open_drain_output = "false";
+defparam \romData[7]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_ibuf \clock~input (
+	.i(clock),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\clock~input_o ));
+// synopsys translate_off
+defparam \clock~input .bus_hold = "false";
+defparam \clock~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_lcell_comb \~GND (
+// Equation(s):
+// \~GND~combout  = GND
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\~GND~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \~GND .extended_lut = "off";
+defparam \~GND .lut_mask = 64'h0000000000000000;
+defparam \~GND .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_io_ibuf \romAddress[0]~input (
+	.i(romAddress[0]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\romAddress[0]~input_o ));
+// synopsys translate_off
+defparam \romAddress[0]~input .bus_hold = "false";
+defparam \romAddress[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \romAddress[1]~input (
+	.i(romAddress[1]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\romAddress[1]~input_o ));
+// synopsys translate_off
+defparam \romAddress[1]~input .bus_hold = "false";
+defparam \romAddress[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \romAddress[2]~input (
+	.i(romAddress[2]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\romAddress[2]~input_o ));
+// synopsys translate_off
+defparam \romAddress[2]~input .bus_hold = "false";
+defparam \romAddress[2]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \romAddress[3]~input (
+	.i(romAddress[3]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\romAddress[3]~input_o ));
+// synopsys translate_off
+defparam \romAddress[3]~input .bus_hold = "false";
+defparam \romAddress[3]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \romAddress[4]~input (
+	.i(romAddress[4]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\romAddress[4]~input_o ));
+// synopsys translate_off
+defparam \romAddress[4]~input .bus_hold = "false";
+defparam \romAddress[4]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \romAddress[5]~input (
+	.i(romAddress[5]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\romAddress[5]~input_o ));
+// synopsys translate_off
+defparam \romAddress[5]~input .bus_hold = "false";
+defparam \romAddress[5]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \romAddress[6]~input (
+	.i(romAddress[6]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\romAddress[6]~input_o ));
+// synopsys translate_off
+defparam \romAddress[6]~input .bus_hold = "false";
+defparam \romAddress[6]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \romAddress[7]~input (
+	.i(romAddress[7]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\romAddress[7]~input_o ));
+// synopsys translate_off
+defparam \romAddress[7]~input .bus_hold = "false";
+defparam \romAddress[7]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \romAddress[8]~input (
+	.i(romAddress[8]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\romAddress[8]~input_o ));
+// synopsys translate_off
+defparam \romAddress[8]~input .bus_hold = "false";
+defparam \romAddress[8]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \romAddress[9]~input (
+	.i(romAddress[9]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\romAddress[9]~input_o ));
+// synopsys translate_off
+defparam \romAddress[9]~input .bus_hold = "false";
+defparam \romAddress[9]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \romAddress[10]~input (
+	.i(romAddress[10]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\romAddress[10]~input_o ));
+// synopsys translate_off
+defparam \romAddress[10]~input .bus_hold = "false";
+defparam \romAddress[10]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_ram_block \romLookup|altsyncram_component|auto_generated|ram_block1a0 (
+	.portawe(gnd),
+	.portare(vcc),
+	.portaaddrstall(gnd),
+	.portbwe(gnd),
+	.portbre(vcc),
+	.portbaddrstall(gnd),
+	.clk0(\clock~input_o ),
+	.clk1(gnd),
+	.ena0(vcc),
+	.ena1(vcc),
+	.ena2(vcc),
+	.ena3(vcc),
+	.clr0(gnd),
+	.clr1(gnd),
+	.nerror(vcc),
+	.portadatain({\~GND~combout }),
+	.portaaddr({\romAddress[10]~input_o ,\romAddress[9]~input_o ,\romAddress[8]~input_o ,\romAddress[7]~input_o ,\romAddress[6]~input_o ,\romAddress[5]~input_o ,\romAddress[4]~input_o ,\romAddress[3]~input_o ,\romAddress[2]~input_o ,\romAddress[1]~input_o ,\romAddress[0]~input_o }),
+	.portabyteenamasks(1'b1),
+	.portbdatain(1'b0),
+	.portbaddr(11'b00000000000),
+	.portbbyteenamasks(1'b1),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.portadataout(\romLookup|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus ),
+	.portbdataout(),
+	.eccstatus(),
+	.dftout());
+// synopsys translate_off
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .data_interleave_offset_in_bits = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .data_interleave_width_in_bits = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .init_file = "rom_example.mif";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .init_file_layout = "port_a";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .logical_ram_name = "lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated|ALTSYNCRAM";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .operation_mode = "single_port";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .port_a_address_clear = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .port_a_address_width = 11;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .port_a_byte_enable_clock = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .port_a_data_out_clear = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .port_a_data_out_clock = "clock0";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .port_a_data_width = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .port_a_first_address = 0;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .port_a_first_bit_number = 0;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .port_a_last_address = 2047;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .port_a_logical_ram_depth = 2048;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .port_a_logical_ram_width = 8;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .port_a_read_during_write_mode = "new_data_no_nbe_read";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .port_b_address_width = 11;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .port_b_data_width = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .ram_block_type = "M20K";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a0 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007E1111116E";
+// synopsys translate_on
+
+cyclonev_ram_block \romLookup|altsyncram_component|auto_generated|ram_block1a1 (
+	.portawe(gnd),
+	.portare(vcc),
+	.portaaddrstall(gnd),
+	.portbwe(gnd),
+	.portbre(vcc),
+	.portbaddrstall(gnd),
+	.clk0(\clock~input_o ),
+	.clk1(gnd),
+	.ena0(vcc),
+	.ena1(vcc),
+	.ena2(vcc),
+	.ena3(vcc),
+	.clr0(gnd),
+	.clr1(gnd),
+	.nerror(vcc),
+	.portadatain({\~GND~combout }),
+	.portaaddr({\romAddress[10]~input_o ,\romAddress[9]~input_o ,\romAddress[8]~input_o ,\romAddress[7]~input_o ,\romAddress[6]~input_o ,\romAddress[5]~input_o ,\romAddress[4]~input_o ,\romAddress[3]~input_o ,\romAddress[2]~input_o ,\romAddress[1]~input_o ,\romAddress[0]~input_o }),
+	.portabyteenamasks(1'b1),
+	.portbdatain(1'b0),
+	.portbaddr(11'b00000000000),
+	.portbbyteenamasks(1'b1),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.portadataout(\romLookup|altsyncram_component|auto_generated|ram_block1a1_PORTADATAOUT_bus ),
+	.portbdataout(),
+	.eccstatus(),
+	.dftout());
+// synopsys translate_off
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .data_interleave_offset_in_bits = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .data_interleave_width_in_bits = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .init_file = "rom_example.mif";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .init_file_layout = "port_a";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .logical_ram_name = "lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated|ALTSYNCRAM";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .operation_mode = "single_port";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .port_a_address_clear = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .port_a_address_width = 11;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .port_a_byte_enable_clock = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .port_a_data_out_clear = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .port_a_data_out_clock = "clock0";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .port_a_data_width = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .port_a_first_address = 0;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .port_a_first_bit_number = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .port_a_last_address = 2047;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .port_a_logical_ram_depth = 2048;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .port_a_logical_ram_width = 8;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .port_a_read_during_write_mode = "new_data_no_nbe_read";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .port_b_address_width = 11;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .port_b_data_width = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .ram_block_type = "M20K";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a1 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011";
+// synopsys translate_on
+
+cyclonev_ram_block \romLookup|altsyncram_component|auto_generated|ram_block1a2 (
+	.portawe(gnd),
+	.portare(vcc),
+	.portaaddrstall(gnd),
+	.portbwe(gnd),
+	.portbre(vcc),
+	.portbaddrstall(gnd),
+	.clk0(\clock~input_o ),
+	.clk1(gnd),
+	.ena0(vcc),
+	.ena1(vcc),
+	.ena2(vcc),
+	.ena3(vcc),
+	.clr0(gnd),
+	.clr1(gnd),
+	.nerror(vcc),
+	.portadatain({\~GND~combout }),
+	.portaaddr({\romAddress[10]~input_o ,\romAddress[9]~input_o ,\romAddress[8]~input_o ,\romAddress[7]~input_o ,\romAddress[6]~input_o ,\romAddress[5]~input_o ,\romAddress[4]~input_o ,\romAddress[3]~input_o ,\romAddress[2]~input_o ,\romAddress[1]~input_o ,\romAddress[0]~input_o }),
+	.portabyteenamasks(1'b1),
+	.portbdatain(1'b0),
+	.portbaddr(11'b00000000000),
+	.portbbyteenamasks(1'b1),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.portadataout(\romLookup|altsyncram_component|auto_generated|ram_block1a2_PORTADATAOUT_bus ),
+	.portbdataout(),
+	.eccstatus(),
+	.dftout());
+// synopsys translate_off
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .data_interleave_offset_in_bits = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .data_interleave_width_in_bits = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .init_file = "rom_example.mif";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .init_file_layout = "port_a";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .logical_ram_name = "lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated|ALTSYNCRAM";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .operation_mode = "single_port";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .port_a_address_clear = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .port_a_address_width = 11;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .port_a_byte_enable_clock = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .port_a_data_out_clear = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .port_a_data_out_clock = "clock0";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .port_a_data_width = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .port_a_first_address = 0;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .port_a_first_bit_number = 2;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .port_a_last_address = 2047;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .port_a_logical_ram_depth = 2048;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .port_a_logical_ram_width = 8;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .port_a_read_during_write_mode = "new_data_no_nbe_read";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .port_b_address_width = 11;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .port_b_data_width = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .ram_block_type = "M20K";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a2 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011";
+// synopsys translate_on
+
+cyclonev_ram_block \romLookup|altsyncram_component|auto_generated|ram_block1a3 (
+	.portawe(gnd),
+	.portare(vcc),
+	.portaaddrstall(gnd),
+	.portbwe(gnd),
+	.portbre(vcc),
+	.portbaddrstall(gnd),
+	.clk0(\clock~input_o ),
+	.clk1(gnd),
+	.ena0(vcc),
+	.ena1(vcc),
+	.ena2(vcc),
+	.ena3(vcc),
+	.clr0(gnd),
+	.clr1(gnd),
+	.nerror(vcc),
+	.portadatain({\~GND~combout }),
+	.portaaddr({\romAddress[10]~input_o ,\romAddress[9]~input_o ,\romAddress[8]~input_o ,\romAddress[7]~input_o ,\romAddress[6]~input_o ,\romAddress[5]~input_o ,\romAddress[4]~input_o ,\romAddress[3]~input_o ,\romAddress[2]~input_o ,\romAddress[1]~input_o ,\romAddress[0]~input_o }),
+	.portabyteenamasks(1'b1),
+	.portbdatain(1'b0),
+	.portbaddr(11'b00000000000),
+	.portbbyteenamasks(1'b1),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.portadataout(\romLookup|altsyncram_component|auto_generated|ram_block1a3_PORTADATAOUT_bus ),
+	.portbdataout(),
+	.eccstatus(),
+	.dftout());
+// synopsys translate_off
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .data_interleave_offset_in_bits = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .data_interleave_width_in_bits = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .init_file = "rom_example.mif";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .init_file_layout = "port_a";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .logical_ram_name = "lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated|ALTSYNCRAM";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .operation_mode = "single_port";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .port_a_address_clear = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .port_a_address_width = 11;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .port_a_byte_enable_clock = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .port_a_data_out_clear = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .port_a_data_out_clock = "clock0";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .port_a_data_width = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .port_a_first_address = 0;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .port_a_first_bit_number = 3;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .port_a_last_address = 2047;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .port_a_logical_ram_depth = 2048;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .port_a_logical_ram_width = 8;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .port_a_read_during_write_mode = "new_data_no_nbe_read";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .port_b_address_width = 11;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .port_b_data_width = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .ram_block_type = "M20K";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a3 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011";
+// synopsys translate_on
+
+cyclonev_ram_block \romLookup|altsyncram_component|auto_generated|ram_block1a4 (
+	.portawe(gnd),
+	.portare(vcc),
+	.portaaddrstall(gnd),
+	.portbwe(gnd),
+	.portbre(vcc),
+	.portbaddrstall(gnd),
+	.clk0(\clock~input_o ),
+	.clk1(gnd),
+	.ena0(vcc),
+	.ena1(vcc),
+	.ena2(vcc),
+	.ena3(vcc),
+	.clr0(gnd),
+	.clr1(gnd),
+	.nerror(vcc),
+	.portadatain({\~GND~combout }),
+	.portaaddr({\romAddress[10]~input_o ,\romAddress[9]~input_o ,\romAddress[8]~input_o ,\romAddress[7]~input_o ,\romAddress[6]~input_o ,\romAddress[5]~input_o ,\romAddress[4]~input_o ,\romAddress[3]~input_o ,\romAddress[2]~input_o ,\romAddress[1]~input_o ,\romAddress[0]~input_o }),
+	.portabyteenamasks(1'b1),
+	.portbdatain(1'b0),
+	.portbaddr(11'b00000000000),
+	.portbbyteenamasks(1'b1),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.portadataout(\romLookup|altsyncram_component|auto_generated|ram_block1a4_PORTADATAOUT_bus ),
+	.portbdataout(),
+	.eccstatus(),
+	.dftout());
+// synopsys translate_off
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .data_interleave_offset_in_bits = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .data_interleave_width_in_bits = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .init_file = "rom_example.mif";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .init_file_layout = "port_a";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .logical_ram_name = "lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated|ALTSYNCRAM";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .operation_mode = "single_port";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .port_a_address_clear = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .port_a_address_width = 11;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .port_a_byte_enable_clock = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .port_a_data_out_clear = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .port_a_data_out_clock = "clock0";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .port_a_data_width = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .port_a_first_address = 0;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .port_a_first_bit_number = 4;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .port_a_last_address = 2047;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .port_a_logical_ram_depth = 2048;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .port_a_logical_ram_width = 8;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .port_a_read_during_write_mode = "new_data_no_nbe_read";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .port_b_address_width = 11;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .port_b_data_width = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .ram_block_type = "M20K";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a4 .mem_init0 = "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001F";
+// synopsys translate_on
+
+cyclonev_ram_block \romLookup|altsyncram_component|auto_generated|ram_block1a5 (
+	.portawe(gnd),
+	.portare(vcc),
+	.portaaddrstall(gnd),
+	.portbwe(gnd),
+	.portbre(vcc),
+	.portbaddrstall(gnd),
+	.clk0(\clock~input_o ),
+	.clk1(gnd),
+	.ena0(vcc),
+	.ena1(vcc),
+	.ena2(vcc),
+	.ena3(vcc),
+	.clr0(gnd),
+	.clr1(gnd),
+	.nerror(vcc),
+	.portadatain({\~GND~combout }),
+	.portaaddr({\romAddress[10]~input_o ,\romAddress[9]~input_o ,\romAddress[8]~input_o ,\romAddress[7]~input_o ,\romAddress[6]~input_o ,\romAddress[5]~input_o ,\romAddress[4]~input_o ,\romAddress[3]~input_o ,\romAddress[2]~input_o ,\romAddress[1]~input_o ,\romAddress[0]~input_o }),
+	.portabyteenamasks(1'b1),
+	.portbdatain(1'b0),
+	.portbaddr(11'b00000000000),
+	.portbbyteenamasks(1'b1),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.portadataout(\romLookup|altsyncram_component|auto_generated|ram_block1a5_PORTADATAOUT_bus ),
+	.portbdataout(),
+	.eccstatus(),
+	.dftout());
+// synopsys translate_off
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .data_interleave_offset_in_bits = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .data_interleave_width_in_bits = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .init_file = "rom_example.mif";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .init_file_layout = "port_a";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .logical_ram_name = "lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated|ALTSYNCRAM";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .operation_mode = "single_port";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .port_a_address_clear = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .port_a_address_width = 11;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .port_a_byte_enable_clock = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .port_a_data_out_clear = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .port_a_data_out_clock = "clock0";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .port_a_data_width = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .port_a_first_address = 0;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .port_a_first_bit_number = 5;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .port_a_last_address = 2047;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .port_a_logical_ram_depth = 2048;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .port_a_logical_ram_width = 8;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .port_a_read_during_write_mode = "new_data_no_nbe_read";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .port_b_address_width = 11;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .port_b_data_width = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .ram_block_type = "M20K";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a5 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011";
+// synopsys translate_on
+
+cyclonev_ram_block \romLookup|altsyncram_component|auto_generated|ram_block1a6 (
+	.portawe(gnd),
+	.portare(vcc),
+	.portaaddrstall(gnd),
+	.portbwe(gnd),
+	.portbre(vcc),
+	.portbaddrstall(gnd),
+	.clk0(\clock~input_o ),
+	.clk1(gnd),
+	.ena0(vcc),
+	.ena1(vcc),
+	.ena2(vcc),
+	.ena3(vcc),
+	.clr0(gnd),
+	.clr1(gnd),
+	.nerror(vcc),
+	.portadatain({\~GND~combout }),
+	.portaaddr({\romAddress[10]~input_o ,\romAddress[9]~input_o ,\romAddress[8]~input_o ,\romAddress[7]~input_o ,\romAddress[6]~input_o ,\romAddress[5]~input_o ,\romAddress[4]~input_o ,\romAddress[3]~input_o ,\romAddress[2]~input_o ,\romAddress[1]~input_o ,\romAddress[0]~input_o }),
+	.portabyteenamasks(1'b1),
+	.portbdatain(1'b0),
+	.portbaddr(11'b00000000000),
+	.portbbyteenamasks(1'b1),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.portadataout(\romLookup|altsyncram_component|auto_generated|ram_block1a6_PORTADATAOUT_bus ),
+	.portbdataout(),
+	.eccstatus(),
+	.dftout());
+// synopsys translate_off
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .data_interleave_offset_in_bits = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .data_interleave_width_in_bits = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .init_file = "rom_example.mif";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .init_file_layout = "port_a";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .logical_ram_name = "lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated|ALTSYNCRAM";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .operation_mode = "single_port";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .port_a_address_clear = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .port_a_address_width = 11;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .port_a_byte_enable_clock = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .port_a_data_out_clear = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .port_a_data_out_clock = "clock0";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .port_a_data_width = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .port_a_first_address = 0;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .port_a_first_bit_number = 6;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .port_a_last_address = 2047;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .port_a_logical_ram_depth = 2048;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .port_a_logical_ram_width = 8;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .port_a_read_during_write_mode = "new_data_no_nbe_read";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .port_b_address_width = 11;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .port_b_data_width = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .ram_block_type = "M20K";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a6 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011";
+// synopsys translate_on
+
+cyclonev_ram_block \romLookup|altsyncram_component|auto_generated|ram_block1a7 (
+	.portawe(gnd),
+	.portare(vcc),
+	.portaaddrstall(gnd),
+	.portbwe(gnd),
+	.portbre(vcc),
+	.portbaddrstall(gnd),
+	.clk0(\clock~input_o ),
+	.clk1(gnd),
+	.ena0(vcc),
+	.ena1(vcc),
+	.ena2(vcc),
+	.ena3(vcc),
+	.clr0(gnd),
+	.clr1(gnd),
+	.nerror(vcc),
+	.portadatain({\~GND~combout }),
+	.portaaddr({\romAddress[10]~input_o ,\romAddress[9]~input_o ,\romAddress[8]~input_o ,\romAddress[7]~input_o ,\romAddress[6]~input_o ,\romAddress[5]~input_o ,\romAddress[4]~input_o ,\romAddress[3]~input_o ,\romAddress[2]~input_o ,\romAddress[1]~input_o ,\romAddress[0]~input_o }),
+	.portabyteenamasks(1'b1),
+	.portbdatain(1'b0),
+	.portbaddr(11'b00000000000),
+	.portbbyteenamasks(1'b1),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.portadataout(\romLookup|altsyncram_component|auto_generated|ram_block1a7_PORTADATAOUT_bus ),
+	.portbdataout(),
+	.eccstatus(),
+	.dftout());
+// synopsys translate_off
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .data_interleave_offset_in_bits = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .data_interleave_width_in_bits = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .init_file = "rom_example.mif";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .init_file_layout = "port_a";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .logical_ram_name = "lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated|ALTSYNCRAM";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .operation_mode = "single_port";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .port_a_address_clear = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .port_a_address_width = 11;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .port_a_byte_enable_clock = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .port_a_data_out_clear = "none";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .port_a_data_out_clock = "clock0";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .port_a_data_width = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .port_a_first_address = 0;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .port_a_first_bit_number = 7;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .port_a_last_address = 2047;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .port_a_logical_ram_depth = 2048;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .port_a_logical_ram_width = 8;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .port_a_read_during_write_mode = "new_data_no_nbe_read";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .port_b_address_width = 11;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .port_b_data_width = 1;
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .ram_block_type = "M20K";
+defparam \romLookup|altsyncram_component|auto_generated|ram_block1a7 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+// synopsys translate_on
+
+endmodule
