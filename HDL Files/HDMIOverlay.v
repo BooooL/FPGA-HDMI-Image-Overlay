@@ -26,7 +26,7 @@ module HDMIOverlay (
 	input clock_50,	//50Mhz FPGA clock
 	input key0,		//Push button. This is automatically latched by the DE-10 Nano development board.
 	input key1,		//Push button. This is automatically latched by the DE-10 Nano development board.
-	input sw[3:0],	//4 Slide switches
+	input [3:0] sw,	//4 Slide switches
 	
 	output DE,		//Data enable
 	output VSYNC,	//Vertical sync
