@@ -22,6 +22,8 @@ module dataWrite
 		case(currentState)
 			//go to next address where the pixel information is being held. 
 			//
+			default:
+			
 		endcase
 
 	end

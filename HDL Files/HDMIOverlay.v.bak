@@ -34,8 +34,8 @@ module HDMIOverlay (
 );
 	
 	//Define resolution. Default 1920x1080.
-	parameter hPixels = 1920;	//Horizontal pixel length
-	parameter vPixels = 1080;	//Vertical pixel length
+	parameter hPixels = 1920	//Horizontal pixel length
+	parameter vPixels = 1080	//Vertical pixel length
 	
 	//Refresh rate
 	parameter refreshRate = 30;	//Refresh rate. Default 30 frames a second.
@@ -103,7 +103,7 @@ module HDMIOverlay (
 		.hCount 			( hCount ), 	//Horizontal pixel counter
 		.resVertical 		( vPixels ),	//Vertical pixel count (1080)
 		.vCount 			( vCount ), 	//Vertical pixel counter
-		.deOut 				( DE )			//DE signal output
+		.deOut 				( DE ),			//DE signal output
 	);
 		
 	

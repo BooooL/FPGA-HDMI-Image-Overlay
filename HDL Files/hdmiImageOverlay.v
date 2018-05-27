@@ -34,8 +34,8 @@ module hdmiImageOverlay (
 );
 	
 	//Define resolution. Default 1280x720
-	parameter hPixels = 1280	//Horizontal pixel length
-	parameter vPixels = 720		//Vertical pixel length
+	parameter hPixels = 1280;	//Horizontal pixel length
+	parameter vPixels = 720;		//Vertical pixel length
 	
 	//Refresh rate
 	parameter refreshRate = 30;	//Refresh rate. Default 30 frames a second.

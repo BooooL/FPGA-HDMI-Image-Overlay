@@ -34,12 +34,12 @@ module i2cInterface
 	//[23:16] 	Slave Address
 	//[15:8]	Register Address
 	//[7:0]		Data to be written to register. 
-	parameter [23:0] dataIn		= 24'hFFFFFF;	
+	parameter [23:0] dataIn		= 24'hFFFFFF,	
 	
 	//Parameters used for calculating the values needed for creating the
 	//state machine clock. Values are in Hz.
-	parameter inputSpeed		= 5 	* ( 10 ** 6 ); 	//Input reference clock. 50MHz.
-	parameter sclSpeed			= 400 	* ( 10 ** 3 );	//SCL communication speed. 400kHz.
+	parameter inputSpeed		= 5 	* ( 10 ** 6 ), 	//Input reference clock. 50MHz.
+	parameter sclSpeed			= 400 	* ( 10 ** 3 )	//SCL communication speed. 400kHz.
 )
 
 (
@@ -230,7 +230,7 @@ module i2cInterface
 						writeData 	<= 0;
 					end
 					
-				i2cInitialise
+				i2cInitialise:
 					begin
 						//Set SDA low while SCL is high to signalise the start of i2c communications.
 						sda			<= 1'b0;
