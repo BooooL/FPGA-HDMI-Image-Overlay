@@ -5,21 +5,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	counter
 
-} {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/HDMIOverlay.v} {0 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/HDMIOverlay.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module HDMIOverlay
-** Error: (vlog-13069) C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/HDMIOverlay.v(67): near ".": syntax error, unexpected '.'.
-** Error: (vlog-13069) C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/HDMIOverlay.v(78): near ".": syntax error, unexpected '.'.
-** Error: (vlog-13069) C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/HDMIOverlay.v(89): near ".": syntax error, unexpected '.'.
-** Error: (vlog-13069) C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/HDMIOverlay.v(99): near ".": syntax error, unexpected '.'.
-
-} {4.0 8.0} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/dataWrite.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/dataWrite.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module dataWrite
-
-Top level modules:
-	dataWrite
-
 } {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/DE.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/DE.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module DE
@@ -27,12 +12,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	DE
 
-} {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hsync.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hsync.v}
+} {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/dataWrite.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/dataWrite.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module hsync
+-- Compiling module dataWrite
 
 Top level modules:
-	hsync
+	dataWrite
 
 } {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/clockGen.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/clockGen.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -40,27 +25,5 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	clockGen
-
-} {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v} {0 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module HDMIOverlay
-** Error: (vlog-13069) C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v(67): near ".": syntax error, unexpected '.'.
-** Error: (vlog-13069) C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v(78): near ".": syntax error, unexpected '.'.
-** Error: (vlog-13069) C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v(89): near ".": syntax error, unexpected '.'.
-** Error: (vlog-13069) C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v(99): near ".": syntax error, unexpected '.'.
-
-} {4.0 8.0} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/vsync.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/vsync.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module vsync
-
-Top level modules:
-	vsync
-
-} {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cInterface.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cInterface.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module i2cInterface
-
-Top level modules:
-	i2cInterface
 
 } {} {}}

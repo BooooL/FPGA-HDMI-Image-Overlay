@@ -42,15 +42,6 @@ set_global_assignment -name TOP_LEVEL_ENTITY hdmiImageOverlay
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:03:07  MAY 27, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
-set_global_assignment -name VERILOG_FILE "../HDL Files/vsync.v"
-set_global_assignment -name VERILOG_FILE "../HDL Files/i2cInterface.v"
-set_global_assignment -name VERILOG_FILE "../HDL Files/hsync.v"
-set_global_assignment -name VERILOG_FILE "../HDL Files/HDMIOverlay.v"
-set_global_assignment -name VERILOG_FILE "../HDL Files/hdmiImageOverlay.v"
-set_global_assignment -name VERILOG_FILE "../HDL Files/DE.v"
-set_global_assignment -name VERILOG_FILE "../HDL Files/dataWrite.v"
-set_global_assignment -name VERILOG_FILE "../HDL Files/counter.v"
-set_global_assignment -name VERILOG_FILE "../HDL Files/clockGen.v"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
@@ -61,4 +52,81 @@ set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE "../HDL Files/i2cRegisterConfigure.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/vsync.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/i2cInterface.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/hsync.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/hdmiImageOverlay.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/DE.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/dataWrite.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/counter.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/clockGen.v"
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_AD10 -to data[5]
+set_location_assignment PIN_Y4 -to data[9]
+set_location_assignment PIN_AE4 -to data[16]
+set_location_assignment PIN_AE7 -to data[12]
+set_location_assignment PIN_AF8 -to data[14]
+set_location_assignment PIN_AE8 -to data[23]
+set_location_assignment PIN_AF9 -to data[22]
+set_location_assignment PIN_AD11 -to data[4]
+set_location_assignment PIN_AE11 -to data[6]
+set_location_assignment PIN_AF5 -to data[15]
+set_location_assignment PIN_AF6 -to data[13]
+set_location_assignment PIN_AG6 -to data[21]
+set_location_assignment PIN_AF10 -to data[8]
+set_location_assignment PIN_AH2 -to data[17]
+set_location_assignment PIN_AE12 -to data[1]
+set_location_assignment PIN_AD12 -to data[0]
+set_location_assignment PIN_AH6 -to data[20]
+set_location_assignment PIN_AH5 -to data[19]
+set_location_assignment PIN_AD19 -to DE
+set_location_assignment PIN_AH4 -to data[18]
+set_location_assignment PIN_AE9 -to data[10]
+set_location_assignment PIN_Y8 -to data[3]
+set_location_assignment PIN_Y5 -to data[7]
+set_location_assignment PIN_W8 -to data[2]
+set_location_assignment PIN_AB4 -to data[11]
+set_location_assignment PIN_T8 -to HSYNC
+set_location_assignment PIN_AA4 -to i2cSda
+set_location_assignment PIN_U10 -to i2cScl
+set_location_assignment PIN_V13 -to VSYNC
+set_location_assignment PIN_V11 -to clock_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sw[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[16]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to i2cScl
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to i2cSda
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to key0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to key1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sw[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sw[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sw[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DE
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HSYNC
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VSYNC
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clock_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[23]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[22]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[21]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[20]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[19]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[18]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[17]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,0 +1,129 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "DE",
+					"strict" : false
+				},
+				{
+					"name" : "VSYNC",
+					"strict" : false
+				},
+				{
+					"name" : "HSYNC",
+					"strict" : false
+				},
+				{
+					"name" : "data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data[8]",
+					"strict" : false
+				},
+				{
+					"name" : "data[9]",
+					"strict" : false
+				},
+				{
+					"name" : "data[10]",
+					"strict" : false
+				},
+				{
+					"name" : "data[11]",
+					"strict" : false
+				},
+				{
+					"name" : "data[12]",
+					"strict" : false
+				},
+				{
+					"name" : "data[13]",
+					"strict" : false
+				},
+				{
+					"name" : "data[14]",
+					"strict" : false
+				},
+				{
+					"name" : "data[15]",
+					"strict" : false
+				},
+				{
+					"name" : "data[16]",
+					"strict" : false
+				},
+				{
+					"name" : "data[17]",
+					"strict" : false
+				},
+				{
+					"name" : "data[18]",
+					"strict" : false
+				},
+				{
+					"name" : "data[19]",
+					"strict" : false
+				},
+				{
+					"name" : "data[20]",
+					"strict" : false
+				},
+				{
+					"name" : "data[21]",
+					"strict" : false
+				},
+				{
+					"name" : "data[22]",
+					"strict" : false
+				},
+				{
+					"name" : "data[23]",
+					"strict" : false
+				},
+				{
+					"name" : "i2cScl",
+					"strict" : false
+				},
+				{
+					"name" : "i2cSda",
+					"strict" : false
+				},
+				{
+					"name" : "clock_50",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

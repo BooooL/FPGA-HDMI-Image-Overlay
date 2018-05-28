@@ -30,17 +30,18 @@ module i2cInterface
 	//[23:16] 	Slave Address
 	//[15:8]	Register Address
 	//[7:0]		Data to be written to register. 
-	parameter [23:0] dataIn		= 24'hAFAFAF,
+	//parameter [23:0] dataIn		= 24'hAFAFAF,
 	
 	//Parameters used for calculating the values needed for creating the
 	//state machine clock. Values are in Hz.
-	parameter inputSpeed		= 5 	* ( 10 ** 6 ), 	//Input reference clock in MHz
-	parameter sclSpeed			= 400 	* ( 10 ** 3 )	//SCL communication speed in kHz
+	parameter inputSpeed		= 50 	* ( 10 ** 6 ), 	//Input reference clock in MHz
+	parameter sclSpeed			= 100 	* ( 10 ** 3 )	//SCL communication speed in kHz
 )
 (
 	input 	refClock,		//Input reference clock.
+	input [23:0] dataIn,
 	input 	i2cGo,			//Input signal to start communications
-	input 	reset_n,		//Active low reset
+	//input 	reset_n,		//Active low reset
 	inout 	sda,			//I2C SDA
 	output	scl,			//I2C input communications reference clock. 400kHz
 	output 	i2cComplete		//Output signal stating that the input data has successfully communicated.
@@ -51,12 +52,12 @@ module i2cInterface
 //				CLOCK GENERATOR USED FOR THE STATE MACHINE CLOCK
 	
 	//Set the state machine to run at four times the speed of SCL.
-	parameter stateSpeed = ( sclSpeed * 4 );
+	localparam stateSpeed = ( sclSpeed * 4 );
 	
 	//Define the bit width based on the clock speeds. .
 	//log2( inputSpeed / stateSpeed ),				Round up.
 	//ln( inputSpeed / stateSpeed ) / ln( 2 ),		Round up.
-	parameter clockWidth = 2;
+	localparam clockWidth = 7;
 	
 	//Wire used for connecting the state clock to the state machine.
 	wire stateClock;
@@ -80,9 +81,10 @@ module i2cInterface
 	reg endOK;								//Register for state machine telling if the i2c communcation has ended	
 	reg i2cSDAOut;							//Tri-state control for SDA Pin. (output = 1).
 	reg SDAOut;								//Internal module output bit for SDA.
-	reg SCL;								//Register output for SCL.
+	reg SCL;									//Register output for SCL.
+	//reg [23:0] dataIn;					//I2C Data Register
 	
-	wire [ ( dataLength - 1 ) : 0 ] data = dataIn;	//Wire used for holding the dataIn parameter.
+	//wire [ ( dataLength - 1 ) : 0 ] data = dataIn;	//Wire used for holding the dataIn parameter.
 	
 	reg [1:0] byteCounter	= 2'b00;		//Counter used for storing the i2c tranmission bytes
 	reg [3:0] bitCounter	= 3'b000;		//Counter used for storing the bits transmitted in said byte.
@@ -112,20 +114,22 @@ module i2cInterface
 		
 	//Logic to handle the currentState -> nextState transition.
 	//Sensitivity list based on the SDA transition.
-	always @( negedge( reset_n ) or posedge( stateClock ) )
+	always @( posedge( stateClock ) )
 		begin: nextStateTransition
 			currentState <= nextState;	
 		end
 		
 	//Logic handling which state will transition into which.
-	always @( negedge( reset_n ) or posedge( stateClock ) )
+	always @( nextState, currentState, i2cGo, bitCounter, ackOK, byteCounter )
+	//always@( posedge( stateClock ) )
 		begin: nextStateLogic	
-		
+		/*
 			if( reset_n == 1'b0 )
 				begin
 					nextState <= idleState;
 				end
 			else
+		*/
 				begin
 					case( currentState )
 						default:
@@ -240,129 +244,131 @@ module i2cInterface
 				end//else
 		end//nextStateLogic
 		
-	always @( * )
+	//always @( currentState, bitCounter, byteCounter, dataCounter, dataIn, sda, ackOK )
+	always@( posedge( stateClock ) )
+	//always @( currentState )
 		begin: currentStateLogic
 			
 			case( currentState )
 					default:
 						begin
-							SCL 		= 1'b1;
-							i2cSDAOut	= 1'b1;
-							SDAOut		= 1'b1;
-							endOK		= 1'b0;
-							ackOK		= 1'b0;
-							bitCounter	= 1'b0;
-							byteCounter	= 1'b0;
-							dataCounter	= 1'b0;
+							SCL 		<= 1'b1;
+							i2cSDAOut	<= 1'b1;
+							SDAOut		<= 1'b1;
+							endOK		<= 1'b0;
+							ackOK		<= 1'b0;
+							bitCounter	<= 1'b0;
+							byteCounter	<= 1'b0;
+							dataCounter	<= 1'b0;
 						end
 						
 					i2cStop1:
 						begin
-							SCL			= 1'b0;
-							i2cSDAOut	= 1'b1;
-							SDAOut		= 1'b0;
-							endOK		= 1'b0;
-							ackOK		= 1'b0;
-							bitCounter	= 1'b0;
-							byteCounter	= 1'b0;
-							dataCounter	= 1'b0;
+							SCL			<= 1'b0;
+							i2cSDAOut	<= 1'b1;
+							SDAOut		<= 1'b0;
+							endOK		<= 1'b0;
+							ackOK		<= 1'b0;
+							bitCounter	<= 1'b0;
+							byteCounter	<= 1'b0;
+							dataCounter	<= 1'b0;
 						end
 						
 					i2cStop2:
 						begin
-							SCL			= 1'b1;
-							i2cSDAOut	= 1'b1;
-							SDAOut		= 1'b0;
-							endOK		= 1'b1;
-							ackOK		= 1'b0;
-							bitCounter	= 1'b0;
-							byteCounter	= 1'b0;
-							dataCounter	= 1'b0;
+							SCL			<= 1'b1;
+							i2cSDAOut	<= 1'b1;
+							SDAOut		<= 1'b0;
+							endOK		<= 1'b1;
+							ackOK		<= 1'b0;
+							bitCounter	<= 1'b0;
+							byteCounter	<= 1'b0;
+							dataCounter	<= 1'b0;
 						end
 						
 					idleState:
 						begin
-							SCL			= 1'b1;
-							i2cSDAOut	= 1'b1;
-							SDAOut		= 1'b1;
-							endOK		= 1'b0;
-							ackOK		= 1'b0;
-							bitCounter	= 1'b0;
-							byteCounter	= 1'b0;
-							dataCounter = 1'b0;
+							SCL			<= 1'b1;
+							i2cSDAOut	<= 1'b1;
+							SDAOut		<= 1'b1;
+							endOK		<= 1'b0;
+							ackOK		<= 1'b0;
+							bitCounter	<= 1'b0;
+							byteCounter	<= 1'b0;
+							dataCounter <= 1'b0;
 						end
 						
 					i2cInitialise:
 						begin
-							SCL			= 1'b1;
-							i2cSDAOut	= 1'b1;
-							SDAOut		= 1'b1;
-							endOK		= 1'b0;
-							ackOK		= 1'b0;
-							bitCounter	= bitCounter;
-							byteCounter	= byteCounter;
-							dataCounter	= dataCounter;
+							SCL			<= 1'b1;
+							i2cSDAOut	<= 1'b1;
+							SDAOut		<= 1'b1;
+							endOK		<= 1'b0;
+							ackOK		<= 1'b0;
+							bitCounter	<= bitCounter;
+							byteCounter	<= byteCounter;
+							dataCounter	<= dataCounter;
 
 						end
 						
 					i2cInitialiseDelay:
 						begin
-							SCL			= 1'b1;
-							i2cSDAOut	= 1'b1;
-							SDAOut		= 1'b0;
-							endOK		= 1'b0;
-							ackOK		= 1'b0;
-							bitCounter	= bitCounter;
-							byteCounter	= byteCounter;
-							dataCounter	= dataCounter;
+							SCL			<= 1'b1;
+							i2cSDAOut	<= 1'b1;
+							SDAOut		<= 1'b0;
+							endOK		<= 1'b0;
+							ackOK		<= 1'b0;
+							bitCounter	<= bitCounter;
+							byteCounter	<= byteCounter;
+							dataCounter	<= dataCounter;
 						end
 						
 					i2cEnable:
 						begin
-							SCL			= 1'b0;
-							i2cSDAOut	= 1'b1;
-							SDAOut		= 1'b0;
-							endOK		= 1'b0;
-							ackOK		= 1'b0;
-							bitCounter	= bitCounter;
-							byteCounter	= byteCounter;
-							dataCounter	= dataCounter;
+							SCL			<= 1'b0;
+							i2cSDAOut	<= 1'b1;
+							SDAOut		<= 1'b0;
+							endOK		<= 1'b0;
+							ackOK		<= 1'b0;
+							bitCounter	<= bitCounter;
+							byteCounter	<= byteCounter;
+							dataCounter	<= dataCounter;
 						end
 						
 					i2cShift:
 						begin
-							SCL			= 1'b0;
-							i2cSDAOut	= 1'b1;
-							SDAOut		= data[ ( ( dataLength - 1 ) - dataCounter ) ]; //set SDAOut to the highest bit of the input data.
-							endOK		= 1'b0;
-							ackOK		= 1'b0;
-							bitCounter	= bitCounter;
-							byteCounter	= byteCounter;
-							dataCounter	= dataCounter;
+							SCL			<= 1'b0;
+							i2cSDAOut	<= 1'b1;
+							SDAOut		<= dataIn[ ( ( dataLength - 1 ) - dataCounter ) ]; //set SDAOut to the highest bit of the input data.
+							endOK		<= 1'b0;
+							ackOK		<= 1'b0;
+							bitCounter	<= bitCounter;
+							byteCounter	<= byteCounter;
+							dataCounter	<= dataCounter;
 						end
 						
 					i2cClockHigh1:
 						begin
-							SCL			= 1'b1;
-							i2cSDAOut	= 1'b1;
-							SDAOut		= SDAOut; //Keep SDAOut the same.
-							endOK		= 1'b0;
-							ackOK		= 1'b0;
-							bitCounter	= bitCounter;
-							byteCounter	= byteCounter;
+							SCL			<= 1'b1;
+							i2cSDAOut	<= 1'b1;
+							SDAOut		<= dataIn[ ( ( dataLength - 1 ) - dataCounter ) ]; //Keep SDAOut the same.
+							endOK		<= 1'b0;
+							ackOK		<= 1'b0;
+							bitCounter	<= bitCounter;
+							byteCounter	<= byteCounter;
 							
 						end
 						
 					i2cClockHigh2:
 						begin
-							SCL			= 1'b1;
-							i2cSDAOut	= 1'b1;
-							SDAOut		= SDAOut; //Keep SDAOut the same.
-							endOK		= 1'b0;
-							ackOK		= 1'b0;
-							bitCounter	= bitCounter + 1'b1; //Increment the bitCounter
-							byteCounter	= byteCounter;
-							dataCounter	= dataCounter;
+							SCL			<= 1'b1;
+							i2cSDAOut	<= 1'b1;
+							SDAOut		<= dataIn[ ( ( dataLength - 1 ) - dataCounter ) ]; //Keep SDAOut the same.
+							endOK		<= 1'b0;
+							ackOK		<= 1'b0;
+							bitCounter	<= bitCounter + 1'b1; //Increment the bitCounter
+							byteCounter	<= byteCounter;
+							dataCounter	<= dataCounter;
 							
 							/* What is this doing? 
 							//If the bitCounter is 7 ( The byte of data has been completely written )
@@ -376,16 +382,16 @@ module i2cInterface
 						
 					i2cClockLow:
 						begin
-							SCL 		= 1'b0;
-							i2cSDAOut	= 1'b1;
+							SCL 		<= 1'b0;
+							i2cSDAOut	<= 1'b1;
 							//data		= data;
 							//SDAOut		= data[ ( dataLength - 1 ) ];	//set SDAOut to the highest bit of the input data.
-							SDAOut		= SDAOut;
-							endOK		= 1'b0;
-							ackOK		= 1'b0;	
-							bitCounter	= bitCounter;
-							byteCounter	= byteCounter;
-							dataCounter = dataCounter + 1'b1;
+							SDAOut		<= dataIn[ ( ( dataLength - 1 ) - dataCounter ) ];
+							endOK		<= 1'b0;
+							ackOK		<= 1'b0;	
+							bitCounter	<= bitCounter;
+							byteCounter	<= byteCounter;
+							dataCounter <= dataCounter + 1'b1;
 
 							
 							/*
@@ -404,68 +410,69 @@ module i2cInterface
 
 					i2cAck1:
 						begin
-							SCL			= 1'b0;
-							i2cSDAOut	= 1'b0;	//Set i2cSDAOut low to enable reading of sda inout value.
-							SDAOut		= 1'bz;	//Ignored as sda is high impedance anyways.
-							endOK		= 1'b0;
-							ackOK		= 1'b0;
-							bitCounter	= 1'b0;
-							byteCounter	= byteCounter;
-							dataCounter	= dataCounter;
+							SCL			<= 1'b0;
+							i2cSDAOut	<= 1'b0;	//Set i2cSDAOut low to enable reading of sda inout value.
+							SDAOut		<= 1'bz;	//Ignored as sda is high impedance anyways.
+							endOK		<= 1'b0;
+							ackOK		<= 1'b0;
+							bitCounter	<= 1'b0;
+							byteCounter	<= byteCounter;
+							dataCounter	<= dataCounter;
 						end
 						
 					i2cAck2:
 						begin
-							SCL			= 1'b1;
-							i2cSDAOut	= 1'b0;	//Set i2cSDAOut low to enable reading of sda inout value.
-							SDAOut		= 1'bz;	//Ignored as sda is high impedance anyways.
-							endOK		= 1'b0;
-							bitCounter	= bitCounter;
-							byteCounter	= byteCounter;
-							dataCounter	= dataCounter;
+							SCL			<= 1'b1;
+							i2cSDAOut	<= 1'b0;	//Set i2cSDAOut low to enable reading of sda inout value.
+							SDAOut		<= 1'bz;	//Ignored as sda is high impedance anyways.
+							endOK		<= 1'b0;
+							bitCounter	<= bitCounter;
+							byteCounter	<= byteCounter;
+							dataCounter	<= dataCounter;
 							
 							//If SDA has been set high by the i2c slave, then set ackOK high.
 							if( sda == 1'b1 )
 								begin
-									ackOK = 1'b1;
+									ackOK <= 1'b1;
 								end
 							else
 								begin
-									ackOK = ackOK;
+									ackOK <= ackOK;
 								end
 						end
 						
 					i2cAck3:
 						begin
-							SCL			= 1'b1;
-							i2cSDAOut	= 1'b0;	//Set i2cSDAOut low to enable reading of sda inout value.
-							SDAOut		= 1'bz;	//Ignored as sda is high impedance anyways.
-							endOK		= 1'b0;
-							bitCounter	= bitCounter;
-							byteCounter	= byteCounter + 1'b1; //Increment byteCounter
-							dataCounter	= dataCounter;
+							SCL			<= 1'b1;
+							i2cSDAOut	<= 1'b0;	//Set i2cSDAOut low to enable reading of sda inout value.
+							SDAOut		<= 1'bz;	//Ignored as sda is high impedance anyways.
+							endOK		<= 1'b0;
+							bitCounter	<= bitCounter;
+							byteCounter	<= byteCounter + 1'b1; //Increment byteCounter
+							dataCounter	<= dataCounter;
 
 							//If SDA has been set high by the i2c slave
 							//then set ackOK high
 							if( sda == 1'b1 )
 								begin
-									ackOK 		= 1'b1;
+									ackOK <= 1'b1;
 								end
 							else
 								begin
-									ackOK = ackOK;
+									ackOK <= ackOK;
 								end
 						end
 
 					i2cAck4:
 						begin
-							SCL			= 1'b0;
-							i2cSDAOut	= 1'b0;	//Set i2cSDAOut low to enable reading of sda inout value.
-							SDAOut		= 1'bz;	//Ignored as sda is high impedance anyways.
-							endOK		= 1'b0;
-							bitCounter	= bitCounter;
-							byteCounter	= byteCounter;
-							dataCounter	= dataCounter;
+							SCL			<= 1'b0;
+							i2cSDAOut	<= 1'b0;	//Set i2cSDAOut low to enable reading of sda inout value.
+							SDAOut		<= 1'bz;	//Ignored as sda is high impedance anyways.
+							ackOK		<= 1'b0;
+							endOK		<= 1'b0;
+							bitCounter	<= bitCounter;
+							byteCounter	<= byteCounter;
+							dataCounter	<= dataCounter;
 						end
 				endcase
 		end//currentStateLogic

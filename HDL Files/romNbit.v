@@ -1,7 +1,7 @@
 module romNbit #(
 	parameter bitLength = 24,	//Length of ROM as pointed to by the address
 	parameter addressWidth = 4,	//Address pointer width. 2^x ROM locations.
-);
+)
 (
 	//input [ ( addressWidth - 1 ) : 0 ] address,
 	//Input for incrementing the addressCounter. 

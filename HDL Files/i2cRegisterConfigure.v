@@ -24,13 +24,13 @@ module i2cRegisterConfigure #(
 	//Counter used for stepping through the addresses one by one.
 	reg [ ( addressWidth - 1 ) : 0 ] addressCounter = 0;
 	
-	reg [1:0] currentState = 2'b00;
-	reg [1:0] nextState = 2'b00;
+	//reg [1:0] currentState = 2'b00;
+	//reg [1:0] nextState = 2'b00;
 	
-	localparam resetState 		= 0;
-	localparam idleState		= 1;
-	localparam writeState		= 2;
-	localparam incrementState 	= 3;
+	//localparam resetState 		= 0;
+	//localparam idleState		= 1;
+	//localparam writeState		= 2;
+	//localparam incrementState 	= 3;
 	
 	always @ ( * )
 		begin
