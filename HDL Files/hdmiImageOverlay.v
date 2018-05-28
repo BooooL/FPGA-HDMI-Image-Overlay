@@ -22,7 +22,7 @@
 */
 
 //Real world inputs and outputs
-module hdmiImageOverlay (
+module HDMIOverlay (
 	input clock_50,	//50Mhz FPGA clock
 	input key0,		//Push button. This is automatically latched by the DE-10 Nano development board.
 	input key1,		//Push button. This is automatically latched by the DE-10 Nano development board.
@@ -30,18 +30,20 @@ module hdmiImageOverlay (
 	
 	output DE,		//Data enable
 	output VSYNC,	//Vertical sync
-	output HSYNC	//Horizontal sync
+	output HSYNC,	//Horizontal sync
+	output [23:0] data //Data output bus
 );
 	
-	//Define resolution. Default 1280x720
-	parameter hPixels = 1280;	//Horizontal pixel length
-	parameter vPixels = 720;		//Vertical pixel length
+	//Define resolution. Default 1920x1080.
+	parameter hPixels = 1920;	//Horizontal pixel length
+	parameter vPixels = 1080;	//Vertical pixel length
 	
 	//Refresh rate
 	parameter refreshRate = 30;	//Refresh rate. Default 30 frames a second.
 	
 	//Define the bus widths used for counting the horizontal and vertical pixels.
 	//12 bits is 4096 x 4096 maximum.
+	//11 bits is 2048 x 2048 maximum.
 	parameter hBusWidth = 12;
 	parameter vBusWidth = 12;
 	
@@ -52,6 +54,12 @@ module hdmiImageOverlay (
 	//Registers used for resetting the horizontal and vertical counters.
 	reg hReset_n = 1'b0;
 	reg vReset_n = 1'b0;
+
+	//Register Definitions
+	reg [23:0] dataReg; //Create 24 bit data register
+
+	//Register Assignments
+	assign data = dataReg; //Assign data register to data output
 	
 	//Horizontal pixel counter, hBusWidth bits long.
 	counter #( hBusWidth )
@@ -60,22 +68,56 @@ module hdmiImageOverlay (
 		.D					( 1'b0 ),		//Set the data input to 0 always. No preloading of the counter.
 		.parallelEnable_n 	( 1'b1 ),		//Disable the parallel loading ability!!!
 		.countEnable		( 1'b1 ),		//Always have the counting ability enabled.
-		.masterReset_n		( 1'b0 ),		//Reset the counter, active low.
+		.masterReset_n		( hReset_n ),	//Reset the counter, active low.
 		.Q					( hCount )		//The horizontal counter value.
 	);
 	
 	//Vertical pixel counter, vBusWidth bits long.
-	counter #( hBusWidth )
+	counter #( vBusWidth )
 	(
 		.clock				( clock_50 ),	//Clock input clock
 		.D					( 1'b0 ),		//Set the data input to 0 always. No preloading of the counter.
 		.parallelEnable_n 	( 1'b1 ),		//Disable the parallel loading ability!!!
 		.countEnable		( 1'b1 ),		//Always have the counting ability enabled.
-		.masterReset_n		( 1'b0 ),		//Reset the counter, active low.
+		.masterReset_n		( vReset_n ),	//Reset the counter, active low.
 		.Q					( vCount )		//The vertical counter value.
 	);
 	
-	
+	//Horizontal sync module
+	hsync #( hBusWidth )
+	(
+		.resHorizontal		( hPixels ),	//1920 pixels wide
+		.counterVal			( hCount ),		//Send horizontal counter value to the hsync counterVal
+		.clock 				( clock_50 ),	//Clock input clock
+		.hSyncPulse 		( HSYNC ),		//hSync pulse goes to HSYNC output, which is tied to a pin
+		.hCountReset_n 		( hReset_n )	//Maps the hSync counter reset to hReset_n register
+	);
+
+	//Vertical sync module
+	vsync #( vBusWidth )
+	(
+		.resVertical 		( vPixels ),	//1080 pixels wide
+		.counterVal 		( vCount ),		//Send vertical counter value to the vsync counterVal
+		.clock 				( clock_50 ),	//Clock input clock
+		.vSyncPulse 		( VSYNC ),		//vSync pulse goes to VSYNC output, which is tied to a pin
+		.vCountReset_n 		( vReset_n )	//Maps the vSync counter reset to vReset_n register
+	);
+
+	DE de_module
+	(
+		.clock 				( clock_50 ), 	//Input clock
+		.resHorizontal		( hPixels ),	//Horizontal pixel count (1920)
+		.hCount 			( hCount ), 	//Horizontal pixel counter
+		.resVertical 		( vPixels ),	//Vertical pixel count (1080)
+		.vCount 			( vCount ), 	//Vertical pixel counter
+		.deOut 				( DE )			//DE signal output
+	);
+
+	dataWrite dataWrite_module
+	(
+		.clock 				( clock_50 ), 	//Input clock
+		.dataOutput 		( dataReg ) 	//Data output
+	);
 		
 	
 endmodule
