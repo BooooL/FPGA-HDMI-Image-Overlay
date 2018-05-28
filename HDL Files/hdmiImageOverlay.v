@@ -44,12 +44,12 @@ module HDMIOverlay (
 	//Define the bus widths used for counting the horizontal and vertical pixels.
 	//12 bits is 4096 x 4096 maximum.
 	//11 bits is 2048 x 2048 maximum.
-	parameter hBusWidth = 12;
-	parameter vBusWidth = 12;
+	parameter hCountWidth = 12;
+	parameter vCountWidth = 12;
 	
 	//Registers used for storing the pixel count
-	reg [ ( hBusWidth - 1 ) : 0 ] hCount = 0;	//Horizontal pixel count
-	reg [ ( vBusWidth - 1 ) : 0 ] vCount = 0;	//Vertical pixel count	
+	reg [ ( hCountWidth - 1 ) : 0 ] hCount = 0;	//Horizontal pixel counter
+	reg [ ( vCountWidth - 1 ) : 0 ] vCount = 0;	//Vertical pixel counter	
 	
 	//Registers used for resetting the horizontal and vertical counters.
 	reg hReset_n = 1'b0;
@@ -61,8 +61,8 @@ module HDMIOverlay (
 	//Register Assignments
 	assign data = dataReg; //Assign data register to data output
 	
-	//Horizontal pixel counter, hBusWidth bits long.
-	counter #( hBusWidth )
+	//Horizontal pixel counter, hCountWidth bits long.
+	counter #( hCountWidth )
 	(
 		.clock				( clock_50 ),	//Clock input clock
 		.D					( 1'b0 ),		//Set the data input to 0 always. No preloading of the counter.
@@ -72,8 +72,8 @@ module HDMIOverlay (
 		.Q					( hCount )		//The horizontal counter value.
 	);
 	
-	//Vertical pixel counter, vBusWidth bits long.
-	counter #( vBusWidth )
+	//Vertical pixel counter, vCountWidth bits long.
+	counter #( vCountWidth )
 	(
 		.clock				( clock_50 ),	//Clock input clock
 		.D					( 1'b0 ),		//Set the data input to 0 always. No preloading of the counter.
@@ -84,7 +84,7 @@ module HDMIOverlay (
 	);
 	
 	//Horizontal sync module
-	hsync #( hBusWidth )
+	hsync #( hCountWidth )
 	(
 		.resHorizontal		( hPixels ),	//1920 pixels wide
 		.counterVal			( hCount ),		//Send horizontal counter value to the hsync counterVal
@@ -94,7 +94,7 @@ module HDMIOverlay (
 	);
 
 	//Vertical sync module
-	vsync #( vBusWidth )
+	vsync #( vCountWidth )
 	(
 		.resVertical 		( vPixels ),	//1080 pixels wide
 		.counterVal 		( vCount ),		//Send vertical counter value to the vsync counterVal

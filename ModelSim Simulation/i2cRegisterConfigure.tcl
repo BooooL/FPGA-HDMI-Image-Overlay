@@ -1,7 +1,7 @@
-#Script for simulating the i2cInterface file
-#Copyright (c) 2018 Alexander Knapik, Keane-Gene Yew
+#Script for simulating the i2cRegisterConfigure
+#Copyright (c) 2018 Alexander Knapik, Keane-Gene Yew 
 #under the GNU General Public License v3.0 or any other later version
-#27.05.2018
+#28.05.2018
 
 
 #   This file is part of FPGA-HDMI-Image-Overlay. 
@@ -30,29 +30,16 @@ proc runSim {} {
 	add wave *
 	
 	# Set the radix of the buses.
-	property wave -radix unsigned *
+	property wave -radix hexadecimal *
 	
-	# Generate a clock to push the data though.
-	# Generate the system clock that will be used for
-	# the simulation.
-	force -deposit refClock 1 0, 0 {100ns} -repeat 200ns
+	#Clock the state machine
+	#force -deposit clock 1 0, 0 {100ns} -repeat 200ns
+	force -freeze i2cReady 0
+	run 5us
 
-	run 4us
+	#Clock the i2c ready pin, signalling that it has written okay.
+	force -deposit i2cReady 1 0, 0 {100ns} -repeat 200ns
 	
-	# Set the reset to high
-	force -freeze reset_n 1
+	run 20us
 	
-	run 2us
-	
-	# Start i2c
-	force -freeze i2cGo 1
-	run 90us
-	
-	#Set acknowledge state to always on
-	force -freeze sda 1
-	
-	#Set so i2c won't continue after initial data.
-	force -freeze i2cGo 0
-	
-	run 250us
 }
