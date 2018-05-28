@@ -50,8 +50,8 @@ module hdmiImageOverlay (
 	clockGen #( inputSpeed, outputSpeed, 1 )
 	pixelClockGen
 	(
-		.clockIn		( clock_50 		),
-		.clockOut	( pixelClock 	)
+		.clockIn	( clock_50 ),
+		.clockOut	( pixelClock )
 	);
 	
 	//Define the bus widths used for counting the horizontal and vertical pixels.
@@ -82,7 +82,7 @@ module hdmiImageOverlay (
 		.D					( 1'b0 ),		//Set the data input to 0 always. No preloading of the counter.
 		.parallelEnable_n 	( 1'b1 ),		//Disable the parallel loading ability!!!
 		.countEnable		( 1'b1 ),		//Always have the counting ability enabled.
-		//.masterReset_n		( hReset_n ),	//Reset the counter, active low.
+		//.masterReset_n	( hReset_n ),	//Reset the counter, active low.
 		.masterReset_n		( 1'b1 ),	//Reset the counter, active low.
 		.Q					( hCount )		//The horizontal counter value.
 	);
@@ -95,7 +95,7 @@ module hdmiImageOverlay (
 		.D					( 1'b0 ),		//Set the data input to 0 always. No preloading of the counter.
 		.parallelEnable_n 	( 1'b1 ),		//Disable the parallel loading ability!!!
 		.countEnable		( 1'b1 ),		//Always have the counting ability enabled.
-		//.masterReset_n		( vReset_n ),	//Reset the counter, active low.
+		//.masterReset_n	( vReset_n ),	//Reset the counter, active low.
 		.masterReset_n		( 1'b1 ),	//Reset the counter, active low.
 		.Q					( vCount )		//The vertical counter value.
 	);
@@ -105,11 +105,11 @@ module hdmiImageOverlay (
 	hSync
 	(
 		//.resHorizontal	( hPixels ),	//1920 pixels wide
-		.counterVal			( hCount ),		//Send horizontal counter value to the hsync counterVal
+		//.counterVal			( hCount ),		//Send horizontal counter value to the hsync counterVal
 		.clock 				( pixelClock ),	//Clock input clock
 		.hSyncPulse 		( HSYNC )		//hSync pulse goes to HSYNC output, which is tied to a pin
-		//.hCountReset_n 		( hReset_n )	//Maps the hSync counter reset to hReset_n register
-		//.hCountReset_n 		( 1'b1 )	//Maps the hSync counter reset to hReset_n register
+		//.hCountReset_n 	( hReset_n )	//Maps the hSync counter reset to hReset_n register
+		//.hCountReset_n 	( 1'b1 )	//Maps the hSync counter reset to hReset_n register
 	);
 
 	//Vertical sync module
@@ -117,18 +117,18 @@ module hdmiImageOverlay (
 	vSync
 	(
 		//.resVertical 		( vPixels ),	//1080 pixels wide
-		.counterVal 		( vCount ),		//Send vertical counter value to the vsync counterVal
+		//.counterVal 		( vCount ),		//Send vertical counter value to the vsync counterVal
 		.clock 				( pixelClock ),	//Clock input clock
 		.vSyncPulse 		( VSYNC )		//vSync pulse goes to VSYNC output, which is tied to a pin
-		//.vCountReset_n 		( vReset_n )	//Maps the vSync counter reset to vReset_n register
-		//.vCountReset_n 		( 1'b1 )	//Maps the vSync counter reset to vReset_n register
+		//.vCountReset_n 	( vReset_n )	//Maps the vSync counter reset to vReset_n register
+		//.vCountReset_n 	( 1'b1 )	//Maps the vSync counter reset to vReset_n register
 	);
 
 	DE #( hCountWidth, hPixels, vPixels )
 	de_module
 	(
 		.clock 				( pixelClock ), 	//Input clock
-		//.resHorizontal		( hPixels ),	//Horizontal pixel count (1920)
+		//.resHorizontal	( hPixels ),	//Horizontal pixel count (1920)
 		.hCount 			( hCount ), 	//Horizontal pixel counter
 		//.resVertical 		( vPixels ),	//Vertical pixel count (1080)
 		.vCount 			( vCount ), 	//Vertical pixel counter

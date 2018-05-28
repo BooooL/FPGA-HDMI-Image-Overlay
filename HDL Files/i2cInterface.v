@@ -291,7 +291,7 @@ module i2cInterface
 							SCL			<= 1'b1;
 							i2cSDAOut	<= 1'b1;
 							SDAOut		<= 1'b1;
-							endOK		<= 1'b0;
+							endOK		<= 1'b1;
 							ackOK		<= 1'b0;
 							bitCounter	<= 1'b0;
 							byteCounter	<= 1'b0;
