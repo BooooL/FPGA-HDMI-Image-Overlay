@@ -33,7 +33,7 @@ proc runSim {} {
 	property wave -radix hexadecimal *
 	
 	#Generate a 50MHz reference clock
-	force -deposit clock_50 1 0, 0 {100ns} -repeat 200ns
+	force -deposit clock_50 1 0, 0 {10ns} -repeat 20ns
 	
 	run 50ms
 	

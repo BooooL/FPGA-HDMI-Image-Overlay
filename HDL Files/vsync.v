@@ -7,7 +7,7 @@ module vsync #(
 (
 	//input [ (busWidth - 1) : 0] 	resVertical,		//Vertical Resolution e.g. 1080, 11 bits = 1024 - 2047 max
 	//input [ (busWidth - 1) : 0]	counterVal,			//Counter value to tell vsync when to pulse e.g. every 1080 pixels
-	input							clock,				//Pixel clock speed
+	input							hSync,				//Pixel clock speed
 	output 							vSyncPulse			//Output V Sync pulse
 	//output 						vCountReset_n		//Send a signal to reset the vSync counter to 0
 );
@@ -22,7 +22,7 @@ module vsync #(
 	assign vSyncPulse = pulseReg;
 	//assign vCountReset_n = reset;
 	
-	always @( posedge(clock) )
+	always @( posedge(hSync) )
 	begin
 		//If the end of the first line is reached, pulse the hsync
 		if( vCounter == resVertical)

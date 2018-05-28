@@ -1,12 +1,12 @@
-Fitter Status : Successful - Mon May 28 21:11:32 2018
+Fitter Status : Successful - Mon May 28 22:35:09 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : hdmiImageOverlay
 Top-level Entity Name : hdmiImageOverlay
 Family : Cyclone V
 Device : 5CSEBA6U23I7DK
 Timing Models : Final
-Logic utilization (in ALMs) : 45 / 41,910 ( < 1 % )
-Total registers : 103
+Logic utilization (in ALMs) : 52 / 41,910 ( < 1 % )
+Total registers : 110
 Total pins : 36 / 314 ( 11 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 5,662,720 ( 0 % )
@@ -16,5 +16,5 @@ Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0
 Total HSSI PMA TX Serializers : 0
-Total PLLs : 0 / 6 ( 0 % )
+Total PLLs : 1 / 6 ( 17 % )
 Total DLLs : 0 / 4 ( 0 % )

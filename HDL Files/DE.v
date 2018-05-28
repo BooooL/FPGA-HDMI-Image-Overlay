@@ -6,28 +6,37 @@ module DE #(
 	parameter [ ( busWidth - 1 ) : 0 ] resVertical		= 1080
 )
 (
-	input 							clock,				//Input clock
+	input 							hSync,				//Input clock
 	//input [ (busWidth - 1) : 0] 	resHorizontal,		//Horizontal Resolution e.g. 1920, 11 bits = 2047 max
-	input [ (busWidth - 1) : 0]		hCount,				//hSync counter used to determine horizontal position
+	//input [ (busWidth - 1) : 0]		hCount,				//hSync counter used to determine horizontal position
 	//input [ (busWidth - 1) : 0] 	resVertical,		//Vertical Resolution e.g. 1080, 11 bits = 2047 max
 	input [ (busWidth - 1) : 0]		vCount,				//vSync counter used to determine vertical position
 	output 							deOut				//DE output signal
 );
 
 	//Define Registers
-	reg deReg = 1'b0;
+	reg deReg = 1'b0;								//Register used to store the value of DE.
+	reg [ ( busWidth - 1 ) : 0 ] counter = 1'b0;	//Counter storing the horizontal pixel location.
 
 	//Assign Registers to outputs
 	assign deOut = deReg;
 
-	always @( posedge(clock) )
+	always @( posedge( hSync ) )
 		begin
 
-			//deOut goes low at the end of the horizontal count 
-			if(hCount >= resHorizontal)
-				deReg = 1'b0;
+			//If the pixel is at the last location in the horizontal position,
+			//Set DE to low, and reset the counter. 
+			if( counter == resHorizontal )
+				begin
+					deReg 	= 1'b0;
+					counter	= 1'b0;
+				end
+			//Else, Set DE high, and increment the counter. 
 			else
-				deReg = 1'b1;
+				begin
+					deReg 	= 1'b1;
+					counter = counter + 1'b1;
+				end
 
 			/*
 			//deOut goes low at the end of the vertical count 
@@ -36,7 +45,5 @@ module DE #(
 			else
 				deReg = 1'b1;
 			*/
-
 		end
-
 endmodule

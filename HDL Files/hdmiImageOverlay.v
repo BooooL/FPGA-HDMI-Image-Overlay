@@ -41,8 +41,9 @@ module hdmiImageOverlay (
 	parameter vPixels = 1280;	//Vertical pixel length
 	
 	//Refresh rate
-	parameter refreshRate = 30;	//Refresh rate. Default 30 frames a second.
+	parameter refreshRate = 60;	//Refresh rate. Default 30 frames a second.
 	
+	/* NOT ACCURATE ENOUGH
 	//Clock generator used for the pixel clock
 	parameter inputSpeed		=	50 * ( 10 ** 6 ); //Input reference clock speed in Hz.
 	parameter outputSpeed	=	hPixels * vPixels * refreshRate;	//Pixel clock speed
@@ -53,6 +54,17 @@ module hdmiImageOverlay (
 		.clockIn	( clock_50 ),
 		.clockOut	( pixelClock )
 	);
+	*/
+	
+	wire pixelClock;
+	
+	//50MHz to 55.296 MHz PLL for 720p 60fps.
+	pixelPLL pixel(
+		.refclk		( clock_50 ),
+		.rst			( 1'b0 ),
+		.outclk_0	( pixelClock )
+	);
+	
 	
 	//Define the bus widths used for counting the horizontal and vertical pixels.
 	//12 bits is 4096 x 4096 maximum.
@@ -105,35 +117,37 @@ module hdmiImageOverlay (
 	hSync
 	(
 		//.resHorizontal	( hPixels ),	//1920 pixels wide
-		//.counterVal			( hCount ),		//Send horizontal counter value to the hsync counterVal
+		//.counterVal		( hCount ),		//Send horizontal counter value to the hsync counterVal
 		.clock 				( pixelClock ),	//Clock input clock
-		.hSyncPulse 		( HSYNC )		//hSync pulse goes to HSYNC output, which is tied to a pin
+		.hSyncPulse 		( HSYNC ),		//hSync pulse goes to HSYNC output, which is tied to a pin
+		.DE					( DE )
 		//.hCountReset_n 	( hReset_n )	//Maps the hSync counter reset to hReset_n register
 		//.hCountReset_n 	( 1'b1 )	//Maps the hSync counter reset to hReset_n register
 	);
-
+	
 	//Vertical sync module
 	vsync #( vCountWidth, vPixels )
 	vSync
 	(
 		//.resVertical 		( vPixels ),	//1080 pixels wide
 		//.counterVal 		( vCount ),		//Send vertical counter value to the vsync counterVal
-		.clock 				( pixelClock ),	//Clock input clock
+		.hSync 				( HSYNC ),	//Clock input clock
 		.vSyncPulse 		( VSYNC )		//vSync pulse goes to VSYNC output, which is tied to a pin
 		//.vCountReset_n 	( vReset_n )	//Maps the vSync counter reset to vReset_n register
 		//.vCountReset_n 	( 1'b1 )	//Maps the vSync counter reset to vReset_n register
 	);
-
+/*
 	DE #( hCountWidth, hPixels, vPixels )
 	de_module
 	(
-		.clock 				( pixelClock ), 	//Input clock
+		.hSync 				( HSYNC ), 	//Input clock
 		//.resHorizontal	( hPixels ),	//Horizontal pixel count (1920)
-		.hCount 			( hCount ), 	//Horizontal pixel counter
+		//.hCount 			( hCount ), 	//Horizontal pixel counter
 		//.resVertical 		( vPixels ),	//Vertical pixel count (1080)
-		.vCount 			( vCount ), 	//Vertical pixel counter
+		//.vCount 			( vCount ), 	//Vertical pixel counter
 		.deOut 				( DE )			//DE signal output
 	);
+	*/
 
 	dataWrite dataWrite_module
 	(

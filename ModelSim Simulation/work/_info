@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Workspace/Quartus/Lab_4/Home_Alarm_Student_Project/Quartus_Project_Files/simulation
 vclockGen
-Z0 !s110 1527507961
+Z0 !s110 1527510707
 !i10b 1
 !s100 YBHR9^]77^JNAF7k<@QT01
 IT6dc7bN;73oMlc@]QQUR`3
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1527507961.000000
+Z4 !s108 1527510707.000000
 !s107 C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/clockGen.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/clockGen.v|
 !i113 1
@@ -76,11 +76,11 @@ ndata@write
 vDE
 R0
 !i10b 1
-!s100 Ddk4h4VNQloOo8228lOSY3
-I0fIjhf]T5;H@Nkk[3zT9W2
+!s100 W1X>_`hQWkIV@k4TL@5`W0
+IXGgk^il0a1279k[M:Bc?L2
 R1
 R2
-w1527505945
+w1527510436
 8C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/DE.v
 FC:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/DE.v
 L0 3
@@ -98,11 +98,11 @@ n@d@e
 vhdmiImageOverlay
 R0
 !i10b 1
-!s100 O8TJL<1icBYXOC:G;CYZA2
-Ic5=fZ:^L`>@PIP5CjdYSL3
+!s100 @?gdT`6:DNBXS=Ic5D??^1
+Ij@LiX;Z<Ka[LlPV[<`Hz83
 R1
 R2
-w1527507940
+w1527510704
 8C:\Users\Alexander\Documents\University\2018\Semester 1\EEET2162 Advanced Digital Design 1\Major Project\FPGA-HDMI-Image-Overlay\HDL Files\hdmiImageOverlay.v
 FC:\Users\Alexander\Documents\University\2018\Semester 1\EEET2162 Advanced Digital Design 1\Major Project\FPGA-HDMI-Image-Overlay\HDL Files\hdmiImageOverlay.v
 Z7 L0 25
@@ -142,21 +142,21 @@ n@h@d@m@i@overlay
 vhsync
 R0
 !i10b 1
-!s100 Y<ZIFI[SHJ:kezMk<Pi;Z1
-Ib<^KeB>_nFhzFC8ehUjli1
+!s100 0S?Y:?Z>gGDn]6eeD^Hbd3
+IK6D1Tk7z@coX4K<@^A<_=3
 R1
 R2
-w1527507689
-8C:\Users\Alexander\Documents\University\2018\Semester 1\EEET2162 Advanced Digital Design 1\Major Project\FPGA-HDMI-Image-Overlay\HDL Files\hsync.v
-FC:\Users\Alexander\Documents\University\2018\Semester 1\EEET2162 Advanced Digital Design 1\Major Project\FPGA-HDMI-Image-Overlay\HDL Files\hsync.v
+w1527510662
+8C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hsync.v
+FC:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hsync.v
 L0 3
 R3
 r1
 !s85 0
 31
 R4
-!s107 C:\Users\Alexander\Documents\University\2018\Semester 1\EEET2162 Advanced Digital Design 1\Major Project\FPGA-HDMI-Image-Overlay\HDL Files\hsync.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Alexander\Documents\University\2018\Semester 1\EEET2162 Advanced Digital Design 1\Major Project\FPGA-HDMI-Image-Overlay\HDL Files\hsync.v|
+!s107 C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hsync.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hsync.v|
 !i113 1
 R5
 R6
@@ -164,20 +164,20 @@ vi2cInterface
 R0
 !i10b 1
 !s100 WJd2YVahLX1HU?57<iNTR1
-I13MINJ<cc8fNVceI4BF>20
+I[Af6l:>miZ7^4QGL_DR^V3
 R1
 R2
 w1527506909
-8C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cInterface.v
-FC:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cInterface.v
+8C:\Users\Alexander\Documents\University\2018\Semester 1\EEET2162 Advanced Digital Design 1\Major Project\FPGA-HDMI-Image-Overlay\HDL Files\i2cInterface.v
+FC:\Users\Alexander\Documents\University\2018\Semester 1\EEET2162 Advanced Digital Design 1\Major Project\FPGA-HDMI-Image-Overlay\HDL Files\i2cInterface.v
 L0 26
 R3
 r1
 !s85 0
 31
 R4
-!s107 C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cInterface.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cInterface.v|
+!s107 C:\Users\Alexander\Documents\University\2018\Semester 1\EEET2162 Advanced Digital Design 1\Major Project\FPGA-HDMI-Image-Overlay\HDL Files\i2cInterface.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Alexander\Documents\University\2018\Semester 1\EEET2162 Advanced Digital Design 1\Major Project\FPGA-HDMI-Image-Overlay\HDL Files\i2cInterface.v|
 !i113 1
 R5
 R6
@@ -204,14 +204,58 @@ R4
 R5
 R6
 ni2c@register@configure
+vpixelPLL
+Z8 !s110 1527510708
+!i10b 1
+!s100 `De96gH2Pomhi[X^U0aBi1
+IS7jRzIkX<Q7gk@Eh9J0b42
+R1
+R2
+w1527508371
+8C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL.v
+FC:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL.v
+L0 8
+R3
+r1
+!s85 0
+31
+!s108 1527510708.000000
+!s107 C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL.v|
+!i113 1
+R5
+R6
+npixel@p@l@l
+vpixelPLL_0002
+R8
+!i10b 1
+!s100 lf]UBiCo`lkGVi:g6ZjDR3
+I`jY8Ch=lKCf:k]FfdOYZO0
+R1
+R2
+w1527508354
+8C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL/pixelPLL_0002.v
+FC:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL/pixelPLL_0002.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL/pixelPLL_0002.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL/pixelPLL_0002.v|
+!i113 1
+R5
+R6
+npixel@p@l@l_0002
 vvsync
 R0
 !i10b 1
-!s100 3NLzobQ9GaB@3JDWn2OCP3
-I@HX9B_cnF>nXh5cPA3nT^2
+!s100 41?H]f;I34m6HS[2i[>4m3
+IQC2RGF;P1DiX2ZM2eDUi22
 R1
 R2
-w1527507815
+w1527508442
 8C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/vsync.v
 FC:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/vsync.v
 L0 3
