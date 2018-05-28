@@ -1,15 +1,15 @@
 //Data Enable module
 
-module DE 
-#( 
-parameter busWidth = 11
+module DE #( 
+	parameter busWidth = 11,
+	parameter [ ( busWidth - 1 ) : 0 ] resHorizontal 	= 1920,
+	parameter [ ( busWidth - 1 ) : 0 ] resVertical		= 1080
 )
-
 (
 	input 							clock,				//Input clock
-	input [ (busWidth - 1) : 0] 	resHorizontal,		//Horizontal Resolution e.g. 1920, 11 bits = 2047 max
+	//input [ (busWidth - 1) : 0] 	resHorizontal,		//Horizontal Resolution e.g. 1920, 11 bits = 2047 max
 	input [ (busWidth - 1) : 0]		hCount,				//hSync counter used to determine horizontal position
-	input [ (busWidth - 1) : 0] 	resVertical,		//Vertical Resolution e.g. 1080, 11 bits = 2047 max
+	//input [ (busWidth - 1) : 0] 	resVertical,		//Vertical Resolution e.g. 1080, 11 bits = 2047 max
 	input [ (busWidth - 1) : 0]		vCount,				//vSync counter used to determine vertical position
 	output 							deOut				//DE output signal
 );
@@ -29,11 +29,13 @@ parameter busWidth = 11
 			else
 				deReg = 1'b1;
 
+			/*
 			//deOut goes low at the end of the vertical count 
 			if(vCount >= resVertical)
 				deReg = 1'b0;
 			else
 				deReg = 1'b1;
+			*/
 
 		end
 

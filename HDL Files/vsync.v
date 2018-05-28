@@ -1,8 +1,11 @@
 //Vertical Sync Module
 
-module vsync #( parameter busWidth = 11 )
+module vsync #( 
+	parameter busWidth = 11, 
+	parameter [ ( busWidth - 1 ) : 0 ] resVertical = 1080;
+)
 (
-	input [ (busWidth - 1) : 0] 	resVertical,		//Vertical Resolution e.g. 1080, 11 bits = 1024 - 2047 max
+	//input [ (busWidth - 1) : 0] 	resVertical,		//Vertical Resolution e.g. 1080, 11 bits = 1024 - 2047 max
 	input [ (busWidth - 1) : 0]		counterVal,			//Counter value to tell vsync when to pulse e.g. every 1080 pixels
 	input							clock,
 	output 							vSyncPulse,			//Output V Sync pulse
