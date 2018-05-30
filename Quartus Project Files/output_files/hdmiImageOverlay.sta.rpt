@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for hdmiImageOverlay
-Wed May 30 20:12:43 2018
+Thu May 31 00:09:08 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -101,14 +101,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.36        ;
+; Average used               ; 1.34        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  12.0%      ;
-;     Processor 3            ;  11.9%      ;
-;     Processor 4            ;  11.7%      ;
+;     Processor 2            ;  11.5%      ;
+;     Processor 3            ;  11.4%      ;
+;     Processor 4            ;  11.2%      ;
 +----------------------------+-------------+
 
 
@@ -126,7 +126,7 @@ refer to the applicable agreement for further details.
 +-----------+-----------------+---------------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name          ; Note ;
 +-----------+-----------------+---------------------+------+
-; 57.18 MHz ; 57.18 MHz       ; altera_reserved_tck ;      ;
+; 82.31 MHz ; 82.31 MHz       ; altera_reserved_tck ;      ;
 +-----------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -137,13 +137,13 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 HTML report is unavailable in plain text report export.
 
 
-+---------------------------------------------+
-; Slow 1100mV 100C Model Setup Summary        ;
-+---------------------+-------+---------------+
-; Clock               ; Slack ; End Point TNS ;
-+---------------------+-------+---------------+
-; altera_reserved_tck ; 7.922 ; 0.000         ;
-+---------------------+-------+---------------+
++----------------------------------------------+
+; Slow 1100mV 100C Model Setup Summary         ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 10.592 ; 0.000         ;
++---------------------+--------+---------------+
 
 
 +---------------------------------------------+
@@ -151,7 +151,7 @@ HTML report is unavailable in plain text report export.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.177 ; 0.000         ;
+; altera_reserved_tck ; 0.186 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -160,7 +160,7 @@ HTML report is unavailable in plain text report export.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 29.888 ; 0.000         ;
+; altera_reserved_tck ; 30.088 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -169,7 +169,7 @@ HTML report is unavailable in plain text report export.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 1.242 ; 0.000         ;
+; altera_reserved_tck ; 0.901 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -178,7 +178,7 @@ HTML report is unavailable in plain text report export.
 +---------------------+--------+---------------------+
 ; Clock               ; Slack  ; End Point TNS       ;
 +---------------------+--------+---------------------+
-; altera_reserved_tck ; 14.973 ; 0.000               ;
+; altera_reserved_tck ; 14.965 ; 0.000               ;
 +---------------------+--------+---------------------+
 
 
@@ -193,18 +193,18 @@ No synchronizer chains to report.
 +-----------+-----------------+---------------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name          ; Note ;
 +-----------+-----------------+---------------------+------+
-; 60.03 MHz ; 60.03 MHz       ; altera_reserved_tck ;      ;
+; 85.59 MHz ; 85.59 MHz       ; altera_reserved_tck ;      ;
 +-----------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+---------------------------------------------+
-; Slow 1100mV -40C Model Setup Summary        ;
-+---------------------+-------+---------------+
-; Clock               ; Slack ; End Point TNS ;
-+---------------------+-------+---------------+
-; altera_reserved_tck ; 8.337 ; 0.000         ;
-+---------------------+-------+---------------+
++----------------------------------------------+
+; Slow 1100mV -40C Model Setup Summary         ;
++---------------------+--------+---------------+
+; Clock               ; Slack  ; End Point TNS ;
++---------------------+--------+---------------+
+; altera_reserved_tck ; 10.825 ; 0.000         ;
++---------------------+--------+---------------+
 
 
 +---------------------------------------------+
@@ -212,7 +212,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.170 ; 0.000         ;
+; altera_reserved_tck ; 0.178 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -221,7 +221,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 30.055 ; 0.000         ;
+; altera_reserved_tck ; 30.191 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -230,7 +230,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 1.169 ; 0.000         ;
+; altera_reserved_tck ; 0.840 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -239,7 +239,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------------+
 ; Clock               ; Slack  ; End Point TNS       ;
 +---------------------+--------+---------------------+
-; altera_reserved_tck ; 14.958 ; 0.000               ;
+; altera_reserved_tck ; 14.974 ; 0.000               ;
 +---------------------+--------+---------------------+
 
 
@@ -254,7 +254,7 @@ No synchronizer chains to report.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 12.095 ; 0.000         ;
+; altera_reserved_tck ; 13.848 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -263,7 +263,7 @@ No synchronizer chains to report.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.037 ; 0.000         ;
+; altera_reserved_tck ; 0.043 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -272,7 +272,7 @@ No synchronizer chains to report.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 31.103 ; 0.000         ;
+; altera_reserved_tck ; 31.318 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -281,7 +281,7 @@ No synchronizer chains to report.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.481 ; 0.000         ;
+; altera_reserved_tck ; 0.359 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -290,7 +290,7 @@ No synchronizer chains to report.
 +---------------------+--------+---------------------+
 ; Clock               ; Slack  ; End Point TNS       ;
 +---------------------+--------+---------------------+
-; altera_reserved_tck ; 14.748 ; 0.000               ;
+; altera_reserved_tck ; 14.715 ; 0.000               ;
 +---------------------+--------+---------------------+
 
 
@@ -305,7 +305,7 @@ No synchronizer chains to report.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 13.007 ; 0.000         ;
+; altera_reserved_tck ; 14.392 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -314,7 +314,7 @@ No synchronizer chains to report.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.019 ; 0.000         ;
+; altera_reserved_tck ; 0.022 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -323,7 +323,7 @@ No synchronizer chains to report.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 31.453 ; 0.000         ;
+; altera_reserved_tck ; 31.605 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -332,7 +332,7 @@ No synchronizer chains to report.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.383 ; 0.000         ;
+; altera_reserved_tck ; 0.280 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -341,7 +341,7 @@ No synchronizer chains to report.
 +---------------------+--------+---------------------+
 ; Clock               ; Slack  ; End Point TNS       ;
 +---------------------+--------+---------------------+
-; altera_reserved_tck ; 14.714 ; 0.000               ;
+; altera_reserved_tck ; 14.705 ; 0.000               ;
 +---------------------+--------+---------------------+
 
 
@@ -351,16 +351,16 @@ No synchronizer chains to report.
 No synchronizer chains to report.
 
 
-+---------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                             ;
-+----------------------+-------+-------+----------+---------+---------------------+
-; Clock                ; Setup ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+----------------------+-------+-------+----------+---------+---------------------+
-; Worst-case Slack     ; 7.922 ; 0.019 ; 29.888   ; 0.383   ; 14.714              ;
-;  altera_reserved_tck ; 7.922 ; 0.019 ; 29.888   ; 0.383   ; 14.714              ;
-; Design-wide TNS      ; 0.0   ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
-;  altera_reserved_tck ; 0.000 ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
-+----------------------+-------+-------+----------+---------+---------------------+
++----------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                              ;
++----------------------+--------+-------+----------+---------+---------------------+
+; Clock                ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++----------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack     ; 10.592 ; 0.022 ; 30.088   ; 0.280   ; 14.705              ;
+;  altera_reserved_tck ; 10.592 ; 0.022 ; 30.088   ; 0.280   ; 14.705              ;
+; Design-wide TNS      ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  altera_reserved_tck ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
++----------------------+--------+-------+----------+---------+---------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -396,6 +396,9 @@ No synchronizer chains to report.
 ; data[22]            ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; data[23]            ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; i2cScl              ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; sdaSel              ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; i2cSclDebug         ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; i2cSdaDebug         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; i2cSda              ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; altera_reserved_tdo ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 +---------------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
@@ -453,6 +456,9 @@ No synchronizer chains to report.
 ; data[22]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.91e-08 V                   ; 3.17 V              ; -0.311 V            ; 0.143 V                              ; 0.424 V                              ; 4.17e-10 s                  ; 1.36e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 1.91e-08 V                  ; 3.17 V             ; -0.311 V           ; 0.143 V                             ; 0.424 V                             ; 4.17e-10 s                 ; 1.36e-10 s                 ; Yes                       ; No                        ;
 ; data[23]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.91e-08 V                   ; 3.17 V              ; -0.306 V            ; 0.142 V                              ; 0.425 V                              ; 4.17e-10 s                  ; 1.36e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 1.91e-08 V                  ; 3.17 V             ; -0.306 V           ; 0.142 V                             ; 0.425 V                             ; 4.17e-10 s                 ; 1.36e-10 s                 ; Yes                       ; No                        ;
 ; i2cScl              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2e-08 V                      ; 3.17 V              ; -0.245 V            ; 0.166 V                              ; 0.398 V                              ; 4.33e-10 s                  ; 1.46e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2e-08 V                     ; 3.17 V             ; -0.245 V           ; 0.166 V                             ; 0.398 V                             ; 4.33e-10 s                 ; 1.46e-10 s                 ; Yes                       ; No                        ;
+; sdaSel              ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.6e-08 V                    ; 2.42 V              ; -0.0509 V           ; 0.197 V                              ; 0.118 V                              ; 4.57e-10 s                  ; 4.47e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.6e-08 V                   ; 2.42 V             ; -0.0509 V          ; 0.197 V                             ; 0.118 V                             ; 4.57e-10 s                 ; 4.47e-10 s                 ; No                        ; Yes                       ;
+; i2cSclDebug         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.47e-08 V                   ; 3.11 V              ; -0.195 V            ; 0.108 V                              ; 0.32 V                               ; 4.03e-10 s                  ; 1.44e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 1.47e-08 V                  ; 3.11 V             ; -0.195 V           ; 0.108 V                             ; 0.32 V                              ; 4.03e-10 s                 ; 1.44e-10 s                 ; Yes                       ; No                        ;
+; i2cSdaDebug         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.33e-08 V                   ; 2.36 V              ; -0.0253 V           ; 0.132 V                              ; 0.078 V                              ; 4.45e-10 s                  ; 4.26e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.33e-08 V                  ; 2.36 V             ; -0.0253 V          ; 0.132 V                             ; 0.078 V                             ; 4.45e-10 s                 ; 4.26e-10 s                 ; No                        ; Yes                       ;
 ; i2cSda              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.91e-08 V                   ; 3.17 V              ; -0.306 V            ; 0.142 V                              ; 0.425 V                              ; 4.17e-10 s                  ; 1.36e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 1.91e-08 V                  ; 3.17 V             ; -0.306 V           ; 0.142 V                             ; 0.425 V                             ; 4.17e-10 s                 ; 1.36e-10 s                 ; Yes                       ; No                        ;
 ; altera_reserved_tdo ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.56e-08 V                   ; 3.11 V              ; -0.0792 V           ; 0.135 V                              ; 0.16 V                               ; 5.59e-10 s                  ; 2.59e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 2.56e-08 V                  ; 3.11 V             ; -0.0792 V          ; 0.135 V                             ; 0.16 V                              ; 5.59e-10 s                 ; 2.59e-10 s                 ; Yes                       ; Yes                       ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -491,6 +497,9 @@ No synchronizer chains to report.
 ; data[22]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-05 V                   ; 3.11 V              ; -0.105 V            ; 0.101 V                              ; 0.142 V                              ; 5.54e-10 s                  ; 3.16e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-05 V                  ; 3.11 V             ; -0.105 V           ; 0.101 V                             ; 0.142 V                             ; 5.54e-10 s                 ; 3.16e-10 s                 ; Yes                       ; Yes                       ;
 ; data[23]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-05 V                   ; 3.11 V              ; -0.104 V            ; 0.101 V                              ; 0.139 V                              ; 5.54e-10 s                  ; 3.16e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-05 V                  ; 3.11 V             ; -0.104 V           ; 0.101 V                             ; 0.139 V                             ; 5.54e-10 s                 ; 3.16e-10 s                 ; Yes                       ; Yes                       ;
 ; i2cScl              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.87e-05 V                   ; 3.11 V              ; -0.0814 V           ; 0.131 V                              ; 0.136 V                              ; 5.88e-10 s                  ; 3.2e-10 s                   ; Yes                        ; Yes                        ; 3.08 V                      ; 3.87e-05 V                  ; 3.11 V             ; -0.0814 V          ; 0.131 V                             ; 0.136 V                             ; 5.88e-10 s                 ; 3.2e-10 s                  ; Yes                       ; Yes                       ;
+; sdaSel              ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.81e-05 V                   ; 2.37 V              ; -0.0242 V           ; 0.257 V                              ; 0.097 V                              ; 5.03e-10 s                  ; 6.18e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.81e-05 V                  ; 2.37 V             ; -0.0242 V          ; 0.257 V                             ; 0.097 V                             ; 5.03e-10 s                 ; 6.18e-10 s                 ; No                        ; Yes                       ;
+; i2cSclDebug         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.09e-05 V                   ; 3.09 V              ; -0.0462 V           ; 0.045 V                              ; 0.085 V                              ; 5.49e-10 s                  ; 3.06e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.09e-05 V                  ; 3.09 V             ; -0.0462 V          ; 0.045 V                             ; 0.085 V                             ; 5.49e-10 s                 ; 3.06e-10 s                 ; Yes                       ; Yes                       ;
+; i2cSdaDebug         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.28e-05 V                   ; 2.34 V              ; -0.00773 V          ; 0.214 V                              ; 0.065 V                              ; 5.06e-10 s                  ; 5.4e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 4.28e-05 V                  ; 2.34 V             ; -0.00773 V         ; 0.214 V                             ; 0.065 V                             ; 5.06e-10 s                 ; 5.4e-10 s                  ; Yes                       ; Yes                       ;
 ; i2cSda              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-05 V                   ; 3.11 V              ; -0.104 V            ; 0.101 V                              ; 0.139 V                              ; 5.54e-10 s                  ; 3.16e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-05 V                  ; 3.11 V             ; -0.104 V           ; 0.101 V                             ; 0.139 V                             ; 5.54e-10 s                 ; 3.16e-10 s                 ; Yes                       ; Yes                       ;
 ; altera_reserved_tdo ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 5.15e-05 V                   ; 3.12 V              ; -0.037 V            ; 0.165 V                              ; 0.109 V                              ; 7.77e-10 s                  ; 4.14e-10 s                  ; No                         ; Yes                        ; 3.08 V                      ; 5.15e-05 V                  ; 3.12 V             ; -0.037 V           ; 0.165 V                             ; 0.109 V                             ; 7.77e-10 s                 ; 4.14e-10 s                 ; No                        ; Yes                       ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -529,6 +538,9 @@ No synchronizer chains to report.
 ; data[22]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.42e-07 V                   ; 3.75 V              ; -0.589 V            ; 0.329 V                              ; 0.706 V                              ; 2.77e-10 s                  ; 1.3e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 4.42e-07 V                  ; 3.75 V             ; -0.589 V           ; 0.329 V                             ; 0.706 V                             ; 2.77e-10 s                 ; 1.3e-10 s                  ; Yes                       ; No                        ;
 ; data[23]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.42e-07 V                   ; 3.75 V              ; -0.588 V            ; 0.329 V                              ; 0.704 V                              ; 2.77e-10 s                  ; 1.3e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 4.42e-07 V                  ; 3.75 V             ; -0.588 V           ; 0.329 V                             ; 0.704 V                             ; 2.77e-10 s                 ; 1.3e-10 s                  ; Yes                       ; No                        ;
 ; i2cScl              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.64e-07 V                   ; 3.74 V              ; -0.508 V            ; 0.391 V                              ; 0.647 V                              ; 3.08e-10 s                  ; 1.34e-10 s                  ; No                         ; No                         ; 3.63 V                      ; 4.64e-07 V                  ; 3.74 V             ; -0.508 V           ; 0.391 V                             ; 0.647 V                             ; 3.08e-10 s                 ; 1.34e-10 s                 ; No                        ; No                        ;
+; sdaSel              ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 2.45e-07 V                   ; 2.93 V              ; -0.127 V            ; 0.351 V                              ; 0.317 V                              ; 2.74e-10 s                  ; 2.82e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 2.45e-07 V                  ; 2.93 V             ; -0.127 V           ; 0.351 V                             ; 0.317 V                             ; 2.74e-10 s                 ; 2.82e-10 s                 ; No                        ; No                        ;
+; i2cSclDebug         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 3.38e-07 V                   ; 3.67 V              ; -0.403 V            ; 0.084 V                              ; 0.542 V                              ; 3.5e-10 s                   ; 1.32e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 3.38e-07 V                  ; 3.67 V             ; -0.403 V           ; 0.084 V                             ; 0.542 V                             ; 3.5e-10 s                  ; 1.32e-10 s                 ; Yes                       ; No                        ;
+; i2cSdaDebug         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 1.99e-07 V                   ; 2.83 V              ; -0.0718 V           ; 0.269 V                              ; 0.234 V                              ; 2.77e-10 s                  ; 2.75e-10 s                  ; Yes                        ; Yes                        ; 2.75 V                      ; 1.99e-07 V                  ; 2.83 V             ; -0.0718 V          ; 0.269 V                             ; 0.234 V                             ; 2.77e-10 s                 ; 2.75e-10 s                 ; Yes                       ; Yes                       ;
 ; i2cSda              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.42e-07 V                   ; 3.75 V              ; -0.588 V            ; 0.329 V                              ; 0.704 V                              ; 2.77e-10 s                  ; 1.3e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 4.42e-07 V                  ; 3.75 V             ; -0.588 V           ; 0.329 V                             ; 0.704 V                             ; 2.77e-10 s                 ; 1.3e-10 s                  ; Yes                       ; No                        ;
 ; altera_reserved_tdo ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 5.9e-07 V                    ; 3.68 V              ; -0.193 V            ; 0.293 V                              ; 0.245 V                              ; 4.06e-10 s                  ; 2.62e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 5.9e-07 V                   ; 3.68 V             ; -0.193 V           ; 0.293 V                             ; 0.245 V                             ; 4.06e-10 s                 ; 2.62e-10 s                 ; Yes                       ; No                        ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -567,6 +579,9 @@ No synchronizer chains to report.
 ; data[22]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000379 V                   ; 3.65 V              ; -0.292 V            ; 0.053 V                              ; 0.524 V                              ; 4.36e-10 s                  ; 1.95e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000379 V                  ; 3.65 V             ; -0.292 V           ; 0.053 V                             ; 0.524 V                             ; 4.36e-10 s                 ; 1.95e-10 s                 ; Yes                       ; No                        ;
 ; data[23]            ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000379 V                   ; 3.65 V              ; -0.289 V            ; 0.051 V                              ; 0.523 V                              ; 4.36e-10 s                  ; 1.95e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000379 V                  ; 3.65 V             ; -0.289 V           ; 0.051 V                             ; 0.523 V                             ; 4.36e-10 s                 ; 1.95e-10 s                 ; Yes                       ; No                        ;
 ; i2cScl              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000395 V                   ; 3.65 V              ; -0.232 V            ; 0.065 V                              ; 0.547 V                              ; 4.68e-10 s                  ; 2.07e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000395 V                  ; 3.65 V             ; -0.232 V           ; 0.065 V                             ; 0.547 V                             ; 4.68e-10 s                 ; 2.07e-10 s                 ; Yes                       ; No                        ;
+; sdaSel              ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000419 V                   ; 2.85 V              ; -0.0671 V           ; 0.203 V                              ; 0.19 V                               ; 4.57e-10 s                  ; 4.54e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000419 V                  ; 2.85 V             ; -0.0671 V          ; 0.203 V                             ; 0.19 V                              ; 4.57e-10 s                 ; 4.54e-10 s                 ; No                        ; No                        ;
+; i2cSclDebug         ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000307 V                   ; 3.64 V              ; -0.165 V            ; 0.022 V                              ; 0.425 V                              ; 4.58e-10 s                  ; 2e-10 s                     ; Yes                        ; No                         ; 3.63 V                      ; 0.000307 V                  ; 3.64 V             ; -0.165 V           ; 0.022 V                             ; 0.425 V                             ; 4.58e-10 s                 ; 2e-10 s                    ; Yes                       ; No                        ;
+; i2cSdaDebug         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000362 V                   ; 2.79 V              ; -0.0303 V           ; 0.139 V                              ; 0.127 V                              ; 4.44e-10 s                  ; 4.38e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000362 V                  ; 2.79 V             ; -0.0303 V          ; 0.139 V                             ; 0.127 V                             ; 4.44e-10 s                 ; 4.38e-10 s                 ; No                        ; Yes                       ;
 ; i2cSda              ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000379 V                   ; 3.65 V              ; -0.289 V            ; 0.051 V                              ; 0.523 V                              ; 4.36e-10 s                  ; 1.95e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000379 V                  ; 3.65 V             ; -0.289 V           ; 0.051 V                             ; 0.523 V                             ; 4.36e-10 s                 ; 1.95e-10 s                 ; Yes                       ; No                        ;
 ; altera_reserved_tdo ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000519 V                   ; 3.68 V              ; -0.039 V            ; 0.235 V                              ; 0.074 V                              ; 6e-10 s                     ; 3e-10 s                     ; No                         ; Yes                        ; 3.63 V                      ; 0.000519 V                  ; 3.68 V             ; -0.039 V           ; 0.235 V                             ; 0.074 V                             ; 6e-10 s                    ; 3e-10 s                    ; No                        ; Yes                       ;
 +---------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -577,7 +592,7 @@ No synchronizer chains to report.
 +---------------------+---------------------+----------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+----------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 5744     ; 0        ; 56       ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 5785     ; 0        ; 56       ; 0        ;
 +---------------------+---------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -587,7 +602,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+----------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+----------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 5744     ; 0        ; 56       ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 5785     ; 0        ; 56       ; 0        ;
 +---------------------+---------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -597,7 +612,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+----------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+----------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 152      ; 0        ; 0        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 149      ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -607,7 +622,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+----------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+----------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 152      ; 0        ; 0        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 149      ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -630,8 +645,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Property                        ; Setup ; Hold ;
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
-; Unconstrained Clocks            ; 3     ; 3    ;
-; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Clocks            ; 2     ; 2    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
 ; Unconstrained Input Port Paths  ; 57    ; 57   ;
 ; Unconstrained Output Ports      ; 6     ; 6    ;
 ; Unconstrained Output Port Paths ; 11    ; 11   ;
@@ -646,7 +661,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; altera_reserved_tck                        ; altera_reserved_tck ; Base ; Constrained   ;
 ; clock_50                                   ;                     ; Base ; Unconstrained ;
 ; i2cInterface:i2c|clockGen:clockDivider|clk ;                     ; Base ; Unconstrained ;
-; i2cInterface:i2c|endOK                     ;                     ; Base ; Unconstrained ;
 +--------------------------------------------+---------------------+------+---------------+
 
 
@@ -658,6 +672,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; altera_reserved_tdi ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; altera_reserved_tms ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; i2cSda              ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sw[0]               ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +---------------------+--------------------------------------------------------------------------------------+
 
 
@@ -683,6 +698,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; altera_reserved_tdi ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; altera_reserved_tms ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; i2cSda              ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sw[0]               ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +---------------------+--------------------------------------------------------------------------------------+
 
 
@@ -706,7 +722,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Wed May 30 20:12:31 2018
+    Info: Processing started: Thu May 31 00:08:56 2018
 Info: Command: quartus_sta hdmiImageOverlay -c hdmiImageOverlay
 Info: qsta_default_script.tcl version: #3
 Warning (20013): Ignored 16 assignments for entity "pixelPLL" -- entity does not exist in design
@@ -726,135 +742,127 @@ Info (332164): Evaluating HDL-embedded SDC commands
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'hdmiImageOverlay.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Warning (332060): Node: clock_50 was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register hdmiInterface:hdmi|pCounter[11] is being clocked by clock_50
-Warning (332060): Node: i2cInterface:i2c|endOK was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register i2cRegisterConfigure:i2cROM|addressCounter[2] is being clocked by i2cInterface:i2c|endOK
 Warning (332060): Node: i2cInterface:i2c|clockGen:clockDivider|clk was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register i2cInterface:i2c|endOK is being clocked by i2cInterface:i2c|clockGen:clockDivider|clk
+    Info (13166): Register i2cInterface:i2c|SDAOut~en is being clocked by i2cInterface:i2c|clockGen:clockDivider|clk
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
     Warning (332056): Node: pixelPll|pixelpll1080p60_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 100C Model
-Info (332146): Worst-case setup slack is 7.922
+Info (332146): Worst-case setup slack is 10.592
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     7.922               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is 0.177
+    Info (332119):    10.592               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.186
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.177               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is 29.888
+    Info (332119):     0.186               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 30.088
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    29.888               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 1.242
+    Info (332119):    30.088               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.901
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.242               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 14.973
+    Info (332119):     0.901               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 14.965
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    14.973               0.000 altera_reserved_tck 
+    Info (332119):    14.965               0.000 altera_reserved_tck 
 Info: Analyzing Slow 1100mV -40C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Warning (332060): Node: clock_50 was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register hdmiInterface:hdmi|pCounter[11] is being clocked by clock_50
-Warning (332060): Node: i2cInterface:i2c|endOK was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register i2cRegisterConfigure:i2cROM|addressCounter[2] is being clocked by i2cInterface:i2c|endOK
 Warning (332060): Node: i2cInterface:i2c|clockGen:clockDivider|clk was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register i2cInterface:i2c|endOK is being clocked by i2cInterface:i2c|clockGen:clockDivider|clk
+    Info (13166): Register i2cInterface:i2c|SDAOut~en is being clocked by i2cInterface:i2c|clockGen:clockDivider|clk
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
     Warning (332056): Node: pixelPll|pixelpll1080p60_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
-Info (332146): Worst-case setup slack is 8.337
+Info (332146): Worst-case setup slack is 10.825
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.337               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is 0.170
+    Info (332119):    10.825               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.178
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.170               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is 30.055
+    Info (332119):     0.178               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 30.191
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    30.055               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 1.169
+    Info (332119):    30.191               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.840
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.169               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 14.958
+    Info (332119):     0.840               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 14.974
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    14.958               0.000 altera_reserved_tck 
+    Info (332119):    14.974               0.000 altera_reserved_tck 
 Info: Analyzing Fast 1100mV 100C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Warning (332060): Node: clock_50 was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register hdmiInterface:hdmi|pCounter[11] is being clocked by clock_50
-Warning (332060): Node: i2cInterface:i2c|endOK was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register i2cRegisterConfigure:i2cROM|addressCounter[2] is being clocked by i2cInterface:i2c|endOK
 Warning (332060): Node: i2cInterface:i2c|clockGen:clockDivider|clk was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register i2cInterface:i2c|endOK is being clocked by i2cInterface:i2c|clockGen:clockDivider|clk
+    Info (13166): Register i2cInterface:i2c|SDAOut~en is being clocked by i2cInterface:i2c|clockGen:clockDivider|clk
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
     Warning (332056): Node: pixelPll|pixelpll1080p60_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
-Info (332146): Worst-case setup slack is 12.095
+Info (332146): Worst-case setup slack is 13.848
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    12.095               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is 0.037
+    Info (332119):    13.848               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.043
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.037               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is 31.103
+    Info (332119):     0.043               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 31.318
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    31.103               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.481
+    Info (332119):    31.318               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.359
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.481               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 14.748
+    Info (332119):     0.359               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 14.715
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    14.748               0.000 altera_reserved_tck 
+    Info (332119):    14.715               0.000 altera_reserved_tck 
 Info: Analyzing Fast 1100mV -40C Model
 Warning (332060): Node: clock_50 was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register hdmiInterface:hdmi|pCounter[11] is being clocked by clock_50
-Warning (332060): Node: i2cInterface:i2c|endOK was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register i2cRegisterConfigure:i2cROM|addressCounter[2] is being clocked by i2cInterface:i2c|endOK
 Warning (332060): Node: i2cInterface:i2c|clockGen:clockDivider|clk was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register i2cInterface:i2c|endOK is being clocked by i2cInterface:i2c|clockGen:clockDivider|clk
+    Info (13166): Register i2cInterface:i2c|SDAOut~en is being clocked by i2cInterface:i2c|clockGen:clockDivider|clk
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
     Warning (332056): Node: pixelPll|pixelpll1080p60_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
-Info (332146): Worst-case setup slack is 13.007
+Info (332146): Worst-case setup slack is 14.392
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    13.007               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is 0.019
+    Info (332119):    14.392               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.022
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.019               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is 31.453
+    Info (332119):     0.022               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 31.605
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    31.453               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.383
+    Info (332119):    31.605               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.280
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.383               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 14.714
+    Info (332119):     0.280               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 14.705
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    14.714               0.000 altera_reserved_tck 
+    Info (332119):    14.705               0.000 altera_reserved_tck 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 27 warnings
-    Info: Peak virtual memory: 1145 megabytes
-    Info: Processing ended: Wed May 30 20:12:43 2018
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 1139 megabytes
+    Info: Processing ended: Thu May 31 00:09:08 2018
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:14
 

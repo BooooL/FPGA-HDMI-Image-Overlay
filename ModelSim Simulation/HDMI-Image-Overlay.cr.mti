@@ -1,18 +1,11 @@
-{C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL/pixelPLL_0002.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL/pixelPLL_0002.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module pixelPLL_0002
-
-Top level modules:
-	pixelPLL_0002
-
-} {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/DE.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/DE.v}
+{C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/DE.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/DE.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module DE
 
 Top level modules:
 	DE
 
-} {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiInterface.v} {1 {vlog -work work -stats=none {C:\Users\Alexander\Documents\University\2018\Semester 1\EEET2162 Advanced Digital Design 1\Major Project\FPGA-HDMI-Image-Overlay\HDL Files\hdmiInterface.v}
+} {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiInterface.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiInterface.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module hdmiInterface
 
@@ -33,19 +26,26 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	hsync
 
+} {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60/PixelPll1080p60_0002.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60/PixelPll1080p60_0002.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PixelPll1080p60_0002
+
+Top level modules:
+	PixelPll1080p60_0002
+
+} {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v} {1 {vlog -work work -stats=none {C:\Users\Alexander\Documents\University\2018\Semester 1\EEET2162 Advanced Digital Design 1\Major Project\FPGA-HDMI-Image-Overlay\HDL Files\hdmiImageOverlay.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module hdmiImageOverlay
+
+Top level modules:
+	hdmiImageOverlay
+
 } {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cInterface.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cInterface.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module i2cInterface
 
 Top level modules:
 	i2cInterface
-
-} {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module hdmiImageOverlay
-
-Top level modules:
-	hdmiImageOverlay
 
 } {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/counter.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/counter.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -54,13 +54,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	counter
 
-} {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/dataWrite.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/dataWrite.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module dataWrite
-
-Top level modules:
-	dataWrite
-
 } {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cRegisterConfigure.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cRegisterConfigure.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module i2cRegisterConfigure
@@ -68,12 +61,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	i2cRegisterConfigure
 
-} {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL.v}
+} {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module pixelPLL
+-- Compiling module PixelPll1080p60
 
 Top level modules:
-	pixelPLL
+	PixelPll1080p60
+
+} {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/dataWrite.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/dataWrite.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module dataWrite
+
+Top level modules:
+	dataWrite
 
 } {} {}} {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/clockGen.v} {1 {vlog -work work -stats=none {C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/clockGen.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016

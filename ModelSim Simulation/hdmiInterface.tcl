@@ -42,7 +42,7 @@ proc runSim {} {
 	
 	force -freeze pixelClock 0
 	run 5ns
-	
+		
 	# Generate a clock to push the data though.
 	# Generate the system clock that will be used for
 	# the simulation.

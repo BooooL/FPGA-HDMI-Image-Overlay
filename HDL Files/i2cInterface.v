@@ -45,6 +45,7 @@ module i2cInterface
 	inout 	sda,			//I2C SDA
 	output	scl,			//I2C input communications reference clock. 400kHz
 	output 	i2cComplete		//Output signal stating that the input data has successfully communicated.
+	//output	sdaSel
 
 );
 
@@ -90,6 +91,11 @@ module i2cInterface
 	reg [3:0] bitCounter	= 3'b000;		//Counter used for storing the bits transmitted in said byte.
 	reg [4:0] dataCounter 	= 4'b0000;		//Counter used for storing the location of the data register.
 	
+	//Debug
+	//assign i2cSdaSel	= i2cSDAOut;
+	//assign i2cSda	= SDAOut;
+	//assign sdaSel = i2cSDAOut;
+	
 	assign sda 			= i2cSDAOut ? SDAOut : 1'bz;	//Tri state control for the i2c sda pin.
 	assign scl 			= SCL;							//Register mapping for output.
 	assign i2cComplete	= endOK;
@@ -104,13 +110,15 @@ module i2cInterface
 	localparam i2cClockLow			= 7;	//Set clock low
 	localparam i2cAck1				= 8;	//If 8 bits of data have been written, set SDA to z for reading.
 	localparam i2cAck2				= 9;	//Delay state for even clock period
-	localparam i2cAck3				= 10;	//If acknowledge was received, keep SCL high
-	localparam i2cAck4				= 11;	//Clock Low. Increment byte write counter.
-	localparam i2cStop1				= 12;	//Set SCL and SDA low for initialising the stop of communications.
-	localparam i2cStop2				= 13;	//Set SCL high while SDA is low to initialise stopping i2c communications
+	localparam i2cAck21				= 10;
+	localparam i2cAck22				= 11;
+	localparam i2cAck3				= 12;	//If acknowledge was received, keep SCL high
+	localparam i2cAck4				= 13;	//Clock Low. Increment byte write counter.
+	localparam i2cStop1				= 14;	//Set SCL and SDA low for initialising the stop of communications.
+	localparam i2cStop2				= 15;	//Set SCL high while SDA is low to initialise stopping i2c communications
 	
-	reg [3:0] currentState;					//Storing current state. Default idle state.
-	reg [3:0] nextState;					//Storing next state
+	reg [4:0] currentState	= 0;					//Storing current state. Default idle state.
+	reg [4:0] nextState		= 0;					//Storing next state
 		
 	//Logic to handle the currentState -> nextState transition.
 	//Sensitivity list based on the SDA transition.
@@ -120,7 +128,7 @@ module i2cInterface
 		end
 		
 	//Logic handling which state will transition into which.
-	always @( nextState, currentState, i2cGo, bitCounter, ackOK, byteCounter )
+	always @( * )
 	//always@( posedge( stateClock ) )
 		begin: nextStateLogic	
 		/*
@@ -134,59 +142,59 @@ module i2cInterface
 					case( currentState )
 						default:
 							begin
-								nextState <= idleState;
+								nextState = idleState;
 							end
 							
 						i2cStop1:
 							begin
-								nextState <= i2cStop2;
+								nextState = i2cStop2;
 							end
 							
 						i2cStop2:
 							begin
-								nextState <= idleState;
+								nextState = idleState;
 							end
 						
 						idleState:
 							begin
 								if( i2cGo == 1 )
 									begin
-										nextState <= i2cInitialise;
+										nextState = i2cInitialise;
 									end
 								else
 									begin
-										nextState <= currentState;
+										nextState = currentState;
 									end
 							end
 						
 						i2cInitialise:
 							begin
-								nextState <= i2cInitialiseDelay;
+								nextState = i2cInitialiseDelay;
 							end
 						
 						i2cInitialiseDelay:
 							begin
-								nextState <= i2cEnable;
+								nextState = i2cEnable;
 							end
 						
 						i2cEnable:
 							begin
-								nextState <= i2cShift;
+								nextState = i2cShift;
 							end
 						
 						i2cShift:
 							begin
-								nextState <= i2cClockHigh1;
+								nextState = i2cClockHigh1;
 							end
 							
 						i2cClockHigh1:
 							begin
-								nextState <= i2cClockHigh2;
+								nextState = i2cClockHigh2;
 							end
 						
 						i2cClockHigh2:
 							begin
-								nextState <= i2cClockLow;
+								nextState = i2cClockLow;
 							end
 							
 						i2cClockLow:
@@ -195,34 +203,44 @@ module i2cInterface
 								//Then handle the i2c slave acknowledge
 								if ( bitCounter == ( bitLength ) )
 									begin
-										nextState <= i2cAck1;
+										nextState = i2cAck1;
 									end
 									//Else handle the next bit of data.
 								else
 									begin
-										nextState <= i2cShift;
+										nextState = i2cShift;
 									end
 							end
 							
 						i2cAck1:
 							begin
-								nextState <= i2cAck2;
+								nextState = i2cAck2;
 							end
 							
 						i2cAck2:
 							begin
-								nextState <= i2cAck3;
+								nextState = i2cAck21;
 							end
 							
+						i2cAck21:
+							begin
+								nextState = i2cAck22;
+							end
+							
+						i2cAck22:
+							begin
+								nextState = i2cAck3;
+							end
+																					
 						i2cAck3:
 							begin
 								if( ackOK == 1'b1 )
 									begin
-										nextState <= i2cAck4;
+										nextState = i2cAck4;
 									end
 								else
 									begin
-										nextState <= i2cStop1;
+										nextState = i2cStop1;
 									end
 							end
 							
@@ -232,12 +250,12 @@ module i2cInterface
 								//Then handle stopping communications.
 								if( byteCounter == ( byteLength ) )
 									begin
-										nextState <= i2cStop1;
+										nextState = i2cStop1;
 									end
 								//Else handle the next byte of data.
 								else
 									begin
-										nextState <= i2cShift;
+										nextState = i2cShift;
 									end
 							end
 					endcase
@@ -430,8 +448,8 @@ module i2cInterface
 							byteCounter	<= byteCounter;
 							dataCounter	<= dataCounter;
 							
-							//If SDA has been set high by the i2c slave, then set ackOK high.
-							if( sda == 1'b1 )
+							//If SDA has been set low by the i2c slave, then set ackOK high.
+							if( sda == 1'b0 )
 								begin
 									ackOK <= 1'b1;
 								end
@@ -441,19 +459,18 @@ module i2cInterface
 								end
 						end
 						
-					i2cAck3:
+					i2cAck21:
 						begin
 							SCL			<= 1'b1;
 							i2cSDAOut	<= 1'b0;	//Set i2cSDAOut low to enable reading of sda inout value.
 							SDAOut		<= 1'bz;	//Ignored as sda is high impedance anyways.
 							endOK		<= 1'b0;
 							bitCounter	<= bitCounter;
-							byteCounter	<= byteCounter + 1'b1; //Increment byteCounter
+							byteCounter	<= byteCounter;
 							dataCounter	<= dataCounter;
-
-							//If SDA has been set high by the i2c slave
-							//then set ackOK high
-							if( sda == 1'b1 )
+							
+							//If SDA has been set low by the i2c slave, then set ackOK high.
+							if( sda == 1'b0 )
 								begin
 									ackOK <= 1'b1;
 								end
@@ -462,12 +479,45 @@ module i2cInterface
 									ackOK <= ackOK;
 								end
 						end
+						
+					i2cAck22:
+						begin
+							SCL			<= 1'b0;
+							i2cSDAOut	<= 1'b0;	//Set i2cSDAOut low to enable reading of sda inout value.
+							SDAOut		<= 1'b0;	//Ignored as sda is high impedance anyways.
+							endOK		<= 1'b0;
+							bitCounter	<= bitCounter;
+							byteCounter	<= byteCounter;
+							dataCounter	<= dataCounter;
+							
+							//If SDA has been set low by the i2c slave, then set ackOK high.
+							if( sda == 1'b0 )
+								begin
+									ackOK <= 1'b1;
+								end
+							else
+								begin
+									ackOK <= ackOK;
+								end
+						end
+											
+					i2cAck3:
+						begin
+							SCL			<= 1'b0;
+							i2cSDAOut	<= 1'b1;	
+							SDAOut		<= 1'b0;	//Ignored as sda is high impedance anyways.
+							endOK		<= 1'b0;
+							bitCounter	<= bitCounter;
+							byteCounter	<= byteCounter + 1'b1; //Increment byteCounter
+							dataCounter	<= dataCounter;
+						
+						end
 
 					i2cAck4:
 						begin
 							SCL			<= 1'b0;
-							i2cSDAOut	<= 1'b0;	//Set i2cSDAOut low to enable reading of sda inout value.
-							SDAOut		<= 1'bz;	//Ignored as sda is high impedance anyways.
+							i2cSDAOut	<= 1'b1;
+							SDAOut		<= 1'b0;
 							ackOK		<= 1'b0;
 							endOK		<= 1'b0;
 							bitCounter	<= bitCounter;

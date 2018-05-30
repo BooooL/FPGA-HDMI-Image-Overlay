@@ -27,7 +27,17 @@ proc runSim {} {
 
 	# Clear the current simulation and add in all waveforms.
 	restart -force -nowave
-	add wave *
+	add wave clock_50
+	add wave i2cWrite
+	add wave i2cReady
+	add wave i2cData
+	add wave i2cSda
+	add wave i2cScl
+	add wave pixelClock
+	add wave data
+	add wave DE
+	add wave HSYNC
+	add wave VSYNC
 	
 	# Set the radix of the buses.
 	property wave -radix hexadecimal *

@@ -27,32 +27,63 @@ proc runSim {} {
 
 	# Clear the current simulation and add in all waveforms.
 	restart -force -nowave
-	add wave *
-	
+
+	add wave refClock
+	add wave stateClock
+	add wave dataIn
+	add wave i2cGo 
+	add wave endOK 
+	add wave ackOK 
+	add wave i2cSDAOut
+	add wave SDAOut
+	add wave sda
+	add wave scl
+	add wave byteCounter
+	add wave bitCounter
+	add wave dataCounter
+	add wave currentState
+	add wave nextState
+
 	# Set the radix of the buses.
-	property wave -radix unsigned *
+	property wave -radix hexadecimal *
+	
+	#force -freeze dataIn 10100011010101000111110101010
+	force -freeze dataIn 11100100100000100010000
 	
 	# Generate a clock to push the data though.
 	# Generate the system clock that will be used for
 	# the simulation.
 	force -deposit refClock 1 0, 0 {100ns} -repeat 200ns
 
-	run 4us
-	
-	# Set the reset to high
-	force -freeze reset_n 1
-	
 	run 2us
 	
 	# Start i2c
 	force -freeze i2cGo 1
 	run 90us
 	
-	#Set acknowledge state to always on
-	force -freeze sda 1
+	#force -freeze i2cSDAOut 1
 	
 	#Set so i2c won't continue after initial data.
+	#force -freeze i2cGo 0
+	
+	run 850us
+	
+	force -freeze ackOK 1
+	
+	#force -freeze i2cSDAOut 1
+	#run 20us
+	
+	#force -freeze sda z
+	
+	#force -freeze sda 0
+	run 2ms
+	
+	force -freeze dataIn 11100101001100000000011
+	
+	run 2.5ms
+	
 	force -freeze i2cGo 0
 	
-	run 250us
+	run 1ms
+	
 }

@@ -33,8 +33,20 @@ module hdmiImageOverlay (
 	output HSYNC,			//Horizontal sync
 	output [23:0] data, 	//RGB Data output bus
 	inout i2cSda,			//SDA Output of the i2c Controller
-	output i2cScl			//SCL Output of the i2c Controller
+	output i2cScl,			//SCL Output of the i2c Controller
+	output sdaSel,
+	output i2cSclDebug,
+	output i2cSdaDebug
 );
+
+	//wire i2cSclw;
+	//wire i2cSdaw;
+
+	//reg SclDebug = i2cScl,
+	//reg SdaDebug = i2cSda,
+	
+	//i2cSclDebug = i2cScl;
+	//i2cSdaDebug = i2cSda;
 	
 	//Define resolution. Default 1920x1080.
 	parameter hPixels = 1920;	//Horizontal pixel length
@@ -198,6 +210,7 @@ module hdmiImageOverlay (
 		.refClock			( clock_50 	),
 		.dataIn				( i2cData	),
 		.i2cGo				( i2cWrite	),
+		//.i2cGo				( 1'b0	),
 		//.reset_n			( 1'b1 		),
 		.sda				( i2cSda	),
 		.scl				( i2cScl	),

@@ -7,6 +7,7 @@ module i2cRegisterConfigure #(
 	//input clock,
 	//Input telling that the the i2c writing has completed and is awaiting new data. 
 	input i2cReady,
+	//input reset_n,
 	//Output to signal i2c state machine to start writing data. 
 	output writeOutput,
 	//Data out from the ROM.
@@ -168,6 +169,13 @@ module i2cRegisterConfigure #(
 							i2cWrite <= 1'b1;
 						end
 				end
+				/*
+			else if ( reset_n == 1'b0 )
+				begin
+					addressCounter <= 0;
+					i2cWrite <= 1'b0;
+				end
+				*/
 			else
 				begin
 					addressCounter <= addressCounter;

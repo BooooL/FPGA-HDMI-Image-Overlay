@@ -1,20 +1,22 @@
 
 State Machine - |hdmiImageOverlay|i2cInterface:i2c|currentState
-Name currentState.i2cStop2 currentState.i2cStop1 currentState.i2cAck4 currentState.i2cAck3 currentState.i2cAck2 currentState.i2cAck1 currentState.i2cClockLow currentState.i2cClockHigh2 currentState.i2cClockHigh1 currentState.i2cShift currentState.i2cEnable currentState.i2cInitialiseDelay currentState.i2cInitialise currentState.idleState 
-currentState.idleState 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-currentState.i2cInitialise 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-currentState.i2cInitialiseDelay 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-currentState.i2cEnable 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-currentState.i2cShift 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-currentState.i2cClockHigh1 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-currentState.i2cClockHigh2 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-currentState.i2cClockLow 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-currentState.i2cAck1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-currentState.i2cAck2 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-currentState.i2cAck3 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-currentState.i2cAck4 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-currentState.i2cStop1 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-currentState.i2cStop2 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Name currentState.i2cStop2 currentState.i2cStop1 currentState.i2cAck4 currentState.i2cAck3 currentState.i2cAck22 currentState.i2cAck21 currentState.i2cAck2 currentState.i2cAck1 currentState.i2cClockLow currentState.i2cClockHigh2 currentState.i2cClockHigh1 currentState.i2cShift currentState.i2cEnable currentState.i2cInitialiseDelay currentState.i2cInitialise currentState.00000 
+currentState.00000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+currentState.i2cInitialise 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+currentState.i2cInitialiseDelay 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+currentState.i2cEnable 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+currentState.i2cShift 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+currentState.i2cClockHigh1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+currentState.i2cClockHigh2 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+currentState.i2cClockLow 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+currentState.i2cAck1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+currentState.i2cAck2 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+currentState.i2cAck21 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+currentState.i2cAck22 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+currentState.i2cAck3 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+currentState.i2cAck4 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+currentState.i2cStop1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+currentState.i2cStop2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |hdmiImageOverlay|hdmiInterface:hdmi|currentState
 Name currentState.startBlankFrame currentState.activeVideo currentState.endBlankHSync currentState.vSyncState currentState.startFrame currentState.00000 

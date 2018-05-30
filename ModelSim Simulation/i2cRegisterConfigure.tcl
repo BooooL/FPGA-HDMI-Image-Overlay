@@ -35,7 +35,7 @@ proc runSim {} {
 	#Clock the state machine
 	#force -deposit clock 1 0, 0 {100ns} -repeat 200ns
 	force -freeze i2cReady 0
-	run 5us
+	run 1us
 
 	#Clock the i2c ready pin, signalling that it has written okay.
 	force -deposit i2cReady 1 0, 0 {100ns} -repeat 200ns

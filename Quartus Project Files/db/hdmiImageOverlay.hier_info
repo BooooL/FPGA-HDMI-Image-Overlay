@@ -35,6 +35,9 @@ data[22] <= dataWrite:dataWrite_module.dataOutput
 data[23] <= dataWrite:dataWrite_module.dataOutput
 i2cSda <> i2cInterface:i2c.sda
 i2cScl <= i2cInterface:i2c.scl
+sdaSel <= <GND>
+i2cSclDebug <= <GND>
+i2cSdaDebug <= <GND>
 
 
 |hdmiImageOverlay|PixelPll1080p60:pixelPll
