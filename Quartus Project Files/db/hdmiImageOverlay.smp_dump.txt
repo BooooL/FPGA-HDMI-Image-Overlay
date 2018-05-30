@@ -23,3 +23,12 @@ nextState.state1
 State Machine - |hdmiImageOverlay|dataWrite:dataWrite_module|currentState
 Name 
 currentState.state1 
+
+State Machine - |hdmiImageOverlay|hdmiInterface:hdmi|currentState
+Name currentState.startBlankFrame currentState.activeVideo currentState.endBlankHSync currentState.vSyncState currentState.startFrame currentState.00000 
+currentState.00000 0 0 0 0 0 0 
+currentState.startFrame 0 0 0 0 1 1 
+currentState.vSyncState 0 0 0 1 0 1 
+currentState.endBlankHSync 0 0 1 0 0 1 
+currentState.activeVideo 0 1 0 0 0 1 
+currentState.startBlankFrame 1 0 0 0 0 1 

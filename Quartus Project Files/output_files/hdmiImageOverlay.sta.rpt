@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for hdmiImageOverlay
-Mon May 28 22:35:27 2018
+Mon May 28 22:45:38 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -99,14 +99,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.08        ;
+; Average used               ; 1.07        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.6%      ;
+;     Processor 2            ;   2.5%      ;
 ;     Processor 3            ;   2.5%      ;
-;     Processor 4            ;   2.5%      ;
+;     Processor 4            ;   2.4%      ;
 +----------------------------+-------------+
 
 
@@ -129,11 +129,11 @@ refer to the applicable agreement for further details.
 +------------+-----------------+----------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                 ; Note ;
 +------------+-----------------+----------------------------------------------------------------------------+------+
-; 147.86 MHz ; 147.86 MHz      ; clock_50                                                                   ;      ;
-; 278.55 MHz ; 278.55 MHz      ; i2cInterface:i2c|clockGen:clockDivider|clk                                 ;      ;
-; 290.61 MHz ; 290.61 MHz      ; hsync:hSync|pulseReg                                                       ;      ;
-; 304.6 MHz  ; 304.6 MHz       ; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
-; 370.51 MHz ; 370.51 MHz      ; i2cInterface:i2c|endOK                                                     ;      ;
+; 149.97 MHz ; 149.97 MHz      ; clock_50                                                                   ;      ;
+; 280.9 MHz  ; 280.9 MHz       ; i2cInterface:i2c|clockGen:clockDivider|clk                                 ;      ;
+; 289.69 MHz ; 289.69 MHz      ; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 291.04 MHz ; 291.04 MHz      ; hsync:hSync|pulseReg                                                       ;      ;
+; 355.11 MHz ; 355.11 MHz      ; i2cInterface:i2c|endOK                                                     ;      ;
 +------------+-----------------+----------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -149,11 +149,11 @@ HTML report is unavailable in plain text report export.
 +----------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                      ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------+--------+---------------+
-; clock_50                                                                   ; -4.207 ; -4.207        ;
-; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -2.590 ; -71.110       ;
-; hsync:hSync|pulseReg                                                       ; -2.441 ; -40.460       ;
-; i2cInterface:i2c|endOK                                                     ; -1.699 ; -13.018       ;
-; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.802 ; 0.000         ;
+; clock_50                                                                   ; -4.730 ; -4.730        ;
+; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -2.560 ; -73.313       ;
+; hsync:hSync|pulseReg                                                       ; -2.436 ; -45.267       ;
+; i2cInterface:i2c|endOK                                                     ; -1.816 ; -10.863       ;
+; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.633 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -162,11 +162,11 @@ HTML report is unavailable in plain text report export.
 +----------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                      ; Slack ; End Point TNS ;
 +----------------------------------------------------------------------------+-------+---------------+
-; hsync:hSync|pulseReg                                                       ; 0.355 ; 0.000         ;
-; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.445 ; 0.000         ;
-; clock_50                                                                   ; 0.525 ; 0.000         ;
-; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; 0.657 ; 0.000         ;
-; i2cInterface:i2c|endOK                                                     ; 0.898 ; 0.000         ;
+; hsync:hSync|pulseReg                                                       ; 0.381 ; 0.000         ;
+; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.447 ; 0.000         ;
+; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; 0.494 ; 0.000         ;
+; clock_50                                                                   ; 0.536 ; 0.000         ;
+; i2cInterface:i2c|endOK                                                     ; 0.874 ; 0.000         ;
 +----------------------------------------------------------------------------+-------+---------------+
 
 
@@ -187,12 +187,12 @@ No paths to report.
 +----------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                      ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------+--------+---------------+
-; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -0.538 ; -29.528       ;
-; hsync:hSync|pulseReg                                                       ; -0.538 ; -13.059       ;
-; i2cInterface:i2c|endOK                                                     ; -0.538 ; -6.193        ;
+; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -0.538 ; -31.766       ;
+; hsync:hSync|pulseReg                                                       ; -0.538 ; -14.617       ;
+; i2cInterface:i2c|endOK                                                     ; -0.538 ; -5.407        ;
 ; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.531  ; 0.000         ;
-; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.297  ; 0.000         ;
-; clock_50                                                                   ; 8.753  ; 0.000         ;
+; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.298  ; 0.000         ;
+; clock_50                                                                   ; 8.828  ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -207,11 +207,11 @@ No synchronizer chains to report.
 +------------+-----------------+----------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                 ; Note ;
 +------------+-----------------+----------------------------------------------------------------------------+------+
-; 142.88 MHz ; 142.88 MHz      ; clock_50                                                                   ;      ;
-; 272.63 MHz ; 272.63 MHz      ; i2cInterface:i2c|clockGen:clockDivider|clk                                 ;      ;
-; 288.6 MHz  ; 288.6 MHz       ; hsync:hSync|pulseReg                                                       ;      ;
-; 297.89 MHz ; 297.89 MHz      ; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
-; 358.68 MHz ; 358.68 MHz      ; i2cInterface:i2c|endOK                                                     ;      ;
+; 143.1 MHz  ; 143.1 MHz       ; clock_50                                                                   ;      ;
+; 284.17 MHz ; 284.17 MHz      ; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 285.96 MHz ; 285.96 MHz      ; i2cInterface:i2c|clockGen:clockDivider|clk                                 ;      ;
+; 289.35 MHz ; 289.35 MHz      ; hsync:hSync|pulseReg                                                       ;      ;
+; 351.62 MHz ; 351.62 MHz      ; i2cInterface:i2c|endOK                                                     ;      ;
 +------------+-----------------+----------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -221,11 +221,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                      ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------+--------+---------------+
-; clock_50                                                                   ; -3.994 ; -3.994        ;
-; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -2.668 ; -70.289       ;
-; hsync:hSync|pulseReg                                                       ; -2.465 ; -40.929       ;
-; i2cInterface:i2c|endOK                                                     ; -1.788 ; -13.287       ;
-; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.728 ; 0.000         ;
+; clock_50                                                                   ; -4.513 ; -4.513        ;
+; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -2.497 ; -72.660       ;
+; hsync:hSync|pulseReg                                                       ; -2.456 ; -45.704       ;
+; i2cInterface:i2c|endOK                                                     ; -1.844 ; -10.977       ;
+; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.566 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -234,11 +234,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                      ; Slack ; End Point TNS ;
 +----------------------------------------------------------------------------+-------+---------------+
-; hsync:hSync|pulseReg                                                       ; 0.378 ; 0.000         ;
-; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.462 ; 0.000         ;
-; clock_50                                                                   ; 0.572 ; 0.000         ;
-; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; 0.643 ; 0.000         ;
-; i2cInterface:i2c|endOK                                                     ; 0.887 ; 0.000         ;
+; hsync:hSync|pulseReg                                                       ; 0.395 ; 0.000         ;
+; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; 0.460 ; 0.000         ;
+; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.463 ; 0.000         ;
+; clock_50                                                                   ; 0.591 ; 0.000         ;
+; i2cInterface:i2c|endOK                                                     ; 0.899 ; 0.000         ;
 +----------------------------------------------------------------------------+-------+---------------+
 
 
@@ -259,12 +259,12 @@ No paths to report.
 +----------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                      ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------+--------+---------------+
-; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -0.538 ; -29.450       ;
-; hsync:hSync|pulseReg                                                       ; -0.538 ; -13.178       ;
-; i2cInterface:i2c|endOK                                                     ; -0.538 ; -6.150        ;
+; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -0.538 ; -31.260       ;
+; hsync:hSync|pulseReg                                                       ; -0.538 ; -14.685       ;
+; i2cInterface:i2c|endOK                                                     ; -0.538 ; -5.390        ;
 ; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.531  ; 0.000         ;
 ; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.223  ; 0.000         ;
-; clock_50                                                                   ; 8.754  ; 0.000         ;
+; clock_50                                                                   ; 8.797  ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -279,25 +279,25 @@ No synchronizer chains to report.
 +----------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                      ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------+--------+---------------+
-; clock_50                                                                   ; -3.247 ; -3.247        ;
-; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -0.971 ; -27.083       ;
-; hsync:hSync|pulseReg                                                       ; -0.821 ; -13.565       ;
-; i2cInterface:i2c|endOK                                                     ; -0.547 ; -3.997        ;
-; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 16.598 ; 0.000         ;
+; clock_50                                                                   ; -3.589 ; -3.589        ;
+; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -1.049 ; -26.585       ;
+; hsync:hSync|pulseReg                                                       ; -0.846 ; -15.678       ;
+; i2cInterface:i2c|endOK                                                     ; -0.633 ; -3.530        ;
+; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 16.439 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; Fast 1100mV 100C Model Hold Summary                                                                ;
-+----------------------------------------------------------------------------+-------+---------------+
-; Clock                                                                      ; Slack ; End Point TNS ;
-+----------------------------------------------------------------------------+-------+---------------+
-; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; 0.037 ; 0.000         ;
-; hsync:hSync|pulseReg                                                       ; 0.102 ; 0.000         ;
-; clock_50                                                                   ; 0.201 ; 0.000         ;
-; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.206 ; 0.000         ;
-; i2cInterface:i2c|endOK                                                     ; 0.386 ; 0.000         ;
-+----------------------------------------------------------------------------+-------+---------------+
++-----------------------------------------------------------------------------------------------------+
+; Fast 1100mV 100C Model Hold Summary                                                                 ;
++----------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                      ; Slack  ; End Point TNS ;
++----------------------------------------------------------------------------+--------+---------------+
+; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -0.025 ; -0.025        ;
+; hsync:hSync|pulseReg                                                       ; 0.117  ; 0.000         ;
+; clock_50                                                                   ; 0.201  ; 0.000         ;
+; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.208  ; 0.000         ;
+; i2cInterface:i2c|endOK                                                     ; 0.394  ; 0.000         ;
++----------------------------------------------------------------------------+--------+---------------+
 
 
 -------------------------------------------
@@ -317,12 +317,12 @@ No paths to report.
 +----------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                      ; Slack ; End Point TNS ;
 +----------------------------------------------------------------------------+-------+---------------+
-; hsync:hSync|pulseReg                                                       ; 0.129 ; 0.000         ;
-; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; 0.135 ; 0.000         ;
-; i2cInterface:i2c|endOK                                                     ; 0.165 ; 0.000         ;
+; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; 0.128 ; 0.000         ;
+; hsync:hSync|pulseReg                                                       ; 0.131 ; 0.000         ;
+; i2cInterface:i2c|endOK                                                     ; 0.152 ; 0.000         ;
 ; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.531 ; 0.000         ;
-; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.596 ; 0.000         ;
-; clock_50                                                                   ; 8.722 ; 0.000         ;
+; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.595 ; 0.000         ;
+; clock_50                                                                   ; 8.767 ; 0.000         ;
 +----------------------------------------------------------------------------+-------+---------------+
 
 
@@ -337,11 +337,11 @@ No synchronizer chains to report.
 +----------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                      ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------+--------+---------------+
-; clock_50                                                                   ; -2.543 ; -2.543        ;
-; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -0.772 ; -20.612       ;
-; hsync:hSync|pulseReg                                                       ; -0.601 ; -9.880        ;
-; i2cInterface:i2c|endOK                                                     ; -0.426 ; -3.100        ;
-; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 16.738 ; 0.000         ;
+; clock_50                                                                   ; -2.829 ; -2.829        ;
+; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -0.827 ; -20.337       ;
+; hsync:hSync|pulseReg                                                       ; -0.614 ; -11.324       ;
+; i2cInterface:i2c|endOK                                                     ; -0.512 ; -2.716        ;
+; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 16.595 ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -350,11 +350,11 @@ No synchronizer chains to report.
 +----------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                      ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------------------+--------+---------------+
-; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -0.021 ; -0.021        ;
-; hsync:hSync|pulseReg                                                       ; 0.082  ; 0.000         ;
-; clock_50                                                                   ; 0.188  ; 0.000         ;
+; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -0.082 ; -0.082        ;
+; hsync:hSync|pulseReg                                                       ; 0.091  ; 0.000         ;
+; clock_50                                                                   ; 0.192  ; 0.000         ;
 ; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.192  ; 0.000         ;
-; i2cInterface:i2c|endOK                                                     ; 0.334  ; 0.000         ;
+; i2cInterface:i2c|endOK                                                     ; 0.344  ; 0.000         ;
 +----------------------------------------------------------------------------+--------+---------------+
 
 
@@ -375,12 +375,12 @@ No paths to report.
 +----------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                      ; Slack ; End Point TNS ;
 +----------------------------------------------------------------------------+-------+---------------+
-; hsync:hSync|pulseReg                                                       ; 0.127 ; 0.000         ;
-; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; 0.140 ; 0.000         ;
-; i2cInterface:i2c|endOK                                                     ; 0.166 ; 0.000         ;
+; hsync:hSync|pulseReg                                                       ; 0.132 ; 0.000         ;
+; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; 0.141 ; 0.000         ;
+; i2cInterface:i2c|endOK                                                     ; 0.149 ; 0.000         ;
 ; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 0.531 ; 0.000         ;
 ; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.587 ; 0.000         ;
-; clock_50                                                                   ; 8.698 ; 0.000         ;
+; clock_50                                                                   ; 8.720 ; 0.000         ;
 +----------------------------------------------------------------------------+-------+---------------+
 
 
@@ -395,18 +395,18 @@ No synchronizer chains to report.
 +-----------------------------------------------------------------------------+----------+--------+----------+---------+---------------------+
 ; Clock                                                                       ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +-----------------------------------------------------------------------------+----------+--------+----------+---------+---------------------+
-; Worst-case Slack                                                            ; -4.207   ; -0.021 ; N/A      ; N/A     ; -0.538              ;
-;  clock_50                                                                   ; -4.207   ; 0.188  ; N/A      ; N/A     ; 8.698               ;
-;  hsync:hSync|pulseReg                                                       ; -2.465   ; 0.082  ; N/A      ; N/A     ; -0.538              ;
-;  i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -2.668   ; -0.021 ; N/A      ; N/A     ; -0.538              ;
-;  i2cInterface:i2c|endOK                                                     ; -1.788   ; 0.334  ; N/A      ; N/A     ; -0.538              ;
+; Worst-case Slack                                                            ; -4.730   ; -0.082 ; N/A      ; N/A     ; -0.538              ;
+;  clock_50                                                                   ; -4.730   ; 0.192  ; N/A      ; N/A     ; 8.720               ;
+;  hsync:hSync|pulseReg                                                       ; -2.456   ; 0.091  ; N/A      ; N/A     ; -0.538              ;
+;  i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -2.560   ; -0.082 ; N/A      ; N/A     ; -0.538              ;
+;  i2cInterface:i2c|endOK                                                     ; -1.844   ; 0.344  ; N/A      ; N/A     ; -0.538              ;
 ;  pixel|pixelpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A      ; N/A    ; N/A      ; N/A     ; 0.531               ;
-;  pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.728   ; 0.192  ; N/A      ; N/A     ; 8.223               ;
-; Design-wide TNS                                                             ; -128.795 ; -0.021 ; 0.0      ; 0.0     ; -48.78              ;
-;  clock_50                                                                   ; -4.207   ; 0.000  ; N/A      ; N/A     ; 0.000               ;
-;  hsync:hSync|pulseReg                                                       ; -40.929  ; 0.000  ; N/A      ; N/A     ; -13.178             ;
-;  i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -71.110  ; -0.021 ; N/A      ; N/A     ; -29.528             ;
-;  i2cInterface:i2c|endOK                                                     ; -13.287  ; 0.000  ; N/A      ; N/A     ; -6.193              ;
+;  pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 14.566   ; 0.192  ; N/A      ; N/A     ; 8.223               ;
+; Design-wide TNS                                                             ; -134.173 ; -0.082 ; 0.0      ; 0.0     ; -51.79              ;
+;  clock_50                                                                   ; -4.730   ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  hsync:hSync|pulseReg                                                       ; -45.704  ; 0.000  ; N/A      ; N/A     ; -14.685             ;
+;  i2cInterface:i2c|clockGen:clockDivider|clk                                 ; -73.313  ; -0.082 ; N/A      ; N/A     ; -31.766             ;
+;  i2cInterface:i2c|endOK                                                     ; -10.977  ; 0.000  ; N/A      ; N/A     ; -5.407              ;
 ;  pixel|pixelpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A      ; N/A    ; N/A      ; N/A     ; 0.000               ;
 ;  pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.000    ; 0.000  ; N/A      ; N/A     ; 0.000               ;
 +-----------------------------------------------------------------------------+----------+--------+----------+---------+---------------------+
@@ -618,13 +618,13 @@ No synchronizer chains to report.
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                                 ; To Clock                                                                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------+----------+----------+----------+----------+
-; clock_50                                                                   ; clock_50                                                                   ; 42       ; 0        ; 0        ; 0        ;
+; clock_50                                                                   ; clock_50                                                                   ; 56       ; 0        ; 0        ; 0        ;
 ; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; clock_50                                                                   ; 1        ; 1        ; 0        ; 0        ;
-; hsync:hSync|pulseReg                                                       ; hsync:hSync|pulseReg                                                       ; 309      ; 0        ; 0        ; 0        ;
-; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; 195      ; 0        ; 0        ; 0        ;
+; hsync:hSync|pulseReg                                                       ; hsync:hSync|pulseReg                                                       ; 338      ; 0        ; 0        ; 0        ;
+; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; 211      ; 0        ; 0        ; 0        ;
 ; i2cInterface:i2c|endOK                                                     ; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; 21       ; 0        ; 0        ; 0        ;
-; i2cInterface:i2c|endOK                                                     ; i2cInterface:i2c|endOK                                                     ; 32       ; 0        ; 0        ; 0        ;
-; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 262      ; 0        ; 0        ; 0        ;
+; i2cInterface:i2c|endOK                                                     ; i2cInterface:i2c|endOK                                                     ; 28       ; 0        ; 0        ; 0        ;
+; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 246      ; 0        ; 0        ; 0        ;
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -634,13 +634,13 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                                 ; To Clock                                                                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------+----------+----------+----------+----------+
-; clock_50                                                                   ; clock_50                                                                   ; 42       ; 0        ; 0        ; 0        ;
+; clock_50                                                                   ; clock_50                                                                   ; 56       ; 0        ; 0        ; 0        ;
 ; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; clock_50                                                                   ; 1        ; 1        ; 0        ; 0        ;
-; hsync:hSync|pulseReg                                                       ; hsync:hSync|pulseReg                                                       ; 309      ; 0        ; 0        ; 0        ;
-; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; 195      ; 0        ; 0        ; 0        ;
+; hsync:hSync|pulseReg                                                       ; hsync:hSync|pulseReg                                                       ; 338      ; 0        ; 0        ; 0        ;
+; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; 211      ; 0        ; 0        ; 0        ;
 ; i2cInterface:i2c|endOK                                                     ; i2cInterface:i2c|clockGen:clockDivider|clk                                 ; 21       ; 0        ; 0        ; 0        ;
-; i2cInterface:i2c|endOK                                                     ; i2cInterface:i2c|endOK                                                     ; 32       ; 0        ; 0        ; 0        ;
-; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 262      ; 0        ; 0        ; 0        ;
+; i2cInterface:i2c|endOK                                                     ; i2cInterface:i2c|endOK                                                     ; 28       ; 0        ; 0        ; 0        ;
+; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 246      ; 0        ; 0        ; 0        ;
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -783,7 +783,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon May 28 22:35:20 2018
+    Info: Processing started: Mon May 28 22:45:31 2018
 Info: Command: quartus_sta hdmiImageOverlay -c hdmiImageOverlay
 Info: qsta_default_script.tcl version: #3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -811,33 +811,33 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 100C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.207
+Info (332146): Worst-case setup slack is -4.730
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.207              -4.207 clock_50 
-    Info (332119):    -2.590             -71.110 i2cInterface:i2c|clockGen:clockDivider|clk 
-    Info (332119):    -2.441             -40.460 hsync:hSync|pulseReg 
-    Info (332119):    -1.699             -13.018 i2cInterface:i2c|endOK 
-    Info (332119):    14.802               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is 0.355
+    Info (332119):    -4.730              -4.730 clock_50 
+    Info (332119):    -2.560             -73.313 i2cInterface:i2c|clockGen:clockDivider|clk 
+    Info (332119):    -2.436             -45.267 hsync:hSync|pulseReg 
+    Info (332119):    -1.816             -10.863 i2cInterface:i2c|endOK 
+    Info (332119):    14.633               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.381
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.355               0.000 hsync:hSync|pulseReg 
-    Info (332119):     0.445               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.525               0.000 clock_50 
-    Info (332119):     0.657               0.000 i2cInterface:i2c|clockGen:clockDivider|clk 
-    Info (332119):     0.898               0.000 i2cInterface:i2c|endOK 
+    Info (332119):     0.381               0.000 hsync:hSync|pulseReg 
+    Info (332119):     0.447               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.494               0.000 i2cInterface:i2c|clockGen:clockDivider|clk 
+    Info (332119):     0.536               0.000 clock_50 
+    Info (332119):     0.874               0.000 i2cInterface:i2c|endOK 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.538
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.538             -29.528 i2cInterface:i2c|clockGen:clockDivider|clk 
-    Info (332119):    -0.538             -13.059 hsync:hSync|pulseReg 
-    Info (332119):    -0.538              -6.193 i2cInterface:i2c|endOK 
+    Info (332119):    -0.538             -31.766 i2cInterface:i2c|clockGen:clockDivider|clk 
+    Info (332119):    -0.538             -14.617 hsync:hSync|pulseReg 
+    Info (332119):    -0.538              -5.407 i2cInterface:i2c|endOK 
     Info (332119):     0.531               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.297               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     8.753               0.000 clock_50 
+    Info (332119):     8.298               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.828               0.000 clock_50 
 Info: Analyzing Slow 1100mV -40C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -848,33 +848,33 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.994
+Info (332146): Worst-case setup slack is -4.513
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.994              -3.994 clock_50 
-    Info (332119):    -2.668             -70.289 i2cInterface:i2c|clockGen:clockDivider|clk 
-    Info (332119):    -2.465             -40.929 hsync:hSync|pulseReg 
-    Info (332119):    -1.788             -13.287 i2cInterface:i2c|endOK 
-    Info (332119):    14.728               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is 0.378
+    Info (332119):    -4.513              -4.513 clock_50 
+    Info (332119):    -2.497             -72.660 i2cInterface:i2c|clockGen:clockDivider|clk 
+    Info (332119):    -2.456             -45.704 hsync:hSync|pulseReg 
+    Info (332119):    -1.844             -10.977 i2cInterface:i2c|endOK 
+    Info (332119):    14.566               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.395
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.378               0.000 hsync:hSync|pulseReg 
-    Info (332119):     0.462               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.572               0.000 clock_50 
-    Info (332119):     0.643               0.000 i2cInterface:i2c|clockGen:clockDivider|clk 
-    Info (332119):     0.887               0.000 i2cInterface:i2c|endOK 
+    Info (332119):     0.395               0.000 hsync:hSync|pulseReg 
+    Info (332119):     0.460               0.000 i2cInterface:i2c|clockGen:clockDivider|clk 
+    Info (332119):     0.463               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.591               0.000 clock_50 
+    Info (332119):     0.899               0.000 i2cInterface:i2c|endOK 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.538
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.538             -29.450 i2cInterface:i2c|clockGen:clockDivider|clk 
-    Info (332119):    -0.538             -13.178 hsync:hSync|pulseReg 
-    Info (332119):    -0.538              -6.150 i2cInterface:i2c|endOK 
+    Info (332119):    -0.538             -31.260 i2cInterface:i2c|clockGen:clockDivider|clk 
+    Info (332119):    -0.538             -14.685 hsync:hSync|pulseReg 
+    Info (332119):    -0.538              -5.390 i2cInterface:i2c|endOK 
     Info (332119):     0.531               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     8.223               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     8.754               0.000 clock_50 
+    Info (332119):     8.797               0.000 clock_50 
 Info: Analyzing Fast 1100mV 100C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -885,33 +885,33 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.247
+Info (332146): Worst-case setup slack is -3.589
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.247              -3.247 clock_50 
-    Info (332119):    -0.971             -27.083 i2cInterface:i2c|clockGen:clockDivider|clk 
-    Info (332119):    -0.821             -13.565 hsync:hSync|pulseReg 
-    Info (332119):    -0.547              -3.997 i2cInterface:i2c|endOK 
-    Info (332119):    16.598               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is 0.037
+    Info (332119):    -3.589              -3.589 clock_50 
+    Info (332119):    -1.049             -26.585 i2cInterface:i2c|clockGen:clockDivider|clk 
+    Info (332119):    -0.846             -15.678 hsync:hSync|pulseReg 
+    Info (332119):    -0.633              -3.530 i2cInterface:i2c|endOK 
+    Info (332119):    16.439               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is -0.025
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.037               0.000 i2cInterface:i2c|clockGen:clockDivider|clk 
-    Info (332119):     0.102               0.000 hsync:hSync|pulseReg 
+    Info (332119):    -0.025              -0.025 i2cInterface:i2c|clockGen:clockDivider|clk 
+    Info (332119):     0.117               0.000 hsync:hSync|pulseReg 
     Info (332119):     0.201               0.000 clock_50 
-    Info (332119):     0.206               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.386               0.000 i2cInterface:i2c|endOK 
+    Info (332119):     0.208               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.394               0.000 i2cInterface:i2c|endOK 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 0.129
+Info (332146): Worst-case minimum pulse width slack is 0.128
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.129               0.000 hsync:hSync|pulseReg 
-    Info (332119):     0.135               0.000 i2cInterface:i2c|clockGen:clockDivider|clk 
-    Info (332119):     0.165               0.000 i2cInterface:i2c|endOK 
+    Info (332119):     0.128               0.000 i2cInterface:i2c|clockGen:clockDivider|clk 
+    Info (332119):     0.131               0.000 hsync:hSync|pulseReg 
+    Info (332119):     0.152               0.000 i2cInterface:i2c|endOK 
     Info (332119):     0.531               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     8.596               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     8.722               0.000 clock_50 
+    Info (332119):     8.595               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.767               0.000 clock_50 
 Info: Analyzing Fast 1100mV -40C Model
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: pixel|pixelpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
@@ -920,38 +920,38 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.543
+Info (332146): Worst-case setup slack is -2.829
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.543              -2.543 clock_50 
-    Info (332119):    -0.772             -20.612 i2cInterface:i2c|clockGen:clockDivider|clk 
-    Info (332119):    -0.601              -9.880 hsync:hSync|pulseReg 
-    Info (332119):    -0.426              -3.100 i2cInterface:i2c|endOK 
-    Info (332119):    16.738               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case hold slack is -0.021
+    Info (332119):    -2.829              -2.829 clock_50 
+    Info (332119):    -0.827             -20.337 i2cInterface:i2c|clockGen:clockDivider|clk 
+    Info (332119):    -0.614             -11.324 hsync:hSync|pulseReg 
+    Info (332119):    -0.512              -2.716 i2cInterface:i2c|endOK 
+    Info (332119):    16.595               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is -0.082
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.021              -0.021 i2cInterface:i2c|clockGen:clockDivider|clk 
-    Info (332119):     0.082               0.000 hsync:hSync|pulseReg 
-    Info (332119):     0.188               0.000 clock_50 
+    Info (332119):    -0.082              -0.082 i2cInterface:i2c|clockGen:clockDivider|clk 
+    Info (332119):     0.091               0.000 hsync:hSync|pulseReg 
+    Info (332119):     0.192               0.000 clock_50 
     Info (332119):     0.192               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.334               0.000 i2cInterface:i2c|endOK 
+    Info (332119):     0.344               0.000 i2cInterface:i2c|endOK 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 0.127
+Info (332146): Worst-case minimum pulse width slack is 0.132
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.127               0.000 hsync:hSync|pulseReg 
-    Info (332119):     0.140               0.000 i2cInterface:i2c|clockGen:clockDivider|clk 
-    Info (332119):     0.166               0.000 i2cInterface:i2c|endOK 
+    Info (332119):     0.132               0.000 hsync:hSync|pulseReg 
+    Info (332119):     0.141               0.000 i2cInterface:i2c|clockGen:clockDivider|clk 
+    Info (332119):     0.149               0.000 i2cInterface:i2c|endOK 
     Info (332119):     0.531               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     8.587               0.000 pixel|pixelpll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     8.698               0.000 clock_50 
+    Info (332119):     8.720               0.000 clock_50 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 1074 megabytes
-    Info: Processing ended: Mon May 28 22:35:27 2018
+    Info: Peak virtual memory: 1073 megabytes
+    Info: Processing ended: Mon May 28 22:45:38 2018
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:07
 

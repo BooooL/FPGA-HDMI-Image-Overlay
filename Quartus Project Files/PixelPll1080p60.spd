@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="PixelPll1080p60_sim/PixelPll1080p60.vo" type="VERILOG" />
+ <topLevel name="PixelPll1080p60" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

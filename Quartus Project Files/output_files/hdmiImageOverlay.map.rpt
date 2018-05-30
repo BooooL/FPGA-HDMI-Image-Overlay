@@ -1,5 +1,5 @@
 Analysis & Synthesis report for hdmiImageOverlay
-Mon May 28 22:33:23 2018
+Wed May 30 18:34:36 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -17,25 +17,23 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   9. State Machine - |hdmiImageOverlay|i2cInterface:i2c|currentState
  10. State Machine - |hdmiImageOverlay|dataWrite:dataWrite_module|nextState
  11. State Machine - |hdmiImageOverlay|dataWrite:dataWrite_module|currentState
- 12. Registers Removed During Synthesis
- 13. General Register Statistics
- 14. Parameter Settings for User Entity Instance: Top-level Entity: |hdmiImageOverlay
- 15. Parameter Settings for User Entity Instance: pixelPLL:pixel|pixelPLL_0002:pixelpll_inst|altera_pll:altera_pll_i
- 16. Parameter Settings for User Entity Instance: counter:hCounter
- 17. Parameter Settings for User Entity Instance: counter:vCounter
- 18. Parameter Settings for User Entity Instance: hsync:hSync
- 19. Parameter Settings for User Entity Instance: vsync:vSync
+ 12. State Machine - |hdmiImageOverlay|hdmiInterface:hdmi|currentState
+ 13. Registers Removed During Synthesis
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Parameter Settings for User Entity Instance: Top-level Entity: |hdmiImageOverlay
+ 18. Parameter Settings for User Entity Instance: PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i
+ 19. Parameter Settings for User Entity Instance: hdmiInterface:hdmi
  20. Parameter Settings for User Entity Instance: dataWrite:dataWrite_module
  21. Parameter Settings for User Entity Instance: i2cRegisterConfigure:i2cROM
  22. Parameter Settings for User Entity Instance: i2cInterface:i2c
  23. Parameter Settings for User Entity Instance: i2cInterface:i2c|clockGen:clockDivider
- 24. Port Connectivity Checks: "counter:vCounter"
- 25. Port Connectivity Checks: "counter:hCounter"
- 26. Port Connectivity Checks: "pixelPLL:pixel"
- 27. Post-Synthesis Netlist Statistics for Top Partition
- 28. Elapsed Time Per Partition
- 29. Analysis & Synthesis Messages
- 30. Analysis & Synthesis Suppressed Messages
+ 24. Port Connectivity Checks: "PixelPll1080p60:pixelPll"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+ 28. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -61,13 +59,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 28 22:33:23 2018       ;
+; Analysis & Synthesis Status     ; Successful - Wed May 30 18:34:36 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; hdmiImageOverlay                            ;
 ; Top-level Entity Name           ; hdmiImageOverlay                            ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 94                                          ;
+; Total registers                 ; 100                                         ;
 ; Total pins                      ; 36                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -185,81 +183,79 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                           ;
-+-------------------------------------+-----------------+-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
-; File Name with User-Entered Path    ; Used in Netlist ; File Type                   ; File Name with Absolute Path                                                                                                                                                    ; Library  ;
-+-------------------------------------+-----------------+-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
-; ../HDL Files/i2cRegisterConfigure.v ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cRegisterConfigure.v               ;          ;
-; ../HDL Files/vsync.v                ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/vsync.v                              ;          ;
-; ../HDL Files/i2cInterface.v         ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cInterface.v                       ;          ;
-; ../HDL Files/hsync.v                ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hsync.v                              ;          ;
-; ../HDL Files/hdmiImageOverlay.v     ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v                   ;          ;
-; ../HDL Files/dataWrite.v            ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/dataWrite.v                          ;          ;
-; ../HDL Files/counter.v              ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/counter.v                            ;          ;
-; ../HDL Files/clockGen.v             ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/clockGen.v                           ;          ;
-; pixelPLL.v                          ; yes             ; User Wizard-Generated File  ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL.v               ; pixelPLL ;
-; pixelPLL/pixelPLL_0002.v            ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL/pixelPLL_0002.v ; pixelPLL ;
-; altera_pll.v                        ; yes             ; Megafunction                ; g:/software/quartus/quartus/libraries/megafunctions/altera_pll.v                                                                                                                ;          ;
-+-------------------------------------+-----------------+-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                                   ;
++----------------------------------------+-----------------+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; File Name with User-Entered Path       ; Used in Netlist ; File Type                   ; File Name with Absolute Path                                                                                                                                                                  ; Library         ;
++----------------------------------------+-----------------+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; ../HDL Files/hdmiInterface.v           ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiInterface.v                                    ;                 ;
+; ../HDL Files/i2cRegisterConfigure.v    ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cRegisterConfigure.v                             ;                 ;
+; ../HDL Files/i2cInterface.v            ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cInterface.v                                     ;                 ;
+; ../HDL Files/hdmiImageOverlay.v        ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v                                 ;                 ;
+; ../HDL Files/dataWrite.v               ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/dataWrite.v                                        ;                 ;
+; ../HDL Files/clockGen.v                ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/clockGen.v                                         ;                 ;
+; pixelPLL/pixelPLL_0002.v               ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL/pixelPLL_0002.v               ; pixelPLL        ;
+; PixelPll1080p60.v                      ; yes             ; User Wizard-Generated File  ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60.v                      ; PixelPll1080p60 ;
+; PixelPll1080p60/PixelPll1080p60_0002.v ; yes             ; User Verilog HDL File       ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60/PixelPll1080p60_0002.v ; PixelPll1080p60 ;
+; altera_pll.v                           ; yes             ; Megafunction                ; g:/software/quartus/quartus/libraries/megafunctions/altera_pll.v                                                                                                                              ;                 ;
++----------------------------------------+-----------------+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                                                     ;
-+---------------------------------------------+-----------------------------------------------------------------------------------+
-; Resource                                    ; Usage                                                                             ;
-+---------------------------------------------+-----------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 55                                                                                ;
-;                                             ;                                                                                   ;
-; Combinational ALUT usage for logic          ; 81                                                                                ;
-;     -- 7 input functions                    ; 2                                                                                 ;
-;     -- 6 input functions                    ; 9                                                                                 ;
-;     -- 5 input functions                    ; 16                                                                                ;
-;     -- 4 input functions                    ; 14                                                                                ;
-;     -- <=3 input functions                  ; 40                                                                                ;
-;                                             ;                                                                                   ;
-; Dedicated logic registers                   ; 94                                                                                ;
-;                                             ;                                                                                   ;
-; I/O pins                                    ; 36                                                                                ;
-;                                             ;                                                                                   ;
-; Total DSP Blocks                            ; 0                                                                                 ;
-;                                             ;                                                                                   ;
-; Total PLLs                                  ; 1                                                                                 ;
-;     -- PLLs                                 ; 1                                                                                 ;
-;                                             ;                                                                                   ;
-; Maximum fan-out node                        ; pixelPLL:pixel|pixelPLL_0002:pixelpll_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
-; Maximum fan-out                             ; 39                                                                                ;
-; Total fan-out                               ; 541                                                                               ;
-; Average fan-out                             ; 2.17                                                                              ;
-+---------------------------------------------+-----------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                                             ;
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                                     ;
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 72                                                                                                        ;
+;                                             ;                                                                                                           ;
+; Combinational ALUT usage for logic          ; 112                                                                                                       ;
+;     -- 7 input functions                    ; 2                                                                                                         ;
+;     -- 6 input functions                    ; 26                                                                                                        ;
+;     -- 5 input functions                    ; 16                                                                                                        ;
+;     -- 4 input functions                    ; 22                                                                                                        ;
+;     -- <=3 input functions                  ; 46                                                                                                        ;
+;                                             ;                                                                                                           ;
+; Dedicated logic registers                   ; 100                                                                                                       ;
+;                                             ;                                                                                                           ;
+; I/O pins                                    ; 36                                                                                                        ;
+;                                             ;                                                                                                           ;
+; Total DSP Blocks                            ; 0                                                                                                         ;
+;                                             ;                                                                                                           ;
+; Total PLLs                                  ; 1                                                                                                         ;
+;     -- PLLs                                 ; 1                                                                                                         ;
+;                                             ;                                                                                                           ;
+; Maximum fan-out node                        ; PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
+; Maximum fan-out                             ; 58                                                                                                        ;
+; Total fan-out                               ; 710                                                                                                       ;
+; Average fan-out                             ; 2.48                                                                                                      ;
++---------------------------------------------+-----------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                       ;
-+-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------+----------------------+--------------+
-; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                  ; Entity Name          ; Library Name ;
-+-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------+----------------------+--------------+
-; |hdmiImageOverlay                   ; 81 (0)              ; 94 (0)                    ; 0                 ; 0          ; 36   ; 0            ; |hdmiImageOverlay                                                                    ; hdmiImageOverlay     ; work         ;
-;    |dataWrite:dataWrite_module|     ; 0 (0)               ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|dataWrite:dataWrite_module                                         ; dataWrite            ; work         ;
-;    |hsync:hSync|                    ; 16 (16)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|hsync:hSync                                                        ; hsync                ; work         ;
-;    |i2cInterface:i2c|               ; 45 (35)             ; 38 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|i2cInterface:i2c                                                   ; i2cInterface         ; work         ;
-;       |clockGen:clockDivider|       ; 10 (10)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|i2cInterface:i2c|clockGen:clockDivider                             ; clockGen             ; work         ;
-;    |i2cRegisterConfigure:i2cROM|    ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|i2cRegisterConfigure:i2cROM                                        ; i2cRegisterConfigure ; work         ;
-;    |pixelPLL:pixel|                 ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|pixelPLL:pixel                                                     ; pixelPLL             ; pixelPLL     ;
-;       |pixelPLL_0002:pixelpll_inst| ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|pixelPLL:pixel|pixelPLL_0002:pixelpll_inst                         ; pixelPLL_0002        ; pixelPLL     ;
-;          |altera_pll:altera_pll_i|  ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|pixelPLL:pixel|pixelPLL_0002:pixelpll_inst|altera_pll:altera_pll_i ; altera_pll           ; work         ;
-;    |vsync:vSync|                    ; 15 (15)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|vsync:vSync                                                        ; vsync                ; work         ;
-+-------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------+----------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                ;
++---------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------+----------------------+-----------------+
+; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                          ; Entity Name          ; Library Name    ;
++---------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------+----------------------+-----------------+
+; |hdmiImageOverlay                                 ; 112 (0)             ; 100 (0)                   ; 0                 ; 0          ; 36   ; 0            ; |hdmiImageOverlay                                                                                            ; hdmiImageOverlay     ; work            ;
+;    |PixelPll1080p60:pixelPll|                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|PixelPll1080p60:pixelPll                                                                   ; PixelPll1080p60      ; PixelPll1080p60 ;
+;       |PixelPll1080p60_0002:pixelpll1080p60_inst| ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst                         ; PixelPll1080p60_0002 ; PixelPll1080p60 ;
+;          |altera_pll:altera_pll_i|                ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i ; altera_pll           ; work            ;
+;    |dataWrite:dataWrite_module|                   ; 0 (0)               ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|dataWrite:dataWrite_module                                                                 ; dataWrite            ; work            ;
+;    |hdmiInterface:hdmi|                           ; 62 (62)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|hdmiInterface:hdmi                                                                         ; hdmiInterface        ; work            ;
+;    |i2cInterface:i2c|                             ; 45 (35)             ; 38 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|i2cInterface:i2c                                                                           ; i2cInterface         ; work            ;
+;       |clockGen:clockDivider|                     ; 10 (10)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|i2cInterface:i2c|clockGen:clockDivider                                                     ; clockGen             ; work            ;
+;    |i2cRegisterConfigure:i2cROM|                  ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|i2cRegisterConfigure:i2cROM                                                                ; i2cRegisterConfigure ; work            ;
++---------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------+----------------------+-----------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                              ;
-+--------+--------------+---------+--------------+--------------+----------------------------------+-----------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                  ; IP Include File ;
-+--------+--------------+---------+--------------+--------------+----------------------------------+-----------------+
-; Altera ; altera_pll   ; 17.1    ; N/A          ; N/A          ; |hdmiImageOverlay|pixelPLL:pixel ; pixelPLL.v      ;
-+--------+--------------+---------+--------------+--------------+----------------------------------+-----------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                          ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------+-------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                            ; IP Include File   ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------+-------------------+
+; Altera ; altera_pll   ; 17.1    ; N/A          ; N/A          ; |hdmiImageOverlay|PixelPll1080p60:pixelPll ; PixelPll1080p60.v ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------+-------------------+
 
 
 Encoding Type:  One-Hot
@@ -305,6 +301,21 @@ Encoding Type:  One-Hot
 +---------------------------------------------------------------------------+
 
 
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |hdmiImageOverlay|hdmiInterface:hdmi|currentState                                                                                                                            ;
++------------------------------+------------------------------+--------------------------+----------------------------+-------------------------+-------------------------+--------------------+
+; Name                         ; currentState.startBlankFrame ; currentState.activeVideo ; currentState.endBlankHSync ; currentState.vSyncState ; currentState.startFrame ; currentState.00000 ;
++------------------------------+------------------------------+--------------------------+----------------------------+-------------------------+-------------------------+--------------------+
+; currentState.00000           ; 0                            ; 0                        ; 0                          ; 0                       ; 0                       ; 0                  ;
+; currentState.startFrame      ; 0                            ; 0                        ; 0                          ; 0                       ; 1                       ; 1                  ;
+; currentState.vSyncState      ; 0                            ; 0                        ; 0                          ; 1                       ; 0                       ; 1                  ;
+; currentState.endBlankHSync   ; 0                            ; 0                        ; 1                          ; 0                       ; 0                       ; 1                  ;
+; currentState.activeVideo     ; 0                            ; 1                        ; 0                          ; 0                       ; 0                       ; 1                  ;
+; currentState.startBlankFrame ; 1                            ; 0                        ; 0                          ; 0                       ; 0                       ; 1                  ;
++------------------------------+------------------------------+--------------------------+----------------------------+-------------------------+-------------------------+--------------------+
+
+
 +------------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                                 ;
 +-------------------------------------------+----------------------------------------+
@@ -318,8 +329,13 @@ Encoding Type:  One-Hot
 ; dataWrite:dataWrite_module|nextState~3    ; Lost fanout                            ;
 ; dataWrite:dataWrite_module|currentState~2 ; Lost fanout                            ;
 ; dataWrite:dataWrite_module|currentState~3 ; Lost fanout                            ;
+; hdmiInterface:hdmi|currentState~2         ; Lost fanout                            ;
+; hdmiInterface:hdmi|currentState~3         ; Lost fanout                            ;
+; hdmiInterface:hdmi|currentState~4         ; Lost fanout                            ;
+; hdmiInterface:hdmi|currentState~5         ; Lost fanout                            ;
+; hdmiInterface:hdmi|currentState~6         ; Lost fanout                            ;
 ; i2cInterface:i2c|SDAOut~en                ; Merged with i2cInterface:i2c|i2cSDAOut ;
-; Total Number of Removed Registers = 9     ;                                        ;
+; Total Number of Removed Registers = 14    ;                                        ;
 +-------------------------------------------+----------------------------------------+
 
 
@@ -328,14 +344,34 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 94    ;
-; Number of registers using Synchronous Clear  ; 24    ;
+; Total registers                              ; 100   ;
+; Number of registers using Synchronous Clear  ; 23    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 11    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; hdmiInterface:hdmi|hCounter[0]         ; 7       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
+; 6:1                ; 11 bits   ; 44 LEs        ; 0 LEs                ; 44 LEs                 ; Yes        ; |hdmiImageOverlay|hdmiInterface:hdmi|hCounter[8] ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |hdmiImageOverlay|hdmiInterface:hdmi|pCounter[5] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------+
@@ -343,301 +379,286 @@ Encoding Type:  One-Hot
 +----------------+-------+---------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                    ;
 +----------------+-------+---------------------------------------------------------+
-; hPixels        ; 720   ; Signed Integer                                          ;
-; vPixels        ; 1280  ; Signed Integer                                          ;
+; hPixels        ; 1920  ; Signed Integer                                          ;
+; vPixels        ; 1080  ; Signed Integer                                          ;
 ; refreshRate    ; 60    ; Signed Integer                                          ;
-; hCountWidth    ; 12    ; Signed Integer                                          ;
-; vCountWidth    ; 12    ; Signed Integer                                          ;
+; hPlacement     ; 88    ; Signed Integer                                          ;
+; hDuration      ; 44    ; Signed Integer                                          ;
+; hDelay         ; 192   ; Signed Integer                                          ;
+; hPolarity      ; 1     ; Signed Integer                                          ;
+; vPlacement     ; 4     ; Signed Integer                                          ;
+; vDuration      ; 5     ; Signed Integer                                          ;
+; vDelay         ; 41    ; Signed Integer                                          ;
+; vPolarity      ; 1     ; Signed Integer                                          ;
+; width          ; 1920  ; Signed Integer                                          ;
+; height         ; 1080  ; Signed Integer                                          ;
 +----------------+-------+---------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: pixelPLL:pixel|pixelPLL_0002:pixelpll_inst|altera_pll:altera_pll_i ;
-+--------------------------------------+------------------------+-------------------------------------------------+
-; Parameter Name                       ; Value                  ; Type                                            ;
-+--------------------------------------+------------------------+-------------------------------------------------+
-; reference_clock_frequency            ; 50.0 MHz               ; String                                          ;
-; fractional_vco_multiplier            ; false                  ; String                                          ;
-; pll_type                             ; General                ; String                                          ;
-; pll_subtype                          ; General                ; String                                          ;
-; number_of_clocks                     ; 1                      ; Signed Integer                                  ;
-; operation_mode                       ; direct                 ; String                                          ;
-; deserialization_factor               ; 4                      ; Signed Integer                                  ;
-; data_rate                            ; 0                      ; Signed Integer                                  ;
-; sim_additional_refclk_cycles_to_lock ; 0                      ; Signed Integer                                  ;
-; output_clock_frequency0              ; 55.294117 MHz          ; String                                          ;
-; phase_shift0                         ; 0 ps                   ; String                                          ;
-; duty_cycle0                          ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency1              ; 0 MHz                  ; String                                          ;
-; phase_shift1                         ; 0 ps                   ; String                                          ;
-; duty_cycle1                          ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency2              ; 0 MHz                  ; String                                          ;
-; phase_shift2                         ; 0 ps                   ; String                                          ;
-; duty_cycle2                          ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency3              ; 0 MHz                  ; String                                          ;
-; phase_shift3                         ; 0 ps                   ; String                                          ;
-; duty_cycle3                          ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency4              ; 0 MHz                  ; String                                          ;
-; phase_shift4                         ; 0 ps                   ; String                                          ;
-; duty_cycle4                          ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency5              ; 0 MHz                  ; String                                          ;
-; phase_shift5                         ; 0 ps                   ; String                                          ;
-; duty_cycle5                          ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency6              ; 0 MHz                  ; String                                          ;
-; phase_shift6                         ; 0 ps                   ; String                                          ;
-; duty_cycle6                          ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency7              ; 0 MHz                  ; String                                          ;
-; phase_shift7                         ; 0 ps                   ; String                                          ;
-; duty_cycle7                          ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency8              ; 0 MHz                  ; String                                          ;
-; phase_shift8                         ; 0 ps                   ; String                                          ;
-; duty_cycle8                          ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency9              ; 0 MHz                  ; String                                          ;
-; phase_shift9                         ; 0 ps                   ; String                                          ;
-; duty_cycle9                          ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency10             ; 0 MHz                  ; String                                          ;
-; phase_shift10                        ; 0 ps                   ; String                                          ;
-; duty_cycle10                         ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency11             ; 0 MHz                  ; String                                          ;
-; phase_shift11                        ; 0 ps                   ; String                                          ;
-; duty_cycle11                         ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency12             ; 0 MHz                  ; String                                          ;
-; phase_shift12                        ; 0 ps                   ; String                                          ;
-; duty_cycle12                         ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency13             ; 0 MHz                  ; String                                          ;
-; phase_shift13                        ; 0 ps                   ; String                                          ;
-; duty_cycle13                         ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency14             ; 0 MHz                  ; String                                          ;
-; phase_shift14                        ; 0 ps                   ; String                                          ;
-; duty_cycle14                         ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency15             ; 0 MHz                  ; String                                          ;
-; phase_shift15                        ; 0 ps                   ; String                                          ;
-; duty_cycle15                         ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency16             ; 0 MHz                  ; String                                          ;
-; phase_shift16                        ; 0 ps                   ; String                                          ;
-; duty_cycle16                         ; 50                     ; Signed Integer                                  ;
-; output_clock_frequency17             ; 0 MHz                  ; String                                          ;
-; phase_shift17                        ; 0 ps                   ; String                                          ;
-; duty_cycle17                         ; 50                     ; Signed Integer                                  ;
-; clock_name_0                         ;                        ; String                                          ;
-; clock_name_1                         ;                        ; String                                          ;
-; clock_name_2                         ;                        ; String                                          ;
-; clock_name_3                         ;                        ; String                                          ;
-; clock_name_4                         ;                        ; String                                          ;
-; clock_name_5                         ;                        ; String                                          ;
-; clock_name_6                         ;                        ; String                                          ;
-; clock_name_7                         ;                        ; String                                          ;
-; clock_name_8                         ;                        ; String                                          ;
-; clock_name_global_0                  ; false                  ; String                                          ;
-; clock_name_global_1                  ; false                  ; String                                          ;
-; clock_name_global_2                  ; false                  ; String                                          ;
-; clock_name_global_3                  ; false                  ; String                                          ;
-; clock_name_global_4                  ; false                  ; String                                          ;
-; clock_name_global_5                  ; false                  ; String                                          ;
-; clock_name_global_6                  ; false                  ; String                                          ;
-; clock_name_global_7                  ; false                  ; String                                          ;
-; clock_name_global_8                  ; false                  ; String                                          ;
-; m_cnt_hi_div                         ; 1                      ; Signed Integer                                  ;
-; m_cnt_lo_div                         ; 1                      ; Signed Integer                                  ;
-; m_cnt_bypass_en                      ; false                  ; String                                          ;
-; m_cnt_odd_div_duty_en                ; false                  ; String                                          ;
-; n_cnt_hi_div                         ; 1                      ; Signed Integer                                  ;
-; n_cnt_lo_div                         ; 1                      ; Signed Integer                                  ;
-; n_cnt_bypass_en                      ; false                  ; String                                          ;
-; n_cnt_odd_div_duty_en                ; false                  ; String                                          ;
-; c_cnt_hi_div0                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div0                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en0                     ; false                  ; String                                          ;
-; c_cnt_in_src0                        ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en0               ; false                  ; String                                          ;
-; c_cnt_prst0                          ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst0                   ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div1                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div1                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en1                     ; false                  ; String                                          ;
-; c_cnt_in_src1                        ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en1               ; false                  ; String                                          ;
-; c_cnt_prst1                          ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst1                   ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div2                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div2                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en2                     ; false                  ; String                                          ;
-; c_cnt_in_src2                        ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en2               ; false                  ; String                                          ;
-; c_cnt_prst2                          ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst2                   ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div3                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div3                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en3                     ; false                  ; String                                          ;
-; c_cnt_in_src3                        ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en3               ; false                  ; String                                          ;
-; c_cnt_prst3                          ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst3                   ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div4                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div4                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en4                     ; false                  ; String                                          ;
-; c_cnt_in_src4                        ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en4               ; false                  ; String                                          ;
-; c_cnt_prst4                          ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst4                   ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div5                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div5                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en5                     ; false                  ; String                                          ;
-; c_cnt_in_src5                        ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en5               ; false                  ; String                                          ;
-; c_cnt_prst5                          ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst5                   ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div6                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div6                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en6                     ; false                  ; String                                          ;
-; c_cnt_in_src6                        ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en6               ; false                  ; String                                          ;
-; c_cnt_prst6                          ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst6                   ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div7                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div7                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en7                     ; false                  ; String                                          ;
-; c_cnt_in_src7                        ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en7               ; false                  ; String                                          ;
-; c_cnt_prst7                          ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst7                   ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div8                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div8                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en8                     ; false                  ; String                                          ;
-; c_cnt_in_src8                        ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en8               ; false                  ; String                                          ;
-; c_cnt_prst8                          ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst8                   ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div9                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div9                        ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en9                     ; false                  ; String                                          ;
-; c_cnt_in_src9                        ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en9               ; false                  ; String                                          ;
-; c_cnt_prst9                          ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst9                   ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div10                       ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div10                       ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en10                    ; false                  ; String                                          ;
-; c_cnt_in_src10                       ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en10              ; false                  ; String                                          ;
-; c_cnt_prst10                         ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst10                  ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div11                       ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div11                       ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en11                    ; false                  ; String                                          ;
-; c_cnt_in_src11                       ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en11              ; false                  ; String                                          ;
-; c_cnt_prst11                         ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst11                  ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div12                       ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div12                       ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en12                    ; false                  ; String                                          ;
-; c_cnt_in_src12                       ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en12              ; false                  ; String                                          ;
-; c_cnt_prst12                         ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst12                  ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div13                       ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div13                       ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en13                    ; false                  ; String                                          ;
-; c_cnt_in_src13                       ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en13              ; false                  ; String                                          ;
-; c_cnt_prst13                         ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst13                  ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div14                       ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div14                       ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en14                    ; false                  ; String                                          ;
-; c_cnt_in_src14                       ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en14              ; false                  ; String                                          ;
-; c_cnt_prst14                         ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst14                  ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div15                       ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div15                       ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en15                    ; false                  ; String                                          ;
-; c_cnt_in_src15                       ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en15              ; false                  ; String                                          ;
-; c_cnt_prst15                         ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst15                  ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div16                       ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div16                       ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en16                    ; false                  ; String                                          ;
-; c_cnt_in_src16                       ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en16              ; false                  ; String                                          ;
-; c_cnt_prst16                         ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst16                  ; 0                      ; Signed Integer                                  ;
-; c_cnt_hi_div17                       ; 1                      ; Signed Integer                                  ;
-; c_cnt_lo_div17                       ; 1                      ; Signed Integer                                  ;
-; c_cnt_bypass_en17                    ; false                  ; String                                          ;
-; c_cnt_in_src17                       ; ph_mux_clk             ; String                                          ;
-; c_cnt_odd_div_duty_en17              ; false                  ; String                                          ;
-; c_cnt_prst17                         ; 1                      ; Signed Integer                                  ;
-; c_cnt_ph_mux_prst17                  ; 0                      ; Signed Integer                                  ;
-; pll_vco_div                          ; 1                      ; Signed Integer                                  ;
-; pll_slf_rst                          ; false                  ; String                                          ;
-; pll_bw_sel                           ; low                    ; String                                          ;
-; pll_output_clk_frequency             ; 0 MHz                  ; String                                          ;
-; pll_cp_current                       ; 0                      ; Signed Integer                                  ;
-; pll_bwctrl                           ; 0                      ; Signed Integer                                  ;
-; pll_fractional_division              ; 1                      ; Signed Integer                                  ;
-; pll_fractional_cout                  ; 24                     ; Signed Integer                                  ;
-; pll_dsm_out_sel                      ; 1st_order              ; String                                          ;
-; mimic_fbclk_type                     ; gclk                   ; String                                          ;
-; pll_fbclk_mux_1                      ; glb                    ; String                                          ;
-; pll_fbclk_mux_2                      ; fb_1                   ; String                                          ;
-; pll_m_cnt_in_src                     ; ph_mux_clk             ; String                                          ;
-; pll_vcoph_div                        ; 1                      ; Signed Integer                                  ;
-; refclk1_frequency                    ; 0 MHz                  ; String                                          ;
-; pll_clkin_0_src                      ; clk_0                  ; String                                          ;
-; pll_clkin_1_src                      ; clk_0                  ; String                                          ;
-; pll_clk_loss_sw_en                   ; false                  ; String                                          ;
-; pll_auto_clk_sw_en                   ; false                  ; String                                          ;
-; pll_manu_clk_sw_en                   ; false                  ; String                                          ;
-; pll_clk_sw_dly                       ; 0                      ; Signed Integer                                  ;
-; pll_extclk_0_cnt_src                 ; pll_extclk_cnt_src_vss ; String                                          ;
-; pll_extclk_1_cnt_src                 ; pll_extclk_cnt_src_vss ; String                                          ;
-+--------------------------------------+------------------------+-------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i ;
++--------------------------------------+------------------------+-------------------------------------------------------------------------+
+; Parameter Name                       ; Value                  ; Type                                                                    ;
++--------------------------------------+------------------------+-------------------------------------------------------------------------+
+; reference_clock_frequency            ; 50.0 MHz               ; String                                                                  ;
+; fractional_vco_multiplier            ; true                   ; String                                                                  ;
+; pll_type                             ; General                ; String                                                                  ;
+; pll_subtype                          ; General                ; String                                                                  ;
+; number_of_clocks                     ; 1                      ; Signed Integer                                                          ;
+; operation_mode                       ; direct                 ; String                                                                  ;
+; deserialization_factor               ; 4                      ; Signed Integer                                                          ;
+; data_rate                            ; 0                      ; Signed Integer                                                          ;
+; sim_additional_refclk_cycles_to_lock ; 0                      ; Signed Integer                                                          ;
+; output_clock_frequency0              ; 148.500000 MHz         ; String                                                                  ;
+; phase_shift0                         ; 0 ps                   ; String                                                                  ;
+; duty_cycle0                          ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency1              ; 0 MHz                  ; String                                                                  ;
+; phase_shift1                         ; 0 ps                   ; String                                                                  ;
+; duty_cycle1                          ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency2              ; 0 MHz                  ; String                                                                  ;
+; phase_shift2                         ; 0 ps                   ; String                                                                  ;
+; duty_cycle2                          ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency3              ; 0 MHz                  ; String                                                                  ;
+; phase_shift3                         ; 0 ps                   ; String                                                                  ;
+; duty_cycle3                          ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency4              ; 0 MHz                  ; String                                                                  ;
+; phase_shift4                         ; 0 ps                   ; String                                                                  ;
+; duty_cycle4                          ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency5              ; 0 MHz                  ; String                                                                  ;
+; phase_shift5                         ; 0 ps                   ; String                                                                  ;
+; duty_cycle5                          ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency6              ; 0 MHz                  ; String                                                                  ;
+; phase_shift6                         ; 0 ps                   ; String                                                                  ;
+; duty_cycle6                          ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency7              ; 0 MHz                  ; String                                                                  ;
+; phase_shift7                         ; 0 ps                   ; String                                                                  ;
+; duty_cycle7                          ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency8              ; 0 MHz                  ; String                                                                  ;
+; phase_shift8                         ; 0 ps                   ; String                                                                  ;
+; duty_cycle8                          ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency9              ; 0 MHz                  ; String                                                                  ;
+; phase_shift9                         ; 0 ps                   ; String                                                                  ;
+; duty_cycle9                          ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency10             ; 0 MHz                  ; String                                                                  ;
+; phase_shift10                        ; 0 ps                   ; String                                                                  ;
+; duty_cycle10                         ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency11             ; 0 MHz                  ; String                                                                  ;
+; phase_shift11                        ; 0 ps                   ; String                                                                  ;
+; duty_cycle11                         ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency12             ; 0 MHz                  ; String                                                                  ;
+; phase_shift12                        ; 0 ps                   ; String                                                                  ;
+; duty_cycle12                         ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency13             ; 0 MHz                  ; String                                                                  ;
+; phase_shift13                        ; 0 ps                   ; String                                                                  ;
+; duty_cycle13                         ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency14             ; 0 MHz                  ; String                                                                  ;
+; phase_shift14                        ; 0 ps                   ; String                                                                  ;
+; duty_cycle14                         ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency15             ; 0 MHz                  ; String                                                                  ;
+; phase_shift15                        ; 0 ps                   ; String                                                                  ;
+; duty_cycle15                         ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency16             ; 0 MHz                  ; String                                                                  ;
+; phase_shift16                        ; 0 ps                   ; String                                                                  ;
+; duty_cycle16                         ; 50                     ; Signed Integer                                                          ;
+; output_clock_frequency17             ; 0 MHz                  ; String                                                                  ;
+; phase_shift17                        ; 0 ps                   ; String                                                                  ;
+; duty_cycle17                         ; 50                     ; Signed Integer                                                          ;
+; clock_name_0                         ;                        ; String                                                                  ;
+; clock_name_1                         ;                        ; String                                                                  ;
+; clock_name_2                         ;                        ; String                                                                  ;
+; clock_name_3                         ;                        ; String                                                                  ;
+; clock_name_4                         ;                        ; String                                                                  ;
+; clock_name_5                         ;                        ; String                                                                  ;
+; clock_name_6                         ;                        ; String                                                                  ;
+; clock_name_7                         ;                        ; String                                                                  ;
+; clock_name_8                         ;                        ; String                                                                  ;
+; clock_name_global_0                  ; false                  ; String                                                                  ;
+; clock_name_global_1                  ; false                  ; String                                                                  ;
+; clock_name_global_2                  ; false                  ; String                                                                  ;
+; clock_name_global_3                  ; false                  ; String                                                                  ;
+; clock_name_global_4                  ; false                  ; String                                                                  ;
+; clock_name_global_5                  ; false                  ; String                                                                  ;
+; clock_name_global_6                  ; false                  ; String                                                                  ;
+; clock_name_global_7                  ; false                  ; String                                                                  ;
+; clock_name_global_8                  ; false                  ; String                                                                  ;
+; m_cnt_hi_div                         ; 1                      ; Signed Integer                                                          ;
+; m_cnt_lo_div                         ; 1                      ; Signed Integer                                                          ;
+; m_cnt_bypass_en                      ; false                  ; String                                                                  ;
+; m_cnt_odd_div_duty_en                ; false                  ; String                                                                  ;
+; n_cnt_hi_div                         ; 1                      ; Signed Integer                                                          ;
+; n_cnt_lo_div                         ; 1                      ; Signed Integer                                                          ;
+; n_cnt_bypass_en                      ; false                  ; String                                                                  ;
+; n_cnt_odd_div_duty_en                ; false                  ; String                                                                  ;
+; c_cnt_hi_div0                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div0                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en0                     ; false                  ; String                                                                  ;
+; c_cnt_in_src0                        ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en0               ; false                  ; String                                                                  ;
+; c_cnt_prst0                          ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst0                   ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div1                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div1                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en1                     ; false                  ; String                                                                  ;
+; c_cnt_in_src1                        ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en1               ; false                  ; String                                                                  ;
+; c_cnt_prst1                          ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst1                   ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div2                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div2                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en2                     ; false                  ; String                                                                  ;
+; c_cnt_in_src2                        ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en2               ; false                  ; String                                                                  ;
+; c_cnt_prst2                          ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst2                   ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div3                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div3                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en3                     ; false                  ; String                                                                  ;
+; c_cnt_in_src3                        ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en3               ; false                  ; String                                                                  ;
+; c_cnt_prst3                          ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst3                   ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div4                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div4                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en4                     ; false                  ; String                                                                  ;
+; c_cnt_in_src4                        ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en4               ; false                  ; String                                                                  ;
+; c_cnt_prst4                          ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst4                   ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div5                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div5                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en5                     ; false                  ; String                                                                  ;
+; c_cnt_in_src5                        ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en5               ; false                  ; String                                                                  ;
+; c_cnt_prst5                          ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst5                   ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div6                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div6                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en6                     ; false                  ; String                                                                  ;
+; c_cnt_in_src6                        ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en6               ; false                  ; String                                                                  ;
+; c_cnt_prst6                          ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst6                   ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div7                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div7                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en7                     ; false                  ; String                                                                  ;
+; c_cnt_in_src7                        ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en7               ; false                  ; String                                                                  ;
+; c_cnt_prst7                          ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst7                   ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div8                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div8                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en8                     ; false                  ; String                                                                  ;
+; c_cnt_in_src8                        ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en8               ; false                  ; String                                                                  ;
+; c_cnt_prst8                          ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst8                   ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div9                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div9                        ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en9                     ; false                  ; String                                                                  ;
+; c_cnt_in_src9                        ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en9               ; false                  ; String                                                                  ;
+; c_cnt_prst9                          ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst9                   ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div10                       ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div10                       ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en10                    ; false                  ; String                                                                  ;
+; c_cnt_in_src10                       ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en10              ; false                  ; String                                                                  ;
+; c_cnt_prst10                         ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst10                  ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div11                       ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div11                       ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en11                    ; false                  ; String                                                                  ;
+; c_cnt_in_src11                       ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en11              ; false                  ; String                                                                  ;
+; c_cnt_prst11                         ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst11                  ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div12                       ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div12                       ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en12                    ; false                  ; String                                                                  ;
+; c_cnt_in_src12                       ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en12              ; false                  ; String                                                                  ;
+; c_cnt_prst12                         ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst12                  ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div13                       ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div13                       ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en13                    ; false                  ; String                                                                  ;
+; c_cnt_in_src13                       ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en13              ; false                  ; String                                                                  ;
+; c_cnt_prst13                         ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst13                  ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div14                       ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div14                       ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en14                    ; false                  ; String                                                                  ;
+; c_cnt_in_src14                       ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en14              ; false                  ; String                                                                  ;
+; c_cnt_prst14                         ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst14                  ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div15                       ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div15                       ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en15                    ; false                  ; String                                                                  ;
+; c_cnt_in_src15                       ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en15              ; false                  ; String                                                                  ;
+; c_cnt_prst15                         ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst15                  ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div16                       ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div16                       ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en16                    ; false                  ; String                                                                  ;
+; c_cnt_in_src16                       ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en16              ; false                  ; String                                                                  ;
+; c_cnt_prst16                         ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst16                  ; 0                      ; Signed Integer                                                          ;
+; c_cnt_hi_div17                       ; 1                      ; Signed Integer                                                          ;
+; c_cnt_lo_div17                       ; 1                      ; Signed Integer                                                          ;
+; c_cnt_bypass_en17                    ; false                  ; String                                                                  ;
+; c_cnt_in_src17                       ; ph_mux_clk             ; String                                                                  ;
+; c_cnt_odd_div_duty_en17              ; false                  ; String                                                                  ;
+; c_cnt_prst17                         ; 1                      ; Signed Integer                                                          ;
+; c_cnt_ph_mux_prst17                  ; 0                      ; Signed Integer                                                          ;
+; pll_vco_div                          ; 1                      ; Signed Integer                                                          ;
+; pll_slf_rst                          ; false                  ; String                                                                  ;
+; pll_bw_sel                           ; low                    ; String                                                                  ;
+; pll_output_clk_frequency             ; 0 MHz                  ; String                                                                  ;
+; pll_cp_current                       ; 0                      ; Signed Integer                                                          ;
+; pll_bwctrl                           ; 0                      ; Signed Integer                                                          ;
+; pll_fractional_division              ; 1                      ; Signed Integer                                                          ;
+; pll_fractional_cout                  ; 24                     ; Signed Integer                                                          ;
+; pll_dsm_out_sel                      ; 1st_order              ; String                                                                  ;
+; mimic_fbclk_type                     ; gclk                   ; String                                                                  ;
+; pll_fbclk_mux_1                      ; glb                    ; String                                                                  ;
+; pll_fbclk_mux_2                      ; fb_1                   ; String                                                                  ;
+; pll_m_cnt_in_src                     ; ph_mux_clk             ; String                                                                  ;
+; pll_vcoph_div                        ; 1                      ; Signed Integer                                                          ;
+; refclk1_frequency                    ; 0 MHz                  ; String                                                                  ;
+; pll_clkin_0_src                      ; clk_0                  ; String                                                                  ;
+; pll_clkin_1_src                      ; clk_0                  ; String                                                                  ;
+; pll_clk_loss_sw_en                   ; false                  ; String                                                                  ;
+; pll_auto_clk_sw_en                   ; false                  ; String                                                                  ;
+; pll_manu_clk_sw_en                   ; false                  ; String                                                                  ;
+; pll_clk_sw_dly                       ; 0                      ; Signed Integer                                                          ;
+; pll_extclk_0_cnt_src                 ; pll_extclk_cnt_src_vss ; String                                                                  ;
+; pll_extclk_1_cnt_src                 ; pll_extclk_cnt_src_vss ; String                                                                  ;
++--------------------------------------+------------------------+-------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: counter:hCounter ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; busWidth       ; 12    ; Signed Integer                       ;
-+----------------+-------+--------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: counter:vCounter ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; busWidth       ; 12    ; Signed Integer                       ;
-+----------------+-------+--------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: hsync:hSync ;
-+----------------+-------+---------------------------------+
-; Parameter Name ; Value ; Type                            ;
-+----------------+-------+---------------------------------+
-; busWidth       ; 12    ; Signed Integer                  ;
-; resHorizontal  ; 720   ; Signed Integer                  ;
-+----------------+-------+---------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: vsync:vSync ;
-+----------------+-------+---------------------------------+
-; Parameter Name ; Value ; Type                            ;
-+----------------+-------+---------------------------------+
-; busWidth       ; 12    ; Signed Integer                  ;
-; resVertical    ; 1280  ; Signed Integer                  ;
-+----------------+-------+---------------------------------+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: hdmiInterface:hdmi ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; hPlacement     ; 88    ; Signed Integer                         ;
+; hDuration      ; 44    ; Signed Integer                         ;
+; hDelay         ; 192   ; Signed Integer                         ;
+; hPolarity      ; 1     ; Signed Integer                         ;
+; vPlacement     ; 4     ; Signed Integer                         ;
+; vDuration      ; 5     ; Signed Integer                         ;
+; vDelay         ; 41    ; Signed Integer                         ;
+; vPolarity      ; 1920  ; Signed Integer                         ;
+; width          ; 1080  ; Signed Integer                         ;
+; height         ; 1080  ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -688,38 +709,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter:vCounter"                                                                                                                                       ;
-+------------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Port             ; Type   ; Severity ; Details                                                                                                                                     ;
-+------------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
-; D                ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (12 bits) it drives.  Extra input bit(s) "D[11..1]" will be connected to GND. ;
-; D                ; Input  ; Info     ; Stuck at GND                                                                                                                                ;
-; parallelEnable_n ; Input  ; Info     ; Stuck at VCC                                                                                                                                ;
-; countEnable      ; Input  ; Info     ; Stuck at VCC                                                                                                                                ;
-; masterReset_n    ; Input  ; Info     ; Stuck at VCC                                                                                                                                ;
-; Q                ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                         ;
-; terminalCount    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                    ;
-+------------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter:hCounter"                                                                                                                                       ;
-+------------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Port             ; Type   ; Severity ; Details                                                                                                                                     ;
-+------------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
-; D                ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (12 bits) it drives.  Extra input bit(s) "D[11..1]" will be connected to GND. ;
-; D                ; Input  ; Info     ; Stuck at GND                                                                                                                                ;
-; parallelEnable_n ; Input  ; Info     ; Stuck at VCC                                                                                                                                ;
-; countEnable      ; Input  ; Info     ; Stuck at VCC                                                                                                                                ;
-; masterReset_n    ; Input  ; Info     ; Stuck at VCC                                                                                                                                ;
-; Q                ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                         ;
-; terminalCount    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                    ;
-+------------------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +---------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "pixelPLL:pixel"                                                                                            ;
+; Port Connectivity Checks: "PixelPll1080p60:pixelPll"                                                                                  ;
 +--------+--------+----------+----------------------------------------------------------------------------------------------------------+
 ; Port   ; Type   ; Severity ; Details                                                                                                  ;
 +--------+--------+----------+----------------------------------------------------------------------------------------------------------+
@@ -733,27 +724,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 94                          ;
-;     SCLR              ; 24                          ;
-;     plain             ; 70                          ;
+; arriav_ff             ; 100                         ;
+;     ENA SCLR          ; 11                          ;
+;     SCLR              ; 12                          ;
+;     plain             ; 77                          ;
 ; arriav_io_obuf        ; 1                           ;
-; arriav_lcell_comb     ; 81                          ;
+; arriav_lcell_comb     ; 112                         ;
 ;     arith             ; 31                          ;
 ;         1 data inputs ; 31                          ;
 ;     extend            ; 2                           ;
 ;         7 data inputs ; 2                           ;
-;     normal            ; 48                          ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 4                           ;
-;         3 data inputs ; 4                           ;
-;         4 data inputs ; 14                          ;
+;     normal            ; 79                          ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 22                          ;
 ;         5 data inputs ; 16                          ;
-;         6 data inputs ; 9                           ;
+;         6 data inputs ; 26                          ;
 ; boundary_port         ; 36                          ;
 ; generic_pll           ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.61                        ;
+; Average LUT depth     ; 1.82                        ;
 +-----------------------+-----------------------------+
 
 
@@ -762,7 +753,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -772,10 +763,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon May 28 22:33:08 2018
+    Info: Processing started: Wed May 30 18:34:22 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off hdmiImageOverlay -c hdmiImageOverlay
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/alexander/documents/university/2018/semester 1/eeet2162 advanced digital design 1/major project/fpga-hdmi-image-overlay/hdl files/hdmiinterface.v
+    Info (12023): Found entity 1: hdmiInterface File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiInterface.v Line: 26
 Info (12021): Found 1 design units, including 1 entities, in source file /users/alexander/documents/university/2018/semester 1/eeet2162 advanced digital design 1/major project/fpga-hdmi-image-overlay/hdl files/i2cregisterconfigure.v
     Info (12023): Found entity 1: i2cRegisterConfigure File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cRegisterConfigure.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /users/alexander/documents/university/2018/semester 1/eeet2162 advanced digital design 1/major project/fpga-hdmi-image-overlay/hdl files/vsync.v
@@ -798,18 +791,22 @@ Info (12021): Found 1 design units, including 1 entities, in source file pixelpl
     Info (12023): Found entity 1: pixelPLL File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL.v Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file pixelpll/pixelpll_0002.v
     Info (12023): Found entity 1: pixelPLL_0002 File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL/pixelPLL_0002.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file pixelpll1080p60.v
+    Info (12023): Found entity 1: PixelPll1080p60 File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file pixelpll1080p60/pixelpll1080p60_0002.v
+    Info (12023): Found entity 1: PixelPll1080p60_0002 File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60/PixelPll1080p60_0002.v Line: 2
 Info (12127): Elaborating entity "hdmiImageOverlay" for the top level hierarchy
-Info (12128): Elaborating entity "pixelPLL" for hierarchy "pixelPLL:pixel" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 66
-Info (12128): Elaborating entity "pixelPLL_0002" for hierarchy "pixelPLL:pixel|pixelPLL_0002:pixelpll_inst" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL.v Line: 20
-Info (12128): Elaborating entity "altera_pll" for hierarchy "pixelPLL:pixel|pixelPLL_0002:pixelpll_inst|altera_pll:altera_pll_i" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL/pixelPLL_0002.v Line: 85
+Info (12128): Elaborating entity "PixelPll1080p60" for hierarchy "PixelPll1080p60:pixelPll" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 66
+Info (12128): Elaborating entity "PixelPll1080p60_0002" for hierarchy "PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60.v Line: 20
+Info (12128): Elaborating entity "altera_pll" for hierarchy "PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60/PixelPll1080p60_0002.v Line: 85
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
-Info (12130): Elaborated megafunction instantiation "pixelPLL:pixel|pixelPLL_0002:pixelpll_inst|altera_pll:altera_pll_i" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL/pixelPLL_0002.v Line: 85
-Info (12133): Instantiated megafunction "pixelPLL:pixel|pixelPLL_0002:pixelpll_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL/pixelPLL_0002.v Line: 85
-    Info (12134): Parameter "fractional_vco_multiplier" = "false"
+Info (12130): Elaborated megafunction instantiation "PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60/PixelPll1080p60_0002.v Line: 85
+Info (12133): Instantiated megafunction "PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60/PixelPll1080p60_0002.v Line: 85
+    Info (12134): Parameter "fractional_vco_multiplier" = "true"
     Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
     Info (12134): Parameter "operation_mode" = "direct"
     Info (12134): Parameter "number_of_clocks" = "1"
-    Info (12134): Parameter "output_clock_frequency0" = "55.294117 MHz"
+    Info (12134): Parameter "output_clock_frequency0" = "148.500000 MHz"
     Info (12134): Parameter "phase_shift0" = "0 ps"
     Info (12134): Parameter "duty_cycle0" = "50"
     Info (12134): Parameter "output_clock_frequency1" = "0 MHz"
@@ -865,20 +862,26 @@ Info (12133): Instantiated megafunction "pixelPLL:pixel|pixelPLL_0002:pixelpll_i
     Info (12134): Parameter "duty_cycle17" = "50"
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
-Info (12128): Elaborating entity "counter" for hierarchy "counter:hCounter" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 100
-Info (12128): Elaborating entity "hsync" for hierarchy "hsync:hSync" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 126
-Info (12128): Elaborating entity "vsync" for hierarchy "vsync:vSync" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 138
-Info (12128): Elaborating entity "dataWrite" for hierarchy "dataWrite:dataWrite_module" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 157
-Info (12128): Elaborating entity "i2cRegisterConfigure" for hierarchy "i2cRegisterConfigure:i2cROM" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 169
-Info (12128): Elaborating entity "i2cInterface" for hierarchy "i2cInterface:i2c" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 181
+Info (12128): Elaborating entity "hdmiInterface" for hierarchy "hdmiInterface:hdmi" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 90
+Warning (10036): Verilog HDL or VHDL warning at hdmiInterface.v(68): object "vCounter" assigned a value but never read File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiInterface.v Line: 68
+Info (10264): Verilog HDL Case Statement information at hdmiInterface.v(90): all case item expressions in this case statement are onehot File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiInterface.v Line: 90
+Info (10264): Verilog HDL Case Statement information at hdmiInterface.v(179): all case item expressions in this case statement are onehot File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiInterface.v Line: 179
+Info (12128): Elaborating entity "dataWrite" for hierarchy "dataWrite:dataWrite_module" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 181
+Info (12128): Elaborating entity "i2cRegisterConfigure" for hierarchy "i2cRegisterConfigure:i2cROM" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 193
+Info (12128): Elaborating entity "i2cInterface" for hierarchy "i2cInterface:i2c" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 205
 Info (12128): Elaborating entity "clockGen" for hierarchy "i2cInterface:i2c|clockGen:clockDivider" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cInterface.v Line: 72
-Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (17049): 13 registers lost all their fanouts during netlist optimizations.
+Warning (20013): Ignored 16 assignments for entity "pixelPLL" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_pll -entity pixelPLL -sip pixelPLL.sip -library lib_pixelPLL was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 17.1 -entity pixelPLL -sip pixelPLL.sip -library lib_pixelPLL was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV mwpim -entity pixelPLL -sip pixelPLL.sip -library lib_pixelPLL was ignored
+Warning (20013): Ignored 317 assignments for entity "pixelPLL_0002" -- entity does not exist in design
 Info (144001): Generated suppressed messages file C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/output_files/hdmiImageOverlay.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 3 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning: RST port on the PLL is not properly connected on instance pixelPLL:pixel|pixelPLL_0002:pixelpll_inst|altera_pll:altera_pll_i|general[0].gpll. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: g:/software/quartus/quartus/libraries/megafunctions/altera_pll.v Line: 748
+Warning: RST port on the PLL is not properly connected on instance PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i|general[0].gpll. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: g:/software/quartus/quartus/libraries/megafunctions/altera_pll.v Line: 748
     Info: Must be connected
 Warning (21074): Design contains 6 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "key0" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 27
@@ -887,17 +890,17 @@ Warning (21074): Design contains 6 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sw[1]" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 29
     Warning (15610): No output dependent on input pin "sw[2]" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 29
     Warning (15610): No output dependent on input pin "sw[3]" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 29
-Info (21057): Implemented 152 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 182 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 28 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 115 logic cells
+    Info (21061): Implemented 145 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
     Info: Peak virtual memory: 689 megabytes
-    Info: Processing ended: Mon May 28 22:33:23 2018
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Processing ended: Wed May 30 18:34:36 2018
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:24
 
 
 +------------------------------------------+

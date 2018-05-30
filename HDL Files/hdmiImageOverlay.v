@@ -37,8 +37,8 @@ module hdmiImageOverlay (
 );
 	
 	//Define resolution. Default 1920x1080.
-	parameter hPixels = 720;	//Horizontal pixel length
-	parameter vPixels = 1280;	//Vertical pixel length
+	parameter hPixels = 1920;	//Horizontal pixel length
+	parameter vPixels = 1080;	//Vertical pixel length
 	
 	//Refresh rate
 	parameter refreshRate = 60;	//Refresh rate. Default 30 frames a second.
@@ -58,23 +58,46 @@ module hdmiImageOverlay (
 	
 	wire pixelClock;
 	
-	//50MHz to 55.296 MHz PLL for 720p 60fps.
-	pixelPLL pixel(
+	//50MHz to 148.50MHz for 1080p 60fps
+	PixelPll1080p60 pixelPll(
 		.refclk		( clock_50 ),
 		.rst			( 1'b0 ),
 		.outclk_0	( pixelClock )
-	);
+	);	
 	
+	//1920x1080 @ 60 Hz parameters.
+	//HSync parameters
+	parameter hPlacement	= 88;	//How many pixel clocks HSync is set high after DE falls.
+	parameter hDuration		= 44;	//How many pixel clocks HSync is held high for.
+	parameter hDelay		= 192;	//How many pixel clocks DE goes high, after HSync goes high in the active video section.
+	parameter hPolarity		= 1;	//VSync is active High for 1.
+	//VSync parameters
+	parameter vPlacement	= 4;	//How many HSync periods VSync is set high after DE falls.
+	parameter vDuration		= 5;	//How many HSync periods VSync is held high for.
+	parameter vDelay		= 41;	//How many HSync periods it takes for DE to go high once VSync has gone high. (DE still effected by hDelay).
+	parameter vPolarity		= 1;	//VSync is active High for 1.
+	//Active screen resolution.
+	parameter width			= 1920;	//pixel width of the active video region.
+	parameter height		= 1080;	//pixel height of the active video region.
+	
+	hdmiInterface #( hPlacement, hDuration, hDelay, hPolarity, vPlacement, vDuration, vDelay, width, height )
+	hdmi
+	(
+		.pixelClock		( pixelClock ),
+		.DE				( DE ),
+		.HSYNC			( HSYNC ),
+		.VSYNC			( VSYNC )	
+	);
 	
 	//Define the bus widths used for counting the horizontal and vertical pixels.
 	//12 bits is 4096 x 4096 maximum.
 	//11 bits is 2048 x 2048 maximum.
-	parameter hCountWidth = 12;
-	parameter vCountWidth = 12;
+	//parameter hCountWidth = 12;
+	//parameter vCountWidth = 12;
 	
 	//Registers used for storing the pixel count
-	wire [ ( hCountWidth - 1 ) : 0 ] hCount;	//Horizontal pixel counter
-	wire [ ( vCountWidth - 1 ) : 0 ] vCount;	//Vertical pixel counter	
+	//wire [ ( hCountWidth - 1 ) : 0 ] hCount;	//Horizontal pixel counter
+	//wire [ ( vCountWidth - 1 ) : 0 ] vCount;	//Vertical pixel counter	
 	
 	//Registers used for resetting the horizontal and vertical counters.
 	//reg hReset_n = 1'b0;
@@ -86,6 +109,7 @@ module hdmiImageOverlay (
 	//Register Assignments
 	//assign data = dataReg; //Assign data register to data output
 	
+	/*
 	//Horizontal pixel counter, hCountWidth bits long.
 	counter #( hCountWidth )
 	hCounter
@@ -136,7 +160,7 @@ module hdmiImageOverlay (
 		//.vCountReset_n 	( vReset_n )	//Maps the vSync counter reset to vReset_n register
 		//.vCountReset_n 	( 1'b1 )	//Maps the vSync counter reset to vReset_n register
 	);
-/*
+	
 	DE #( hCountWidth, hPixels, vPixels )
 	de_module
 	(

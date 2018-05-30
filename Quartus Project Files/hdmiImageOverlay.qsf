@@ -52,15 +52,6 @@ set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VERILOG_FILE "../HDL Files/i2cRegisterConfigure.v"
-set_global_assignment -name VERILOG_FILE "../HDL Files/vsync.v"
-set_global_assignment -name VERILOG_FILE "../HDL Files/i2cInterface.v"
-set_global_assignment -name VERILOG_FILE "../HDL Files/hsync.v"
-set_global_assignment -name VERILOG_FILE "../HDL Files/hdmiImageOverlay.v"
-set_global_assignment -name VERILOG_FILE "../HDL Files/DE.v"
-set_global_assignment -name VERILOG_FILE "../HDL Files/dataWrite.v"
-set_global_assignment -name VERILOG_FILE "../HDL Files/counter.v"
-set_global_assignment -name VERILOG_FILE "../HDL Files/clockGen.v"
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_location_assignment PIN_AD10 -to data[5]
@@ -129,6 +120,18 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[20]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[19]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[18]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to data[17]
+set_global_assignment -name VERILOG_FILE "../HDL Files/hdmiInterface.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/i2cRegisterConfigure.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/vsync.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/i2cInterface.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/hsync.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/hdmiImageOverlay.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/DE.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/dataWrite.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/counter.v"
+set_global_assignment -name VERILOG_FILE "../HDL Files/clockGen.v"
 set_global_assignment -name QIP_FILE pixelPLL.qip
 set_global_assignment -name SIP_FILE pixelPLL.sip
+set_global_assignment -name QIP_FILE PixelPll1080p60.qip
+set_global_assignment -name SIP_FILE PixelPll1080p60.sip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

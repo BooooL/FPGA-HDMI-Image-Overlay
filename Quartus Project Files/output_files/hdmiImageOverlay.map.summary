@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Mon May 28 22:33:23 2018
+Analysis & Synthesis Status : Successful - Wed May 30 18:34:36 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : hdmiImageOverlay
 Top-level Entity Name : hdmiImageOverlay
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 94
+Total registers : 100
 Total pins : 36
 Total virtual pins : 0
 Total block memory bits : 0

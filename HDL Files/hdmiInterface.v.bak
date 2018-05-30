@@ -1,0 +1,142 @@
+//Verilog HDMI Interface
+//Copyright (C) 2018 Alexander Knapik & Keane-Gene Yew
+//under the GNU General Public License v3.0 or any later version
+//29.05.2018
+
+/*
+    This file is part of FPGA-HDMI-Image-Overlay. 
+	https://github.com/AlexanderKnapik/FPGA-HDMI-Image-Overlay
+
+    FPGA-HDMI-Image-Overlay is free software: you can redistribute it and/or 
+	modify it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    FPGA-HDMI-Image-Overlay is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with FPGA-HDMI-Image-Overlay.
+	
+	If not, see <http://www.gnu.org/licenses/>.
+*/
+
+module hdmiInterface 
+//Parameters passed via the top level entity.
+//The ones here defined are for 1920x1080p 60fps
+//With an input pixel clock of 148.50MHz
+#(
+	//HSync parameters
+	parameter hPlacement	= 88,	//How many pixel clocks HSync is set high after DE falls.
+	parameter hDuration		= 44,	//How many pixel clocks HSync is held high for.
+	parameter hDelay		= 192,	//How many pixel clocks DE goes high, after HSync goes high in the active video section.
+	parameter hPolarity		= 1,	//VSync is active High for 1.
+	//VSync parameters
+	parameter vPlacement	= 4,	//How many HSync periods VSync is set high after DE falls.
+	parameter vDuration		= 5,	//How many HSync periods VSync is held high for.
+	parameter vDelay		= 41,	//How many HSync periods it takes for DE to go high once VSync has gone high. (DE still effected by hDelay).
+	parameter vPolarity		= 1,	//VSync is active High for 1.
+	//Active screen resolution.
+	parameter width			= 1920,	//pixel width of the active video region.
+	parameter height		= 1080	//pixel height of the active video region.
+)
+//Defining the inputs and outputs of the system.
+(
+	input 	pixelClock,				//Pixel clock used for the system. 148.5MHz.
+	output	DE,						//Data Enable 	
+	output 	HSYNC,					//Horizontal Sync
+	output	VSYNC					//Vertical Sync
+);
+	localparam lineWidth	= width + hPlacement + hDelay;	//2200 Horizontal clocks per line.
+	localparam lineHeight	= height + vPlacement + vDelay;	//1125 Vertical lines.
+
+	//How many pixel clocks it takes for DE to go high after HSync goes low.
+	localparam deDelay		= ( hDelay - ( hDuration + hPlacement ) );	//148 pixel clocks
+	
+	reg de		= 1'b0;
+	reg hsync	= 1'b0;
+	reg vsync	= 1'b0;
+	
+	assign DE 		= de;
+	assign HSYNC	= hsync;
+	assign VSYNC	= vsync;
+	
+	reg [11:0]	pCounter		= 0;	//Counting pixel clocks.
+	reg [11:0]	hCounter 		= 0;	//Count pixel clocks for pulsing HSync/DE
+	reg [11:0]	vCounter		= 0;	//Count HSync pulses for pulsing VSync.
+	
+	localparam resetState		= 0;
+	localparam startFrame		= 1;
+	localparam vSyncInitial		= 2;
+	
+	reg[4:0]	currentState	= 0;
+	reg[4:0]	nextState		= 0;
+	
+	/*
+	//Logic to handle the currentState -> nextState transition.
+	//Sensitivity list based on the input clock.
+	always @( posedge( pixelClock ) )
+		begin: nextStateTransition
+			currentState <= nextState;	
+		end
+		
+	//Logic handling which state will transition into which.
+	always @( * )
+		begin: nextStateLogic
+			case( currentState )
+				default:
+					begin
+						nextState <= startFrame;
+					end
+				
+				startFrame:
+					begin
+						//If there has been an hDuration amount of pixel clocks,
+						//Go onto the vSyncInitial state.
+						//Else, stay in the same state. (Keep hSync high)
+						if( pCounter == hDuration )
+							begin
+								nextState <= vSyncInitial;
+							end
+						else
+							begin
+								nextState <= currentState;
+							end
+					end
+					
+				vSyncInitial:
+					begin
+						nextState <= 
+	*/
+	
+	always @ ( posedge ( pixelClock ) )
+		begin
+			
+			if ( pCounter == lineWidth )
+				begin
+					pCounter <= 0;
+					hCounter <= hCounter + 1'b1;
+				end
+			else if ( hCounter == lineHeight )
+				begin
+					pCounter <= pCounter;
+					hCounter <= 0;
+				end
+			else
+				begin
+					pCounter <= pCounter + 1'b1;
+					hCounter <= hCounter;
+				end			
+		end
+	/*
+	always @ ( posedge ( pixelClock ) )
+		begin
+		
+			if( pCounter == 0
+			
+		end
+	*/		
+
+endmodule

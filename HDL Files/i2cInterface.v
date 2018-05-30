@@ -109,7 +109,7 @@ module i2cInterface
 	localparam i2cStop1				= 12;	//Set SCL and SDA low for initialising the stop of communications.
 	localparam i2cStop2				= 13;	//Set SCL high while SDA is low to initialise stopping i2c communications
 	
-	reg [3:0] currentState;	//Storing current state. Default idle state.
+	reg [3:0] currentState;					//Storing current state. Default idle state.
 	reg [3:0] nextState;					//Storing next state
 		
 	//Logic to handle the currentState -> nextState transition.
