@@ -1,0 +1,22 @@
+//Text engine module
+
+//Keep track of "cursor" location e.g. pixel location (238, 132) out of (1280, 720)
+//Choose character
+//Somehow link that chosen character to its data location in the lookup table
+//Write first line of the character
+//Move the cursor location down 1 pixel
+//Repeat for the second line, and so on until the character is written
+//Calculate new position of cursor 
+//
+//Repeat 
+
+module textEngine
+(
+
+
+
+);
+
+
+
+endmodule

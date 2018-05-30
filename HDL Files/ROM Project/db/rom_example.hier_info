@@ -1,4 +1,34 @@
-|lookupTLE
+|projectTLE
+clock => clock.IN2
+key0 => key0.IN1
+key1 => key1.IN1
+dataOutput[0] << dataWrite:dataWrite_module.dataOutput
+dataOutput[1] << dataWrite:dataWrite_module.dataOutput
+dataOutput[2] << dataWrite:dataWrite_module.dataOutput
+dataOutput[3] << dataWrite:dataWrite_module.dataOutput
+dataOutput[4] << dataWrite:dataWrite_module.dataOutput
+dataOutput[5] << dataWrite:dataWrite_module.dataOutput
+dataOutput[6] << dataWrite:dataWrite_module.dataOutput
+dataOutput[7] << dataWrite:dataWrite_module.dataOutput
+dataOutput[8] << dataWrite:dataWrite_module.dataOutput
+dataOutput[9] << dataWrite:dataWrite_module.dataOutput
+dataOutput[10] << dataWrite:dataWrite_module.dataOutput
+dataOutput[11] << dataWrite:dataWrite_module.dataOutput
+dataOutput[12] << dataWrite:dataWrite_module.dataOutput
+dataOutput[13] << dataWrite:dataWrite_module.dataOutput
+dataOutput[14] << dataWrite:dataWrite_module.dataOutput
+dataOutput[15] << dataWrite:dataWrite_module.dataOutput
+dataOutput[16] << dataWrite:dataWrite_module.dataOutput
+dataOutput[17] << dataWrite:dataWrite_module.dataOutput
+dataOutput[18] << dataWrite:dataWrite_module.dataOutput
+dataOutput[19] << dataWrite:dataWrite_module.dataOutput
+dataOutput[20] << dataWrite:dataWrite_module.dataOutput
+dataOutput[21] << dataWrite:dataWrite_module.dataOutput
+dataOutput[22] << dataWrite:dataWrite_module.dataOutput
+dataOutput[23] << dataWrite:dataWrite_module.dataOutput
+
+
+|projectTLE|lookupTLE:lookupTLE_module
 romAddress[0] => romAddress[0].IN1
 romAddress[1] => romAddress[1].IN1
 romAddress[2] => romAddress[2].IN1
@@ -11,17 +41,17 @@ romAddress[8] => romAddress[8].IN1
 romAddress[9] => romAddress[9].IN1
 romAddress[10] => romAddress[10].IN1
 clock => clock.IN1
-romData[0] << lookupTable2:romLookup.q
-romData[1] << lookupTable2:romLookup.q
-romData[2] << lookupTable2:romLookup.q
-romData[3] << lookupTable2:romLookup.q
-romData[4] << lookupTable2:romLookup.q
-romData[5] << lookupTable2:romLookup.q
-romData[6] << lookupTable2:romLookup.q
-romData[7] << lookupTable2:romLookup.q
+romData[0] <= lookupTable2:romLookup.q
+romData[1] <= lookupTable2:romLookup.q
+romData[2] <= lookupTable2:romLookup.q
+romData[3] <= lookupTable2:romLookup.q
+romData[4] <= lookupTable2:romLookup.q
+romData[5] <= lookupTable2:romLookup.q
+romData[6] <= lookupTable2:romLookup.q
+romData[7] <= lookupTable2:romLookup.q
 
 
-|lookupTLE|lookupTable2:romLookup
+|projectTLE|lookupTLE:lookupTLE_module|lookupTable2:romLookup
 address[0] => address[0].IN1
 address[1] => address[1].IN1
 address[2] => address[2].IN1
@@ -53,7 +83,7 @@ q[6] <= altsyncram:altsyncram_component.q_a
 q[7] <= altsyncram:altsyncram_component.q_a
 
 
-|lookupTLE|lookupTable2:romLookup|altsyncram:altsyncram_component
+|projectTLE|lookupTLE:lookupTLE_module|lookupTable2:romLookup|altsyncram:altsyncram_component
 wren_a => altsyncram_kao1:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -105,7 +135,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|lookupTLE|lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated
+|projectTLE|lookupTLE:lookupTLE_module|lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -226,5 +256,143 @@ wren_a => ram_block1a4.PORTAWE
 wren_a => ram_block1a5.PORTAWE
 wren_a => ram_block1a6.PORTAWE
 wren_a => ram_block1a7.PORTAWE
+
+
+|projectTLE|dataWrite:dataWrite_module
+clock => romAddressReg[0].CLK
+clock => romAddressReg[1].CLK
+clock => romAddressReg[2].CLK
+clock => romAddressReg[3].CLK
+clock => romAddressReg[4].CLK
+clock => romAddressReg[5].CLK
+clock => romAddressReg[6].CLK
+clock => romAddressReg[7].CLK
+clock => romAddressReg[8].CLK
+clock => romAddressReg[9].CLK
+clock => romAddressReg[10].CLK
+clock => alphabetCount[0].CLK
+clock => alphabetCount[1].CLK
+clock => alphabetCount[2].CLK
+clock => alphabetCount[3].CLK
+clock => alphabetCount[4].CLK
+clock => alphabetCount[5].CLK
+clock => dataLocation[0].CLK
+clock => dataLocation[1].CLK
+clock => dataLocation[2].CLK
+clock => dataLocation[3].CLK
+clock => pixelRemainder[0].CLK
+clock => pixelRemainder[1].CLK
+clock => pixelRemainder[2].CLK
+clock => pixelRemainder[3].CLK
+clock => pixelRemainder[4].CLK
+clock => pixelRemainder[5].CLK
+clock => pixelRemainder[6].CLK
+clock => pixelRemainder[7].CLK
+clock => pixelRemainder[8].CLK
+clock => pixelRemainder[9].CLK
+clock => pixelRemainder[10].CLK
+clock => pixelRemainder[11].CLK
+clock => outputReg[0].CLK
+clock => outputReg[1].CLK
+clock => outputReg[2].CLK
+clock => outputReg[3].CLK
+clock => outputReg[4].CLK
+clock => outputReg[5].CLK
+clock => outputReg[6].CLK
+clock => outputReg[7].CLK
+clock => outputReg[8].CLK
+clock => outputReg[9].CLK
+clock => outputReg[10].CLK
+clock => outputReg[11].CLK
+clock => outputReg[12].CLK
+clock => outputReg[13].CLK
+clock => outputReg[14].CLK
+clock => outputReg[15].CLK
+clock => outputReg[16].CLK
+clock => outputReg[17].CLK
+clock => outputReg[18].CLK
+clock => outputReg[19].CLK
+clock => outputReg[20].CLK
+clock => outputReg[21].CLK
+clock => outputReg[22].CLK
+clock => outputReg[23].CLK
+clock => nextState~1.DATAIN
+clock => currentState~1.DATAIN
+key0 => alphabetCount.OUTPUTSELECT
+key0 => alphabetCount.OUTPUTSELECT
+key0 => alphabetCount.OUTPUTSELECT
+key0 => alphabetCount.OUTPUTSELECT
+key0 => alphabetCount.OUTPUTSELECT
+key0 => alphabetCount.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => nextState.OUTPUTSELECT
+key0 => nextState.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => romAddressReg.OUTPUTSELECT
+key0 => nextState.OUTPUTSELECT
+key0 => nextState.OUTPUTSELECT
+key1 => ~NO_FANOUT~
+romData[0] => Mux0.IN10
+romData[1] => Mux0.IN9
+romData[2] => Mux0.IN8
+romData[3] => Mux0.IN7
+romData[4] => Mux0.IN6
+romData[5] => Mux0.IN5
+romData[6] => Mux0.IN4
+romData[7] => Mux0.IN3
+dataOutput[0] <= outputReg[0].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[1] <= outputReg[1].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[2] <= outputReg[2].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[3] <= outputReg[3].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[4] <= outputReg[4].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[5] <= outputReg[5].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[6] <= outputReg[6].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[7] <= outputReg[7].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[8] <= outputReg[8].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[9] <= outputReg[9].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[10] <= outputReg[10].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[11] <= outputReg[11].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[12] <= outputReg[12].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[13] <= outputReg[13].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[14] <= outputReg[14].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[15] <= outputReg[15].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[16] <= outputReg[16].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[17] <= outputReg[17].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[18] <= outputReg[18].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[19] <= outputReg[19].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[20] <= outputReg[20].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[21] <= outputReg[21].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[22] <= outputReg[22].DB_MAX_OUTPUT_PORT_TYPE
+dataOutput[23] <= outputReg[23].DB_MAX_OUTPUT_PORT_TYPE
+romAddress[0] <= romAddressReg[0].DB_MAX_OUTPUT_PORT_TYPE
+romAddress[1] <= romAddressReg[1].DB_MAX_OUTPUT_PORT_TYPE
+romAddress[2] <= romAddressReg[2].DB_MAX_OUTPUT_PORT_TYPE
+romAddress[3] <= romAddressReg[3].DB_MAX_OUTPUT_PORT_TYPE
+romAddress[4] <= romAddressReg[4].DB_MAX_OUTPUT_PORT_TYPE
+romAddress[5] <= romAddressReg[5].DB_MAX_OUTPUT_PORT_TYPE
+romAddress[6] <= romAddressReg[6].DB_MAX_OUTPUT_PORT_TYPE
+romAddress[7] <= romAddressReg[7].DB_MAX_OUTPUT_PORT_TYPE
+romAddress[8] <= romAddressReg[8].DB_MAX_OUTPUT_PORT_TYPE
+romAddress[9] <= romAddressReg[9].DB_MAX_OUTPUT_PORT_TYPE
+romAddress[10] <= romAddressReg[10].DB_MAX_OUTPUT_PORT_TYPE
 
 

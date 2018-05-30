@@ -1,0 +1,11 @@
+
+State Machine - |projectTLE|dataWrite:dataWrite_module|nextState
+Name nextState.writeBlank 
+nextState.romWrite 0 
+nextState.writeBlank 1 
+
+State Machine - |projectTLE|dataWrite:dataWrite_module|currentState
+Name currentState.keyState currentState.writeBlank currentState.romWrite 
+currentState.keyState 0 0 0 
+currentState.romWrite 1 0 1 
+currentState.writeBlank 1 1 0 

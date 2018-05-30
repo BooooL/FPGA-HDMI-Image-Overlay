@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rom_example
-Mon May 14 16:20:56 2018
+Wed May 30 16:01:33 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -15,14 +15,23 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. General Register Statistics
- 11. Source assignments for lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated
- 12. Parameter Settings for User Entity Instance: lookupTable2:romLookup|altsyncram:altsyncram_component
- 13. altsyncram Parameter Settings by Entity Instance
- 14. Port Connectivity Checks: "lookupTable2:romLookup"
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+ 10. State Machine - |projectTLE|dataWrite:dataWrite_module|nextState
+ 11. State Machine - |projectTLE|dataWrite:dataWrite_module|currentState
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for lookupTLE:lookupTLE_module|lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated
+ 17. Parameter Settings for User Entity Instance: lookupTLE:lookupTLE_module|lookupTable2:romLookup|altsyncram:altsyncram_component
+ 18. Parameter Settings for User Entity Instance: dataWrite:dataWrite_module
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "dataWrite:dataWrite_module"
+ 21. Port Connectivity Checks: "lookupTLE:lookupTLE_module|lookupTable2:romLookup"
+ 22. Port Connectivity Checks: "lookupTLE:lookupTLE_module"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -48,14 +57,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 14 16:20:56 2018       ;
+; Analysis & Synthesis Status     ; Successful - Wed May 30 16:01:33 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; rom_example                                 ;
-; Top-level Entity Name           ; lookupTLE                                   ;
+; Top-level Entity Name           ; projectTLE                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 20                                          ;
+; Total registers                 ; 38                                          ;
+; Total pins                      ; 27                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 16,384                                      ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -74,7 +83,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEBA6U23I7DK     ;                    ;
-; Top-level entity name                                                           ; lookupTLE          ; rom_example        ;
+; Top-level entity name                                                           ; projectTLE         ; rom_example        ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
@@ -164,10 +173,11 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -179,6 +189,8 @@ refer to the applicable agreement for further details.
 ; rom_example.mif                  ; yes             ; User Memory Initialization File  ; C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/rom_example.mif        ;         ;
 ; lookupTable2.v                   ; yes             ; User Wizard-Generated File       ; C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/lookupTable2.v         ;         ;
 ; lookupTLE.v                      ; yes             ; User Verilog HDL File            ; C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/lookupTLE.v            ;         ;
+; dataWrite.v                      ; yes             ; User Verilog HDL File            ; C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/dataWrite.v            ;         ;
+; projectTLE.v                     ; yes             ; User Verilog HDL File            ; C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/projectTLE.v           ;         ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                ;         ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                         ;         ;
 ; lpm_mux.inc                      ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                   ;         ;
@@ -192,64 +204,100 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimate of Logic utilization (ALMs needed) ; 1     ;
-;                                             ;       ;
-; Combinational ALUT usage for logic          ; 1     ;
-;     -- 7 input functions                    ; 0     ;
-;     -- 6 input functions                    ; 0     ;
-;     -- 5 input functions                    ; 0     ;
-;     -- 4 input functions                    ; 0     ;
-;     -- <=3 input functions                  ; 1     ;
-;                                             ;       ;
-; Dedicated logic registers                   ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 20    ;
-; Total MLAB memory bits                      ; 0     ;
-; Total block memory bits                     ; 16384 ;
-;                                             ;       ;
-; Total DSP Blocks                            ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; ~GND  ;
-; Maximum fan-out                             ; 8     ;
-; Total fan-out                               ; 132   ;
-; Average fan-out                             ; 2.69  ;
-+---------------------------------------------+-------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 49          ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 81          ;
+;     -- 7 input functions                    ; 3           ;
+;     -- 6 input functions                    ; 13          ;
+;     -- 5 input functions                    ; 12          ;
+;     -- 4 input functions                    ; 14          ;
+;     -- <=3 input functions                  ; 39          ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 38          ;
+;                                             ;             ;
+; I/O pins                                    ; 27          ;
+; Total MLAB memory bits                      ; 0           ;
+; Total block memory bits                     ; 16384       ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 46          ;
+; Total fan-out                               ; 572         ;
+; Average fan-out                             ; 3.16        ;
++---------------------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                    ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                              ; Entity Name     ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |lookupTLE                                ; 1 (1)               ; 0 (0)                     ; 16384             ; 0          ; 20   ; 0            ; |lookupTLE                                                                                       ; lookupTLE       ; work         ;
-;    |lookupTable2:romLookup|               ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |lookupTLE|lookupTable2:romLookup                                                                ; lookupTable2    ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |lookupTLE|lookupTable2:romLookup|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
-;          |altsyncram_kao1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |lookupTLE|lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated ; altsyncram_kao1 ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------+-----------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                   ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                          ; Entity Name     ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |projectTLE                                  ; 81 (1)              ; 38 (0)                    ; 16384             ; 0          ; 27   ; 0            ; |projectTLE                                                                                                                  ; projectTLE      ; work         ;
+;    |dataWrite:dataWrite_module|              ; 80 (80)             ; 38 (38)                   ; 0                 ; 0          ; 0    ; 0            ; |projectTLE|dataWrite:dataWrite_module                                                                                       ; dataWrite       ; work         ;
+;    |lookupTLE:lookupTLE_module|              ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |projectTLE|lookupTLE:lookupTLE_module                                                                                       ; lookupTLE       ; work         ;
+;       |lookupTable2:romLookup|               ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |projectTLE|lookupTLE:lookupTLE_module|lookupTable2:romLookup                                                                ; lookupTable2    ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |projectTLE|lookupTLE:lookupTLE_module|lookupTable2:romLookup|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
+;             |altsyncram_kao1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 16384             ; 0          ; 0    ; 0            ; |projectTLE|lookupTLE:lookupTLE_module|lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated ; altsyncram_kao1 ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                            ;
-+--------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+-----------------+
-; Name                                                                                             ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF             ;
-+--------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+-----------------+
-; lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 8            ; --           ; --           ; 16384 ; rom_example.mif ;
-+--------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+-----------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                       ;
++-----------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+-----------------+
+; Name                                                                                                                        ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF             ;
++-----------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+-----------------+
+; lookupTLE:lookupTLE_module|lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 8            ; --           ; --           ; 16384 ; rom_example.mif ;
++-----------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+-----------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                               ;
-+--------+--------------+---------+--------------+--------------+-----------------------------------+-----------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                   ; IP Include File ;
-+--------+--------------+---------+--------------+--------------+-----------------------------------+-----------------+
-; Altera ; RAM: 1-PORT  ; 17.1    ; N/A          ; N/A          ; |lookupTLE|lookupTable2:romLookup ; lookupTable2.v  ;
-+--------+--------------+---------+--------------+--------------+-----------------------------------+-----------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                           ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                               ; IP Include File ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------------------------+-----------------+
+; Altera ; RAM: 1-PORT  ; 17.1    ; N/A          ; N/A          ; |projectTLE|lookupTLE:lookupTLE_module|lookupTable2:romLookup ; lookupTable2.v  ;
++--------+--------------+---------+--------------+--------------+---------------------------------------------------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------+
+; State Machine - |projectTLE|dataWrite:dataWrite_module|nextState ;
++----------------------+-------------------------------------------+
+; Name                 ; nextState.writeBlank                      ;
++----------------------+-------------------------------------------+
+; nextState.romWrite   ; 0                                         ;
+; nextState.writeBlank ; 1                                         ;
++----------------------+-------------------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |projectTLE|dataWrite:dataWrite_module|currentState                               ;
++-------------------------+-----------------------+-------------------------+-----------------------+
+; Name                    ; currentState.keyState ; currentState.writeBlank ; currentState.romWrite ;
++-------------------------+-----------------------+-------------------------+-----------------------+
+; currentState.keyState   ; 0                     ; 0                       ; 0                     ;
+; currentState.romWrite   ; 1                     ; 0                       ; 1                     ;
+; currentState.writeBlank ; 1                     ; 1                       ; 0                     ;
++-------------------------+-----------------------+-------------------------+-----------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                ;
++---------------------------------------------+-----------------------------------------------------+
+; Register name                               ; Reason for Removal                                  ;
++---------------------------------------------+-----------------------------------------------------+
+; dataWrite:dataWrite_module|outputReg[1..23] ; Merged with dataWrite:dataWrite_module|outputReg[0] ;
+; dataWrite:dataWrite_module|nextState~3      ; Lost fanout                                         ;
+; Total Number of Removed Registers = 24      ;                                                     ;
++---------------------------------------------+-----------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -257,108 +305,154 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 38    ;
+; Number of registers using Synchronous Clear  ; 12    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 29    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------+
-; Source assignments for lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated ;
-+---------------------------------+--------------------+------+------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                             ;
-+---------------------------------+--------------------+------+------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                              ;
-+---------------------------------+--------------------+------+------------------------------------------------+
++------------------------------------------------------+
+; Inverted Register Statistics                         ;
++--------------------------------------------+---------+
+; Inverted Register                          ; Fan out ;
++--------------------------------------------+---------+
+; dataWrite:dataWrite_module|dataLocation[3] ; 3       ;
+; Total number of inverted registers = 1     ;         ;
++--------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: lookupTable2:romLookup|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+-----------------------------------------+
-; Parameter Name                     ; Value                ; Type                                    ;
-+------------------------------------+----------------------+-----------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                 ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                              ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                            ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                            ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                          ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                 ;
-; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                 ;
-; WIDTH_A                            ; 8                    ; Signed Integer                          ;
-; WIDTHAD_A                          ; 11                   ; Signed Integer                          ;
-; NUMWORDS_A                         ; 2048                 ; Signed Integer                          ;
-; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                 ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                 ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                 ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                 ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                 ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                 ;
-; WIDTH_B                            ; 1                    ; Untyped                                 ;
-; WIDTHAD_B                          ; 1                    ; Untyped                                 ;
-; NUMWORDS_B                         ; 1                    ; Untyped                                 ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                 ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                 ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                 ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                 ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                 ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                 ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                 ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                 ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                 ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                 ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                 ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                 ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                          ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                 ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                 ;
-; BYTE_SIZE                          ; 8                    ; Untyped                                 ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                 ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                 ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                 ;
-; INIT_FILE                          ; rom_example.mif      ; Untyped                                 ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                 ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                 ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                 ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                 ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                 ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                 ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                 ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                 ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                 ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                 ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                 ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                 ;
-; CBXI_PARAMETER                     ; altsyncram_kao1      ; Untyped                                 ;
-+------------------------------------+----------------------+-----------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 0 LEs                ; 12 LEs                 ; Yes        ; |projectTLE|dataWrite:dataWrite_module|alphabetCount[0]   ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |projectTLE|dataWrite:dataWrite_module|dataLocation[1]    ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |projectTLE|dataWrite:dataWrite_module|pixelRemainder[11] ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |projectTLE|dataWrite:dataWrite_module|romAddressReg[10]  ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |projectTLE|dataWrite:dataWrite_module|romAddressReg[5]   ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |projectTLE|dataWrite:dataWrite_module|Selector58         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for lookupTLE:lookupTLE_module|lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                        ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                         ;
++---------------------------------+--------------------+------+---------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lookupTLE:lookupTLE_module|lookupTable2:romLookup|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+--------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                               ;
++------------------------------------+----------------------+--------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                            ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                         ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                       ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                       ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                     ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                            ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                                            ;
+; WIDTH_A                            ; 8                    ; Signed Integer                                                     ;
+; WIDTHAD_A                          ; 11                   ; Signed Integer                                                     ;
+; NUMWORDS_A                         ; 2048                 ; Signed Integer                                                     ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                                            ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                            ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                            ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                            ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                            ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                            ;
+; WIDTH_B                            ; 1                    ; Untyped                                                            ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                            ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                            ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                            ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                            ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                            ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                            ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                            ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                            ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                            ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                            ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                            ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                            ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                            ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                            ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                     ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                            ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                            ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                            ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                            ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                            ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                            ;
+; INIT_FILE                          ; rom_example.mif      ; Untyped                                                            ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                            ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                            ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                            ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                            ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                            ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                            ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                            ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                            ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                            ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                            ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                            ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                                            ;
+; CBXI_PARAMETER                     ; altsyncram_kao1      ; Untyped                                                            ;
++------------------------------------+----------------------+--------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                                   ;
-+-------------------------------------------+--------------------------------------------------------+
-; Name                                      ; Value                                                  ;
-+-------------------------------------------+--------------------------------------------------------+
-; Number of entity instances                ; 1                                                      ;
-; Entity Instance                           ; lookupTable2:romLookup|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; SINGLE_PORT                                            ;
-;     -- WIDTH_A                            ; 8                                                      ;
-;     -- NUMWORDS_A                         ; 2048                                                   ;
-;     -- OUTDATA_REG_A                      ; CLOCK0                                                 ;
-;     -- WIDTH_B                            ; 1                                                      ;
-;     -- NUMWORDS_B                         ; 1                                                      ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                 ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                           ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                   ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                              ;
-+-------------------------------------------+--------------------------------------------------------+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dataWrite:dataWrite_module ;
++----------------+-------------+------------------------------------------+
+; Parameter Name ; Value       ; Type                                     ;
++----------------+-------------+------------------------------------------+
+; hLength        ; 11          ; Signed Integer                           ;
+; vLength        ; 11          ; Signed Integer                           ;
+; resHorizontal  ; 10100000000 ; Unsigned Binary                          ;
+; resVertical    ; 01011010000 ; Unsigned Binary                          ;
++----------------+-------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                              ;
++-------------------------------------------+-----------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                             ;
++-------------------------------------------+-----------------------------------------------------------------------------------+
+; Number of entity instances                ; 1                                                                                 ;
+; Entity Instance                           ; lookupTLE:lookupTLE_module|lookupTable2:romLookup|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                                       ;
+;     -- WIDTH_A                            ; 8                                                                                 ;
+;     -- NUMWORDS_A                         ; 2048                                                                              ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                                            ;
+;     -- WIDTH_B                            ; 1                                                                                 ;
+;     -- NUMWORDS_B                         ; 1                                                                                 ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                            ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                      ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                              ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                         ;
++-------------------------------------------+-----------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dataWrite:dataWrite_module"                                                                                                                                                   ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                                                 ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; romAddress ; Output ; Warning  ; Output or bidir port (11 bits) is smaller than the port expression (12 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "lookupTable2:romLookup"                                                                                                                     ;
+; Port Connectivity Checks: "lookupTLE:lookupTLE_module|lookupTable2:romLookup"                                                                                          ;
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port ; Type  ; Severity ; Details                                                                                                                                      ;
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -367,19 +461,45 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lookupTLE:lookupTLE_module"                                                                                                                                                             ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; romAddress ; Input ; Warning  ; Input port expression (12 bits) is wider than the input port (11 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 1                           ;
-;     normal            ; 1                           ;
+; arriav_ff             ; 38                          ;
+;     ENA               ; 17                          ;
+;     ENA SCLR          ; 12                          ;
+;     plain             ; 9                           ;
+; arriav_lcell_comb     ; 81                          ;
+;     arith             ; 30                          ;
+;         1 data inputs ; 23                          ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 5                           ;
+;         5 data inputs ; 1                           ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 48                          ;
 ;         0 data inputs ; 1                           ;
-; boundary_port         ; 20                          ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 7                           ;
+;         4 data inputs ; 9                           ;
+;         5 data inputs ; 11                          ;
+;         6 data inputs ; 13                          ;
+; boundary_port         ; 27                          ;
 ; stratixv_ram_block    ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 4.40                        ;
+; Average LUT depth     ; 2.74                        ;
 +-----------------------+-----------------------------+
 
 
@@ -398,7 +518,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon May 14 16:20:39 2018
+    Info: Processing started: Wed May 30 16:01:16 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rom_example -c rom_example
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -408,11 +528,22 @@ Info (12021): Found 1 design units, including 1 entities, in source file lookupt
     Info (12023): Found entity 1: lookupTable2 File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/lookupTable2.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file lookuptle.v
     Info (12023): Found entity 1: lookupTLE File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/lookupTLE.v Line: 3
-Info (12127): Elaborating entity "lookupTLE" for the top level hierarchy
-Info (12128): Elaborating entity "lookupTable2" for hierarchy "lookupTable2:romLookup" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/lookupTLE.v Line: 16
-Info (12128): Elaborating entity "altsyncram" for hierarchy "lookupTable2:romLookup|altsyncram:altsyncram_component" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/lookupTable2.v Line: 85
-Info (12130): Elaborated megafunction instantiation "lookupTable2:romLookup|altsyncram:altsyncram_component" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/lookupTable2.v Line: 85
-Info (12133): Instantiated megafunction "lookupTable2:romLookup|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/lookupTable2.v Line: 85
+Info (12021): Found 1 design units, including 1 entities, in source file textengine.v
+    Info (12023): Found entity 1: textEngine File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/textEngine.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file datawrite.v
+    Info (12023): Found entity 1: dataWrite File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/dataWrite.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file projecttle.v
+    Info (12023): Found entity 1: projectTLE File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/projectTLE.v Line: 4
+Warning (10222): Verilog HDL Parameter Declaration warning at dataWrite.v(30): Parameter Declaration in module "dataWrite" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/dataWrite.v Line: 30
+Warning (10222): Verilog HDL Parameter Declaration warning at dataWrite.v(31): Parameter Declaration in module "dataWrite" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/dataWrite.v Line: 31
+Warning (10222): Verilog HDL Parameter Declaration warning at dataWrite.v(32): Parameter Declaration in module "dataWrite" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/dataWrite.v Line: 32
+Warning (10222): Verilog HDL Parameter Declaration warning at dataWrite.v(33): Parameter Declaration in module "dataWrite" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/dataWrite.v Line: 33
+Info (12127): Elaborating entity "projectTLE" for the top level hierarchy
+Info (12128): Elaborating entity "lookupTLE" for hierarchy "lookupTLE:lookupTLE_module" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/projectTLE.v Line: 21
+Info (12128): Elaborating entity "lookupTable2" for hierarchy "lookupTLE:lookupTLE_module|lookupTable2:romLookup" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/lookupTLE.v Line: 16
+Info (12128): Elaborating entity "altsyncram" for hierarchy "lookupTLE:lookupTLE_module|lookupTable2:romLookup|altsyncram:altsyncram_component" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/lookupTable2.v Line: 85
+Info (12130): Elaborated megafunction instantiation "lookupTLE:lookupTLE_module|lookupTable2:romLookup|altsyncram:altsyncram_component" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/lookupTable2.v Line: 85
+Info (12133): Instantiated megafunction "lookupTLE:lookupTLE_module|lookupTable2:romLookup|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/lookupTable2.v Line: 85
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "init_file" = "rom_example.mif"
@@ -430,19 +561,35 @@ Info (12133): Instantiated megafunction "lookupTable2:romLookup|altsyncram:altsy
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_kao1.tdf
     Info (12023): Found entity 1: altsyncram_kao1 File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/db/altsyncram_kao1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_kao1" for hierarchy "lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12128): Elaborating entity "altsyncram_kao1" for hierarchy "lookupTLE:lookupTLE_module|lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "dataWrite" for hierarchy "dataWrite:dataWrite_module" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/projectTLE.v Line: 31
+Warning (10036): Verilog HDL or VHDL warning at dataWrite.v(39): object "xLocation" assigned a value but never read File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/dataWrite.v Line: 39
+Warning (10036): Verilog HDL or VHDL warning at dataWrite.v(40): object "yLocation" assigned a value but never read File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/dataWrite.v Line: 40
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "n2_romAddress[11]" is missing source, defaulting to GND File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/projectTLE.v Line: 14
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/output_files/rom_example.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 29 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 12 input pins
-    Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 1 logic cells
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "key1" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/projectTLE.v Line: 8
+Info (21057): Implemented 121 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 24 output pins
+    Info (21061): Implemented 86 logic cells
     Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 725 megabytes
-    Info: Processing ended: Mon May 14 16:20:56 2018
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4826 megabytes
+    Info: Processing ended: Wed May 30 16:01:33 2018
     Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:38
+    Info: Total CPU time (on all processors): 00:00:37
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/output_files/rom_example.map.smsg.
 
 

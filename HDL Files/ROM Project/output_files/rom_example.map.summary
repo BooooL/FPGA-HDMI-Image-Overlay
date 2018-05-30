@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Mon May 14 16:20:56 2018
+Analysis & Synthesis Status : Successful - Wed May 30 16:01:33 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : rom_example
-Top-level Entity Name : lookupTLE
+Top-level Entity Name : projectTLE
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 0
-Total pins : 20
+Total registers : 38
+Total pins : 27
 Total virtual pins : 0
 Total block memory bits : 16,384
 Total DSP Blocks : 0

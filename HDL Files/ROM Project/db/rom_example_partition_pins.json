@@ -4,35 +4,99 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "romData[0]",
+					"name" : "dataOutput[0]",
 					"strict" : false
 				},
 				{
-					"name" : "romData[1]",
+					"name" : "dataOutput[1]",
 					"strict" : false
 				},
 				{
-					"name" : "romData[2]",
+					"name" : "dataOutput[2]",
 					"strict" : false
 				},
 				{
-					"name" : "romData[3]",
+					"name" : "dataOutput[3]",
 					"strict" : false
 				},
 				{
-					"name" : "romData[4]",
+					"name" : "dataOutput[4]",
 					"strict" : false
 				},
 				{
-					"name" : "romData[5]",
+					"name" : "dataOutput[5]",
 					"strict" : false
 				},
 				{
-					"name" : "romData[6]",
+					"name" : "dataOutput[6]",
 					"strict" : false
 				},
 				{
-					"name" : "romData[7]",
+					"name" : "dataOutput[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dataOutput[8]",
+					"strict" : false
+				},
+				{
+					"name" : "dataOutput[9]",
+					"strict" : false
+				},
+				{
+					"name" : "dataOutput[10]",
+					"strict" : false
+				},
+				{
+					"name" : "dataOutput[11]",
+					"strict" : false
+				},
+				{
+					"name" : "dataOutput[12]",
+					"strict" : false
+				},
+				{
+					"name" : "dataOutput[13]",
+					"strict" : false
+				},
+				{
+					"name" : "dataOutput[14]",
+					"strict" : false
+				},
+				{
+					"name" : "dataOutput[15]",
+					"strict" : false
+				},
+				{
+					"name" : "dataOutput[16]",
+					"strict" : false
+				},
+				{
+					"name" : "dataOutput[17]",
+					"strict" : false
+				},
+				{
+					"name" : "dataOutput[18]",
+					"strict" : false
+				},
+				{
+					"name" : "dataOutput[19]",
+					"strict" : false
+				},
+				{
+					"name" : "dataOutput[20]",
+					"strict" : false
+				},
+				{
+					"name" : "dataOutput[21]",
+					"strict" : false
+				},
+				{
+					"name" : "dataOutput[22]",
+					"strict" : false
+				},
+				{
+					"name" : "dataOutput[23]",
 					"strict" : false
 				},
 				{
@@ -40,47 +104,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "romAddress[0]",
-					"strict" : false
-				},
-				{
-					"name" : "romAddress[1]",
-					"strict" : false
-				},
-				{
-					"name" : "romAddress[2]",
-					"strict" : false
-				},
-				{
-					"name" : "romAddress[3]",
-					"strict" : false
-				},
-				{
-					"name" : "romAddress[4]",
-					"strict" : false
-				},
-				{
-					"name" : "romAddress[5]",
-					"strict" : false
-				},
-				{
-					"name" : "romAddress[6]",
-					"strict" : false
-				},
-				{
-					"name" : "romAddress[7]",
-					"strict" : false
-				},
-				{
-					"name" : "romAddress[8]",
-					"strict" : false
-				},
-				{
-					"name" : "romAddress[9]",
-					"strict" : false
-				},
-				{
-					"name" : "romAddress[10]",
+					"name" : "key0",
 					"strict" : false
 				}
 			]

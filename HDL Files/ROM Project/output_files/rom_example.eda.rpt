@@ -1,5 +1,5 @@
 EDA Netlist Writer report for rom_example
-Mon May 14 16:21:06 2018
+Wed May 30 16:01:39 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -36,9 +36,9 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon May 14 16:21:06 2018 ;
+; EDA Netlist Writer Status ; Successful - Wed May 30 16:01:38 2018 ;
 ; Revision Name             ; rom_example                           ;
-; Top-level Entity Name     ; lookupTLE                             ;
+; Top-level Entity Name     ; projectTLE                            ;
 ; Family                    ; Cyclone V                             ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -93,17 +93,17 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Mon May 14 16:21:05 2018
+    Info: Processing started: Wed May 30 16:01:37 2018
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/simulation/qsim/" rom_example -c rom_example
 Info (119006): Selected device 5CSEBA6U23I7DK for design "rom_example"
 Warning (18550): Found RAM instances implemented as ROM because the write logic is disabled. One instance is listed below as an example.
-    Info (119043): Atom "lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated|ram_block1a0" is instantiated as RAM, but it is actually implemented as ROM function because the write logic is always disabled
+    Info (119043): Atom "lookupTLE:lookupTLE_module|lookupTable2:romLookup|altsyncram:altsyncram_component|altsyncram_kao1:auto_generated|ram_block1a4" is instantiated as RAM, but it is actually implemented as ROM function because the write logic is always disabled
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file rom_example.vo in folder "C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/ROM Project/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 635 megabytes
-    Info: Processing ended: Mon May 14 16:21:06 2018
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 4731 megabytes
+    Info: Processing ended: Wed May 30 16:01:39 2018
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

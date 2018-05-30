@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "05/14/2018 16:21:05"
+// Generated on "05/29/2018 20:27:28"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          lookupTLE
 // 
@@ -50,8 +50,8 @@ end
 always
 begin
 	clock = 1'b0;
-	clock = #10000 1'b1;
-	#10000;
+	clock = #50000 1'b1;
+	#50000;
 end 
 // romAddress[ 10 ]
 initial
@@ -87,47 +87,42 @@ end
 initial
 begin
 	romAddress[4] = 1'b0;
-	romAddress[4] = #250000 1'b1;
 end 
 // romAddress[ 3 ]
 initial
 begin
 	romAddress[3] = 1'b0;
-	romAddress[3] = #190000 1'b1;
-	romAddress[3] = #60000 1'b0;
+	romAddress[3] = #800000 1'b1;
 end 
 // romAddress[ 2 ]
 initial
 begin
 	romAddress[2] = 1'b0;
-	romAddress[2] = #110000 1'b1;
-	romAddress[2] = #80000 1'b0;
+	romAddress[2] = #400000 1'b1;
+	romAddress[2] = #400000 1'b0;
 end 
 // romAddress[ 1 ]
 initial
 begin
 	romAddress[1] = 1'b0;
-	romAddress[1] = #70000 1'b1;
-	romAddress[1] = #40000 1'b0;
-	romAddress[1] = #40000 1'b1;
-	romAddress[1] = #40000 1'b0;
-	romAddress[1] = #40000 1'b1;
-	romAddress[1] = #20000 1'b0;
+	romAddress[1] = #200000 1'b1;
+	romAddress[1] = #200000 1'b0;
+	romAddress[1] = #200000 1'b1;
+	romAddress[1] = #200000 1'b0;
 end 
 // romAddress[ 0 ]
 initial
 begin
 	romAddress[0] = 1'b0;
-	romAddress[0] = #50000 1'b1;
-	romAddress[0] = #20000 1'b0;
-	romAddress[0] = #20000 1'b1;
-	romAddress[0] = #20000 1'b0;
-	romAddress[0] = #20000 1'b1;
-	romAddress[0] = #20000 1'b0;
-	romAddress[0] = #20000 1'b1;
-	romAddress[0] = #20000 1'b0;
-	romAddress[0] = #20000 1'b1;
-	romAddress[0] = #20000 1'b0;
+	romAddress[0] = #100000 1'b1;
+	romAddress[0] = #100000 1'b0;
+	romAddress[0] = #100000 1'b1;
+	romAddress[0] = #100000 1'b0;
+	romAddress[0] = #100000 1'b1;
+	romAddress[0] = #100000 1'b0;
+	romAddress[0] = #100000 1'b1;
+	romAddress[0] = #100000 1'b0;
+	romAddress[0] = #100000 1'b1;
 end 
 endmodule
 

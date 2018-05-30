@@ -3,7 +3,7 @@ $comment
 		vcd file rom_example.msim.vcd -direction
 $end
 $date
-	Mon May 14 16:21:08 2018
+	Wed May 30 16:01:40 2018
 $end
 $version
 	ModelSim Version 10.5b
@@ -12,61 +12,255 @@ $timescale
 	1ps
 $end
 
-$scope module lookupTLE_vlg_vec_tst $end
+$scope module projectTLE_vlg_vec_tst $end
 $var reg 1 ! clock $end
-$var reg 11 " romAddress [10:0] $end
-$var wire 1 # romData [7] $end
-$var wire 1 $ romData [6] $end
-$var wire 1 % romData [5] $end
-$var wire 1 & romData [4] $end
-$var wire 1 ' romData [3] $end
-$var wire 1 ( romData [2] $end
-$var wire 1 ) romData [1] $end
-$var wire 1 * romData [0] $end
+$var reg 1 " key0 $end
+$var reg 1 # key1 $end
+$var wire 1 $ dataOutput [23] $end
+$var wire 1 % dataOutput [22] $end
+$var wire 1 & dataOutput [21] $end
+$var wire 1 ' dataOutput [20] $end
+$var wire 1 ( dataOutput [19] $end
+$var wire 1 ) dataOutput [18] $end
+$var wire 1 * dataOutput [17] $end
+$var wire 1 + dataOutput [16] $end
+$var wire 1 , dataOutput [15] $end
+$var wire 1 - dataOutput [14] $end
+$var wire 1 . dataOutput [13] $end
+$var wire 1 / dataOutput [12] $end
+$var wire 1 0 dataOutput [11] $end
+$var wire 1 1 dataOutput [10] $end
+$var wire 1 2 dataOutput [9] $end
+$var wire 1 3 dataOutput [8] $end
+$var wire 1 4 dataOutput [7] $end
+$var wire 1 5 dataOutput [6] $end
+$var wire 1 6 dataOutput [5] $end
+$var wire 1 7 dataOutput [4] $end
+$var wire 1 8 dataOutput [3] $end
+$var wire 1 9 dataOutput [2] $end
+$var wire 1 : dataOutput [1] $end
+$var wire 1 ; dataOutput [0] $end
 
 $scope module i1 $end
-$var wire 1 + gnd $end
-$var wire 1 , vcc $end
-$var wire 1 - unknown $end
-$var tri1 1 . devclrn $end
-$var tri1 1 / devpor $end
-$var tri1 1 0 devoe $end
-$var wire 1 1 clock~input_o $end
-$var wire 1 2 ~GND~combout $end
-$var wire 1 3 romAddress[0]~input_o $end
-$var wire 1 4 romAddress[1]~input_o $end
-$var wire 1 5 romAddress[2]~input_o $end
-$var wire 1 6 romAddress[3]~input_o $end
-$var wire 1 7 romAddress[4]~input_o $end
-$var wire 1 8 romAddress[5]~input_o $end
-$var wire 1 9 romAddress[6]~input_o $end
-$var wire 1 : romAddress[7]~input_o $end
-$var wire 1 ; romAddress[8]~input_o $end
-$var wire 1 < romAddress[9]~input_o $end
-$var wire 1 = romAddress[10]~input_o $end
-$var wire 1 > romLookup|altsyncram_component|auto_generated|q_a [7] $end
-$var wire 1 ? romLookup|altsyncram_component|auto_generated|q_a [6] $end
-$var wire 1 @ romLookup|altsyncram_component|auto_generated|q_a [5] $end
-$var wire 1 A romLookup|altsyncram_component|auto_generated|q_a [4] $end
-$var wire 1 B romLookup|altsyncram_component|auto_generated|q_a [3] $end
-$var wire 1 C romLookup|altsyncram_component|auto_generated|q_a [2] $end
-$var wire 1 D romLookup|altsyncram_component|auto_generated|q_a [1] $end
-$var wire 1 E romLookup|altsyncram_component|auto_generated|q_a [0] $end
-$var wire 1 F romLookup|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [0] $end
-$var wire 1 G romLookup|altsyncram_component|auto_generated|ram_block1a1_PORTADATAOUT_bus [0] $end
-$var wire 1 H romLookup|altsyncram_component|auto_generated|ram_block1a2_PORTADATAOUT_bus [0] $end
-$var wire 1 I romLookup|altsyncram_component|auto_generated|ram_block1a3_PORTADATAOUT_bus [0] $end
-$var wire 1 J romLookup|altsyncram_component|auto_generated|ram_block1a4_PORTADATAOUT_bus [0] $end
-$var wire 1 K romLookup|altsyncram_component|auto_generated|ram_block1a5_PORTADATAOUT_bus [0] $end
-$var wire 1 L romLookup|altsyncram_component|auto_generated|ram_block1a6_PORTADATAOUT_bus [0] $end
-$var wire 1 M romLookup|altsyncram_component|auto_generated|ram_block1a7_PORTADATAOUT_bus [0] $end
+$var wire 1 < gnd $end
+$var wire 1 = vcc $end
+$var wire 1 > unknown $end
+$var tri1 1 ? devclrn $end
+$var tri1 1 @ devpor $end
+$var tri1 1 A devoe $end
+$var wire 1 B key1~input_o $end
+$var wire 1 C clock~input_o $end
+$var wire 1 D dataWrite_module|currentState.keyState~q $end
+$var wire 1 E key0~input_o $end
+$var wire 1 F dataWrite_module|Add1~33_sumout $end
+$var wire 1 G dataWrite_module|pixelRemainder[11]~0_combout $end
+$var wire 1 H dataWrite_module|LessThan1~0_combout $end
+$var wire 1 I dataWrite_module|Equal1~1_combout $end
+$var wire 1 J dataWrite_module|pixelRemainder[11]~2_combout $end
+$var wire 1 K dataWrite_module|Add1~34 $end
+$var wire 1 L dataWrite_module|Add1~29_sumout $end
+$var wire 1 M dataWrite_module|Add1~30 $end
+$var wire 1 N dataWrite_module|Add1~25_sumout $end
+$var wire 1 O dataWrite_module|Add1~26 $end
+$var wire 1 P dataWrite_module|Add1~21_sumout $end
+$var wire 1 Q dataWrite_module|Add1~22 $end
+$var wire 1 R dataWrite_module|Add1~17_sumout $end
+$var wire 1 S dataWrite_module|Add1~18 $end
+$var wire 1 T dataWrite_module|Add1~45_sumout $end
+$var wire 1 U dataWrite_module|Add1~46 $end
+$var wire 1 V dataWrite_module|Add1~41_sumout $end
+$var wire 1 W dataWrite_module|Add1~42 $end
+$var wire 1 X dataWrite_module|Add1~37_sumout $end
+$var wire 1 Y dataWrite_module|Add1~38 $end
+$var wire 1 Z dataWrite_module|Add1~9_sumout $end
+$var wire 1 [ dataWrite_module|Add1~10 $end
+$var wire 1 \ dataWrite_module|Add1~13_sumout $end
+$var wire 1 ] dataWrite_module|Add1~14 $end
+$var wire 1 ^ dataWrite_module|Add1~5_sumout $end
+$var wire 1 _ dataWrite_module|Add1~6 $end
+$var wire 1 ` dataWrite_module|Add1~1_sumout $end
+$var wire 1 a dataWrite_module|Equal1~0_combout $end
+$var wire 1 b dataWrite_module|dataLocation[1]~3_combout $end
+$var wire 1 c dataWrite_module|currentState.romWrite~0_combout $end
+$var wire 1 d dataWrite_module|currentState.romWrite~q $end
+$var wire 1 e dataWrite_module|pixelRemainder[11]~1_combout $end
+$var wire 1 f dataWrite_module|dataLocation[0]~2_combout $end
+$var wire 1 g dataWrite_module|Add0~0_combout $end
+$var wire 1 h dataWrite_module|dataLocation[2]~1_combout $end
+$var wire 1 i dataWrite_module|LessThan0~1_combout $end
+$var wire 1 j dataWrite_module|dataLocation[3]~0_combout $end
+$var wire 1 k dataWrite_module|LessThan0~0_combout $end
+$var wire 1 l dataWrite_module|Selector58~0_combout $end
+$var wire 1 m dataWrite_module|alphabetCount[0]~1_combout $end
+$var wire 1 n dataWrite_module|alphabetCount[0]~0_combout $end
+$var wire 1 o dataWrite_module|Add3~4_combout $end
+$var wire 1 p dataWrite_module|Add3~1_combout $end
+$var wire 1 q dataWrite_module|Add4~9_sumout $end
+$var wire 1 r dataWrite_module|Add5~25_sumout $end
+$var wire 1 s dataWrite_module|Selector56~0_combout $end
+$var wire 1 t dataWrite_module|Add5~2 $end
+$var wire 1 u dataWrite_module|Add5~5_sumout $end
+$var wire 1 v dataWrite_module|Add3~3_combout $end
+$var wire 1 w dataWrite_module|Add3~5_combout $end
+$var wire 1 x dataWrite_module|Add3~6_combout $end
+$var wire 1 y dataWrite_module|Add3~2_combout $end
+$var wire 1 z dataWrite_module|Add2~1_combout $end
+$var wire 1 { dataWrite_module|Selector51~0_combout $end
+$var wire 1 | dataWrite_module|Add5~6 $end
+$var wire 1 } dataWrite_module|Add5~33_sumout $end
+$var wire 1 ~ dataWrite_module|Add2~3_combout $end
+$var wire 1 !! dataWrite_module|Selector50~0_combout $end
+$var wire 1 "! dataWrite_module|Add3~0_combout $end
+$var wire 1 #! dataWrite_module|Add4~10 $end
+$var wire 1 $! dataWrite_module|Add4~14 $end
+$var wire 1 %! dataWrite_module|Add4~2 $end
+$var wire 1 &! dataWrite_module|Add4~6 $end
+$var wire 1 '! dataWrite_module|Add4~17_sumout $end
+$var wire 1 (! dataWrite_module|Add5~34 $end
+$var wire 1 )! dataWrite_module|Add5~37_sumout $end
+$var wire 1 *! dataWrite_module|Add2~4_combout $end
+$var wire 1 +! dataWrite_module|Selector49~0_combout $end
+$var wire 1 ,! dataWrite_module|Add4~18 $end
+$var wire 1 -! dataWrite_module|Add4~21_sumout $end
+$var wire 1 .! dataWrite_module|Add5~38 $end
+$var wire 1 /! dataWrite_module|Add5~41_sumout $end
+$var wire 1 0! dataWrite_module|Selector48~0_combout $end
+$var wire 1 1! dataWrite_module|Add4~22 $end
+$var wire 1 2! dataWrite_module|Add4~25_sumout $end
+$var wire 1 3! dataWrite_module|Equal2~3_combout $end
+$var wire 1 4! dataWrite_module|romAddressReg[10]~0_combout $end
+$var wire 1 5! dataWrite_module|Add5~26 $end
+$var wire 1 6! dataWrite_module|Add5~29_sumout $end
+$var wire 1 7! dataWrite_module|Selector55~0_combout $end
+$var wire 1 8! dataWrite_module|Add5~30 $end
+$var wire 1 9! dataWrite_module|Add5~9_sumout $end
+$var wire 1 :! dataWrite_module|Selector54~0_combout $end
+$var wire 1 ;! dataWrite_module|Add5~10 $end
+$var wire 1 <! dataWrite_module|Add5~13_sumout $end
+$var wire 1 =! dataWrite_module|Add2~2_combout $end
+$var wire 1 >! dataWrite_module|Selector53~0_combout $end
+$var wire 1 ?! dataWrite_module|Add5~14 $end
+$var wire 1 @! dataWrite_module|Add5~1_sumout $end
+$var wire 1 A! dataWrite_module|Add2~0_combout $end
+$var wire 1 B! dataWrite_module|Selector52~0_combout $end
+$var wire 1 C! dataWrite_module|Add4~1_sumout $end
+$var wire 1 D! dataWrite_module|Add4~5_sumout $end
+$var wire 1 E! dataWrite_module|Add4~13_sumout $end
+$var wire 1 F! dataWrite_module|Add5~42 $end
+$var wire 1 G! dataWrite_module|Add5~21_sumout $end
+$var wire 1 H! dataWrite_module|Selector47~0_combout $end
+$var wire 1 I! dataWrite_module|Add5~22 $end
+$var wire 1 J! dataWrite_module|Add5~17_sumout $end
+$var wire 1 K! dataWrite_module|Selector46~0_combout $end
+$var wire 1 L! dataWrite_module|Equal2~0_combout $end
+$var wire 1 M! dataWrite_module|Equal2~1_combout $end
+$var wire 1 N! dataWrite_module|Equal2~2_combout $end
+$var wire 1 O! dataWrite_module|Selector58~1_combout $end
+$var wire 1 P! dataWrite_module|nextState.writeBlank~q $end
+$var wire 1 Q! dataWrite_module|currentState.writeBlank~q $end
+$var wire 1 R! ~GND~combout $end
+$var wire 1 S! dataWrite_module|Add0~1_combout $end
+$var wire 1 T! dataWrite_module|Mux0~4_combout $end
+$var wire 1 U! dataWrite_module|Mux0~0_combout $end
+$var wire 1 V! dataWrite_module|outputReg[0]~0_combout $end
+$var wire 1 W! dataWrite_module|pixelRemainder [11] $end
+$var wire 1 X! dataWrite_module|pixelRemainder [10] $end
+$var wire 1 Y! dataWrite_module|pixelRemainder [9] $end
+$var wire 1 Z! dataWrite_module|pixelRemainder [8] $end
+$var wire 1 [! dataWrite_module|pixelRemainder [7] $end
+$var wire 1 \! dataWrite_module|pixelRemainder [6] $end
+$var wire 1 ]! dataWrite_module|pixelRemainder [5] $end
+$var wire 1 ^! dataWrite_module|pixelRemainder [4] $end
+$var wire 1 _! dataWrite_module|pixelRemainder [3] $end
+$var wire 1 `! dataWrite_module|pixelRemainder [2] $end
+$var wire 1 a! dataWrite_module|pixelRemainder [1] $end
+$var wire 1 b! dataWrite_module|pixelRemainder [0] $end
+$var wire 1 c! dataWrite_module|romAddressReg [10] $end
+$var wire 1 d! dataWrite_module|romAddressReg [9] $end
+$var wire 1 e! dataWrite_module|romAddressReg [8] $end
+$var wire 1 f! dataWrite_module|romAddressReg [7] $end
+$var wire 1 g! dataWrite_module|romAddressReg [6] $end
+$var wire 1 h! dataWrite_module|romAddressReg [5] $end
+$var wire 1 i! dataWrite_module|romAddressReg [4] $end
+$var wire 1 j! dataWrite_module|romAddressReg [3] $end
+$var wire 1 k! dataWrite_module|romAddressReg [2] $end
+$var wire 1 l! dataWrite_module|romAddressReg [1] $end
+$var wire 1 m! dataWrite_module|romAddressReg [0] $end
+$var wire 1 n! lookupTLE_module|romLookup|altsyncram_component|auto_generated|q_a [7] $end
+$var wire 1 o! lookupTLE_module|romLookup|altsyncram_component|auto_generated|q_a [6] $end
+$var wire 1 p! lookupTLE_module|romLookup|altsyncram_component|auto_generated|q_a [5] $end
+$var wire 1 q! lookupTLE_module|romLookup|altsyncram_component|auto_generated|q_a [4] $end
+$var wire 1 r! lookupTLE_module|romLookup|altsyncram_component|auto_generated|q_a [3] $end
+$var wire 1 s! lookupTLE_module|romLookup|altsyncram_component|auto_generated|q_a [2] $end
+$var wire 1 t! lookupTLE_module|romLookup|altsyncram_component|auto_generated|q_a [1] $end
+$var wire 1 u! lookupTLE_module|romLookup|altsyncram_component|auto_generated|q_a [0] $end
+$var wire 1 v! dataWrite_module|outputReg [23] $end
+$var wire 1 w! dataWrite_module|outputReg [22] $end
+$var wire 1 x! dataWrite_module|outputReg [21] $end
+$var wire 1 y! dataWrite_module|outputReg [20] $end
+$var wire 1 z! dataWrite_module|outputReg [19] $end
+$var wire 1 {! dataWrite_module|outputReg [18] $end
+$var wire 1 |! dataWrite_module|outputReg [17] $end
+$var wire 1 }! dataWrite_module|outputReg [16] $end
+$var wire 1 ~! dataWrite_module|outputReg [15] $end
+$var wire 1 !" dataWrite_module|outputReg [14] $end
+$var wire 1 "" dataWrite_module|outputReg [13] $end
+$var wire 1 #" dataWrite_module|outputReg [12] $end
+$var wire 1 $" dataWrite_module|outputReg [11] $end
+$var wire 1 %" dataWrite_module|outputReg [10] $end
+$var wire 1 &" dataWrite_module|outputReg [9] $end
+$var wire 1 '" dataWrite_module|outputReg [8] $end
+$var wire 1 (" dataWrite_module|outputReg [7] $end
+$var wire 1 )" dataWrite_module|outputReg [6] $end
+$var wire 1 *" dataWrite_module|outputReg [5] $end
+$var wire 1 +" dataWrite_module|outputReg [4] $end
+$var wire 1 ," dataWrite_module|outputReg [3] $end
+$var wire 1 -" dataWrite_module|outputReg [2] $end
+$var wire 1 ." dataWrite_module|outputReg [1] $end
+$var wire 1 /" dataWrite_module|outputReg [0] $end
+$var wire 1 0" dataWrite_module|dataLocation [3] $end
+$var wire 1 1" dataWrite_module|dataLocation [2] $end
+$var wire 1 2" dataWrite_module|dataLocation [1] $end
+$var wire 1 3" dataWrite_module|dataLocation [0] $end
+$var wire 1 4" dataWrite_module|alphabetCount [5] $end
+$var wire 1 5" dataWrite_module|alphabetCount [4] $end
+$var wire 1 6" dataWrite_module|alphabetCount [3] $end
+$var wire 1 7" dataWrite_module|alphabetCount [2] $end
+$var wire 1 8" dataWrite_module|alphabetCount [1] $end
+$var wire 1 9" dataWrite_module|alphabetCount [0] $end
+$var wire 1 :" lookupTLE_module|romLookup|altsyncram_component|auto_generated|ram_block1a4_PORTADATAOUT_bus [0] $end
+$var wire 1 ;" lookupTLE_module|romLookup|altsyncram_component|auto_generated|ram_block1a6_PORTADATAOUT_bus [0] $end
+$var wire 1 <" lookupTLE_module|romLookup|altsyncram_component|auto_generated|ram_block1a5_PORTADATAOUT_bus [0] $end
+$var wire 1 =" lookupTLE_module|romLookup|altsyncram_component|auto_generated|ram_block1a7_PORTADATAOUT_bus [0] $end
+$var wire 1 >" lookupTLE_module|romLookup|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [0] $end
+$var wire 1 ?" lookupTLE_module|romLookup|altsyncram_component|auto_generated|ram_block1a2_PORTADATAOUT_bus [0] $end
+$var wire 1 @" lookupTLE_module|romLookup|altsyncram_component|auto_generated|ram_block1a1_PORTADATAOUT_bus [0] $end
+$var wire 1 A" lookupTLE_module|romLookup|altsyncram_component|auto_generated|ram_block1a3_PORTADATAOUT_bus [0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
 0!
-b0 "
+1"
+x#
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+02
+01
+00
+0/
+0.
+0-
+0,
+0+
 0*
 0)
 0(
@@ -74,467 +268,1160 @@ b0 "
 0&
 0%
 0$
-0#
-0+
-1,
-x-
-1.
-1/
-10
-01
-02
-03
-04
-05
-06
-07
-08
-09
-0:
-0;
 0<
-0=
-0E
-0D
+1=
+x>
+1?
+1@
+1A
+xB
 0C
-0B
-0A
-0@
-0?
-0>
-0F
+0D
+1E
+1F
 0G
-0H
-0I
+1H
+1I
 0J
 0K
 0L
 0M
+0N
+0O
+0P
+0Q
+0R
+0S
+0T
+0U
+0V
+0W
+0X
+0Y
+0Z
+0[
+0\
+0]
+0^
+0_
+0`
+0a
+0b
+1c
+0d
+0e
+0f
+1g
+0h
+1i
+0j
+0k
+0l
+1m
+0n
+0o
+0p
+1q
+1r
+1s
+0t
+0u
+0v
+0w
+0x
+0y
+0z
+0{
+0|
+0}
+0~
+0!!
+0"!
+0#!
+0$!
+0%!
+0&!
+0'!
+0(!
+0)!
+0*!
+0+!
+0,!
+0-!
+0.!
+0/!
+00!
+01!
+02!
+13!
+14!
+05!
+06!
+07!
+08!
+09!
+1:!
+0;!
+0<!
+0=!
+0>!
+0?!
+0@!
+0A!
+0B!
+0C!
+0D!
+0E!
+0F!
+0G!
+0H!
+0I!
+0J!
+0K!
+0L!
+0M!
+0N!
+0O!
+0P!
+0Q!
+0R!
+1S!
+0T!
+1U!
+0V!
+0b!
+0a!
+0`!
+0_!
+0^!
+0]!
+0\!
+0[!
+0Z!
+0Y!
+0X!
+0W!
+0m!
+0l!
+0k!
+0j!
+0i!
+0h!
+0g!
+0f!
+0e!
+0d!
+0c!
+0u!
+0t!
+0s!
+0r!
+0q!
+0p!
+0o!
+0n!
+0/"
+z."
+z-"
+z,"
+z+"
+z*"
+z)"
+z("
+z'"
+z&"
+z%"
+z$"
+z#"
+z""
+z!"
+z~!
+z}!
+z|!
+z{!
+zz!
+zy!
+zx!
+zw!
+zv!
+03"
+02"
+01"
+00"
+09"
+08"
+07"
+06"
+05"
+04"
+0:"
+0;"
+0<"
+0="
+0>"
+0?"
+0@"
+0A"
 $end
 #10000
 1!
-11
+1C
+1d
+1D
+1e
+1V!
+1j
+1J
+1h
+1f
+1b
 #20000
 0!
-01
+0C
 #30000
 1!
-11
-1L
-1K
-1J
-1I
-1H
-1G
-1?
-1@
-1A
-1B
 1C
-1D
+10"
+11"
+13"
+12"
+1b!
+1<"
+1@"
+1A"
+1?"
+1;"
+1:"
+1q!
+1o!
+1s!
+1r!
+1t!
+1p!
+1/"
+1;
+1:
+19
+18
+17
+16
+15
+14
+13
+12
+11
+10
+1/
+1.
+1-
+1,
+1+
+1*
 1)
 1(
 1'
 1&
 1%
 1$
+1a
+1K
+0i
+1T!
+0F
+0f
+0U!
+1L
+0V!
 #40000
 0!
-01
+0C
 #50000
-b1 "
 1!
-13
-11
-#60000
-0!
-01
-#70000
-b11 "
-b10 "
-1!
-03
-14
-11
-0L
-0K
-0I
-0H
-0G
-1F
-0?
-0@
-0B
-0C
-0D
-1E
-1*
-0)
-0(
-0'
-0%
-0$
-#80000
-0!
-01
-#90000
-b11 "
-1!
-13
-11
-#100000
-0!
-01
-#110000
-b111 "
-b101 "
-b100 "
-1!
-03
-04
-15
-11
-#120000
-0!
-01
-#130000
-b101 "
-1!
-13
-11
-1L
-1K
-1I
-1H
-1G
-0F
-1?
-1@
-1B
 1C
-1D
-0E
-0*
-1)
-1(
-1'
-1%
-1$
-#140000
-0!
-01
-#150000
-b111 "
-b110 "
-1!
+03"
+1a!
+0b!
+0/"
+0;
+0:
+09
+08
+07
+06
+05
+04
 03
-14
-11
-0L
-0K
-0J
-0I
-0H
-0G
-1F
-0?
-0@
-0A
-0B
-0C
-0D
-1E
-1*
+02
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
 0)
 0(
 0'
 0&
 0%
 0$
+0K
+1M
+0T!
+0S!
+1F
+0L
+1f
+0b
+0M
+1L
+1N
+0N
+#60000
+0!
+0C
+#70000
+1!
+1C
+13"
+02"
+1b!
+1K
+1T!
+0F
+0f
+1M
+0L
+1N
+#80000
+0!
+0C
+#90000
+1!
+1C
+03"
+1`!
+0a!
+0b!
+0K
+0M
+1O
+0T!
+1S!
+0g
+1F
+1L
+0N
+1f
+1b
+0O
+0L
+1N
+1P
+0h
+0P
+#100000
+0!
+0C
+#110000
+1!
+1C
+01"
+13"
+12"
+1b!
+1K
+0F
+0f
+1L
+#120000
+0!
+0C
+#130000
+1!
+1C
+03"
+1a!
+0b!
+0K
+1M
+0S!
+1F
+0L
+1f
+0b
+0M
+1O
+1L
+0N
+0O
+1N
+1P
+0P
+#140000
+0!
+0C
+#150000
+1!
+1C
+13"
+02"
+1b!
+1K
+1T!
+0F
+0f
+1M
+1U!
+0L
+1O
+0N
+1V!
+1P
 #160000
 0!
-01
+0C
 #170000
-b111 "
 1!
+1C
+03"
+1_!
+0`!
+0a!
+0b!
+1/"
+1;
+1:
+19
+18
+17
+16
+15
+14
 13
+12
 11
+10
+1/
+1.
+1-
+1,
+1+
+1*
+1)
+1(
+1'
+1&
+1%
+1$
+0K
+0M
+0O
+1Q
+0T!
+1S!
+1k
+1i
+1g
+0e
+1F
+1L
+1N
+0P
+1f
+1b
+0Q
+0J
+1l
+0L
+0N
+1P
+1R
+0f
+0b
+0R
+1O!
 #180000
 0!
-01
+0C
 #190000
-b1111 "
-b1011 "
-b1001 "
-b1000 "
 1!
-03
-04
-05
-16
-11
-0F
-0E
-0*
+1C
+1P!
+0c
 #200000
 0!
-01
+0C
 #210000
-b1001 "
 1!
-13
-11
-1F
-1E
-1*
+1C
+1Q!
+0d
+1J
+0:!
 #220000
 0!
-01
+0C
 #230000
-b1011 "
-b1010 "
 1!
-03
-14
-11
+1C
+1b!
+1K
 0F
-0E
-0*
+1L
 #240000
 0!
-01
+0C
 #250000
-b11010 "
-b10010 "
-b10000 "
 1!
-04
-06
-17
-11
+1C
+1a!
+0b!
+0K
+1M
+1F
+0L
+0M
+1L
+1N
+0N
 #260000
 0!
-01
+0C
 #270000
 1!
-11
-1F
-1E
-1*
+1C
+1b!
+1K
+0F
+1M
+0L
+1N
 #280000
 0!
-01
+0C
 #290000
 1!
-11
+1C
+1`!
+0a!
+0b!
+0K
+0M
+1O
+1F
+1L
+0N
+0O
+1Q
+0L
+1N
+0P
+0Q
+1P
+1R
+0R
 #300000
 0!
-01
+0C
 #310000
 1!
-11
+1C
+1b!
+1K
+0F
+1L
 #320000
 0!
-01
+0C
 #330000
 1!
-11
+1C
+1a!
+0b!
+0K
+1M
+1F
+0L
+0M
+1O
+1L
+0N
+0O
+1Q
+1N
+0P
+0Q
+1P
+1R
+0R
 #340000
 0!
-01
+0C
 #350000
 1!
-11
+1C
+1b!
+1K
+0F
+1M
+0L
+1O
+0N
+1Q
+0P
+1R
 #360000
 0!
-01
+0C
 #370000
 1!
-11
+1C
+1^!
+0_!
+0`!
+0a!
+0b!
+0K
+0M
+0O
+0Q
+1S
+1F
+1L
+1N
+1P
+0R
+0S
+0L
+0N
+0P
+1R
+1T
+0T
 #380000
 0!
-01
+0C
 #390000
 1!
-11
+1C
+1b!
+1K
+0F
+1L
 #400000
 0!
-01
+0C
 #410000
 1!
-11
+1C
+1a!
+0b!
+0K
+1M
+1F
+0L
+0M
+1L
+1N
+0N
 #420000
 0!
-01
+0C
 #430000
 1!
-11
+1C
+1b!
+1K
+0F
+1M
+0L
+1N
 #440000
 0!
-01
+0C
 #450000
 1!
-11
+1C
+1`!
+0a!
+0b!
+0K
+0M
+1O
+1F
+1L
+0N
+0O
+0L
+1N
+1P
+0P
 #460000
 0!
-01
+0C
 #470000
 1!
-11
+1C
+1b!
+1K
+0F
+1L
 #480000
 0!
-01
+0C
 #490000
 1!
-11
+1C
+1a!
+0b!
+0K
+1M
+1F
+0L
+0M
+1O
+1L
+0N
+0O
+1N
+1P
+0P
 #500000
 0!
-01
+0C
 #510000
 1!
-11
+1C
+1b!
+1K
+0F
+1M
+0L
+1O
+0N
+1P
 #520000
 0!
-01
+0C
 #530000
 1!
-11
+1C
+1_!
+0`!
+0a!
+0b!
+0K
+0M
+0O
+1Q
+1F
+1L
+1N
+0P
+0Q
+1S
+0L
+0N
+1P
+0R
+0S
+1R
+1T
+0T
 #540000
 0!
-01
+0C
 #550000
 1!
-11
+1C
+1b!
+1K
+0F
+1L
 #560000
 0!
-01
+0C
 #570000
 1!
-11
+1C
+1a!
+0b!
+0K
+1M
+1F
+0L
+0M
+1L
+1N
+0N
 #580000
 0!
-01
+0C
 #590000
 1!
-11
+1C
+1b!
+1K
+0F
+1M
+0L
+1N
 #600000
 0!
-01
+0C
 #610000
 1!
-11
+1C
+1`!
+0a!
+0b!
+0K
+0M
+1O
+1F
+1L
+0N
+0O
+1Q
+0L
+1N
+0P
+0Q
+1S
+1P
+0R
+0S
+1R
+1T
+0T
 #620000
 0!
-01
+0C
 #630000
 1!
-11
+1C
+1b!
+1K
+0F
+1L
 #640000
 0!
-01
+0C
 #650000
 1!
-11
+1C
+1a!
+0b!
+0K
+1M
+1F
+0L
+0M
+1O
+1L
+0N
+0O
+1Q
+1N
+0P
+0Q
+1S
+1P
+0R
+0S
+1R
+1T
+0T
 #660000
 0!
-01
+0C
 #670000
 1!
-11
+1C
+1b!
+1K
+0F
+1M
+0L
+1O
+0N
+1Q
+0P
+1S
+0R
+1T
 #680000
 0!
-01
+0C
 #690000
 1!
-11
+1C
+1]!
+0^!
+0_!
+0`!
+0a!
+0b!
+0a
+0K
+0M
+0O
+0Q
+0S
+1U
+1F
+1L
+1N
+1P
+1R
+0T
+0U
+0L
+0N
+0P
+0R
+1T
+1V
+0V
 #700000
 0!
-01
+0C
 #710000
 1!
-11
+1C
+1b!
+1a
+1K
+0F
+1L
 #720000
 0!
-01
+0C
 #730000
 1!
-11
+1C
+1a!
+0b!
+0K
+1M
+1F
+0L
+0M
+1L
+1N
+0N
 #740000
 0!
-01
+0C
 #750000
 1!
-11
+1C
+1b!
+1K
+0F
+1M
+0L
+1N
 #760000
 0!
-01
+0C
 #770000
 1!
-11
+1C
+1`!
+0a!
+0b!
+0K
+0M
+1O
+1F
+1L
+0N
+0O
+0L
+1N
+1P
+0P
 #780000
 0!
-01
+0C
 #790000
 1!
-11
+1C
+1b!
+1K
+0F
+1L
 #800000
 0!
-01
+0C
 #810000
 1!
-11
+1C
+1a!
+0b!
+0K
+1M
+1F
+0L
+0M
+1O
+1L
+0N
+0O
+1N
+1P
+0P
 #820000
 0!
-01
+0C
 #830000
 1!
-11
+1C
+1b!
+1K
+0F
+1M
+0L
+1O
+0N
+1P
 #840000
 0!
-01
+0C
 #850000
 1!
-11
+1C
+1_!
+0`!
+0a!
+0b!
+0K
+0M
+0O
+1Q
+1F
+1L
+1N
+0P
+0Q
+0L
+0N
+1P
+1R
+0R
 #860000
 0!
-01
+0C
 #870000
 1!
-11
+1C
+1b!
+1K
+0F
+1L
 #880000
 0!
-01
+0C
 #890000
 1!
-11
+1C
+1a!
+0b!
+0K
+1M
+1F
+0L
+0M
+1L
+1N
+0N
 #900000
 0!
-01
+0C
 #910000
 1!
-11
+1C
+1b!
+1K
+0F
+1M
+0L
+1N
 #920000
 0!
-01
+0C
 #930000
 1!
-11
+1C
+1`!
+0a!
+0b!
+0K
+0M
+1O
+1F
+1L
+0N
+0O
+1Q
+0L
+1N
+0P
+0Q
+1P
+1R
+0R
 #940000
 0!
-01
+0C
 #950000
 1!
-11
+1C
+1b!
+1K
+0F
+1L
 #960000
 0!
-01
+0C
 #970000
 1!
-11
+1C
+1a!
+0b!
+0K
+1M
+1F
+0L
+0M
+1O
+1L
+0N
+0O
+1Q
+1N
+0P
+0Q
+1P
+1R
+0R
 #980000
 0!
-01
+0C
 #990000
 1!
-11
+1C
+1b!
+1K
+0F
+1M
+0L
+1O
+0N
+1Q
+0P
+1R
 #1000000
