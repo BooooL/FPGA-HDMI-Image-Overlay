@@ -16,14 +16,6 @@ currentState.i2cAck4 0 0 1 0 0 0 0 0 0 0 0 0 0 1
 currentState.i2cStop1 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
 currentState.i2cStop2 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - |hdmiImageOverlay|dataWrite:dataWrite_module|nextState
-Name 
-nextState.state1 
-
-State Machine - |hdmiImageOverlay|dataWrite:dataWrite_module|currentState
-Name 
-currentState.state1 
-
 State Machine - |hdmiImageOverlay|hdmiInterface:hdmi|currentState
 Name currentState.startBlankFrame currentState.activeVideo currentState.endBlankHSync currentState.vSyncState currentState.startFrame currentState.00000 
 currentState.00000 0 0 0 0 0 0 

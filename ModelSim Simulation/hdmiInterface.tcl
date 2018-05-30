@@ -27,7 +27,15 @@ proc runSim {} {
 
 	# Clear the current simulation and add in all waveforms.
 	restart -force -nowave
-	add wave *
+	
+	add wave pixelClock
+	add wave DE
+	add wave HSYNC
+	add wave VSYNC
+	add wave pCounter
+	add wave hCounter
+	add wave currentState
+	add wave nextState
 	
 	# Set the radix of the buses.
 	property wave -radix unsigned *

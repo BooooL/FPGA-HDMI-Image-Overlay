@@ -18,19 +18,19 @@ module dataWrite
 );
 
 	//State parameters
-	parameter 	[1:0] 	state1 			= 2'b00;
-	parameter 	[1:0] 	state2 			= 2'b01;
-	parameter 	[1:0] 	state3 			= 2'b10;
-	parameter 	[1:0] 	state4 			= 2'b11;
+	//parameter 	[1:0] 	state1 			= 2'b00;
+	//parameter 	[1:0] 	state2 			= 2'b01;
+	//parameter 	[1:0] 	state3 			= 2'b10;
+	//parameter 	[1:0] 	state4 			= 2'b11;
 
 	//Register Definitions
-	reg 		[1:0] 	currentState 	= state1;
-	reg 		[1:0] 	nextState 		= state1;
-	reg 		[23:0]	outputReg		= 24'h000000;
+	//reg 		[1:0] 	currentState 	= state1;
+	//reg 		[1:0] 	nextState 		= state1;
+	reg 		[23:0]	outputReg		= 24'hffffff;
 
 	//Assign Definitions
 	assign dataOutput = outputReg;
-
+/*
 	//Next state transition logic
 	always @( posedge(clock) )
 		begin: stateChange
@@ -59,5 +59,5 @@ module dataWrite
 		endcase
 
 	end
-
+*/
 endmodule
