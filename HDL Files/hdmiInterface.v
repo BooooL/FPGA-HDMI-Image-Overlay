@@ -186,6 +186,15 @@ module hdmiInterface
 						hCounter	<= 1'b1;
 					end
 					
+				resetState:
+					begin
+						hsync 		<= 1'b1;
+						vsync		<= 1'b1;
+						de 			<= 1'b0;
+						pCounter	<= 1'b1;
+						hCounter	<= 1'b1;
+					end
+					
 				startFrame:
 					begin
 						vsync		<= 1'b1;
@@ -193,6 +202,7 @@ module hdmiInterface
 						//Increment the pixelClock counter every pixelClock Edge.
 						//pCounter	= pCounter + 1'b1;
 						
+						/*
 						//If the pixel clock counter is greater or equal to hDuration long, set HSync to low,
 						//Otherwise keep it high.
 						if ( pCounter >= hDuration )
@@ -203,12 +213,28 @@ module hdmiInterface
 							begin
 								hsync		<= 1'b1;
 							end
+						*/
+						
+						//If the pixel clock counter is greater or equal to hDuration long, set HSync to low,
+						//Otherwise keep it high.
+						if ( pCounter >= hDuration )
+							begin
+								hsync 		<= 1'b0;
+							end
+						else if ( pCounter == lineWidth )
+							begin
+								hsync		<= 1'b1;
+							end
+						else
+							begin
+								hsync		<= 1'b1;
+							end
 							
 						//If the pCounter is equal to the line width, then reset it, and increment hCounter.
 						//otherwise increment it.
-						if ( pCounter == lineWidth )
+						if ( pCounter >= lineWidth )
 							begin
-								pCounter <= 0;
+								pCounter <= 1;
 								hCounter <= hCounter + 1'b1;
 							end
 						//For second frame and onwards.
@@ -249,13 +275,23 @@ module hdmiInterface
 						begin
 							hsync 		<= 1'b1;
 							hCounter 	<= hCounter + 1'b1;
-							pCounter	<= 0;
+							pCounter	<= 1;
 						end						
 					else
 						begin
 							hsync 		<= 1'b0;
 							hCounter 	<= hCounter;
 							pCounter	<= pCounter + 1'b1;
+						end
+						
+					//Set up VSync to fall on the same edge as HSync going high from the VSyncState to endBlankHSync state transition.
+					if ( ( pCounter == lineWidth ) && ( hCounter == vDuration ) )
+						begin
+							vsync	<= 1'b0;
+						end
+					else
+						begin
+							vsync	<= 1'b1;
 						end
 				end
 				
@@ -266,9 +302,13 @@ module hdmiInterface
 					
 						//If the pixel clock counter is greater or equal to hDuration long, set HSync to low,
 						//Otherwise keep it high.
-						if ( pCounter >= hDuration )
+						if ( ( pCounter >= hDuration ) && ( pCounter != lineWidth ) )
 							begin
 								hsync 		<= 1'b0;
+							end
+						else if ( pCounter == lineWidth )
+							begin
+								hsync		<= 1'b1;
 							end
 						else
 							begin
@@ -279,7 +319,7 @@ module hdmiInterface
 						//otherwise increment it.
 						if ( pCounter == lineWidth )
 							begin
-								pCounter <= 0;
+								pCounter <= 1;
 								hCounter <= hCounter + 1'b1;
 							end
 						else
@@ -295,20 +335,24 @@ module hdmiInterface
 					
 						//If the pixel clock counter is greater or equal to hDuration long, set HSync to low,
 						//Otherwise keep it high.
-						if ( pCounter >= hDuration )
+						if ( ( pCounter >= hDuration ) && ( pCounter != lineWidth ) )
 							begin
 								hsync 		<= 1'b0;
 							end
+						else if ( pCounter == lineWidth )
+							begin
+								hsync		<= 1'b1;
+							end
 						else
 							begin
-								hsync 		<= 1'b1;
+								hsync		<= 1'b1;
 							end
 							
 						//If the pCounter is equal to the line width, then reset it, and increment hCounter.
 						//otherwise increment it.
 						if ( pCounter == lineWidth )
 							begin
-								pCounter 	<= 0;
+								pCounter 	<= 1;
 								hCounter 	<= hCounter + 1'b1;
 							end
 						else
@@ -335,31 +379,44 @@ module hdmiInterface
 					//Turn DE off for the blanking lines.
 					de		<= 1'b0;
 					//Turn off vsync as it is the start of the blanking lines at the bottom edge of the screen. 
-					vsync	<= 1'b0;
+					//vsync	<= 1'b0;
 					
 					//Run hSync for up to 1125 vertical lines, to be reset at the new frame in the startFrame state.
 					//If the pixel clock counter is greater or equal to hDuration long, set HSync to low,
-					//Otherwise keep it high.
-					if ( pCounter >= hDuration )
-						begin
-							hsync 		<= 1'b0;
-						end
-					else
-						begin
-							hsync 		<= 1'b1;
-						end
+						//Otherwise keep it high.
+						if ( ( pCounter >= hDuration ) && ( pCounter != lineWidth ) )
+							begin
+								hsync 		<= 1'b0;
+							end
+						else if ( pCounter == lineWidth )
+							begin
+								hsync		<= 1'b1;
+							end
+						else
+							begin
+								hsync		<= 1'b1;
+							end
 						
 					//If the pCounter is equal to the line width, then reset it, and increment hCounter.
 					//otherwise increment it.
-					if ( pCounter == lineWidth )
+					if ( ( pCounter >= lineWidth ) && ( hCounter != lineHeight ) )
 						begin
-							pCounter 	<= 0;
+							pCounter 	<= 1;
 							hCounter 	<= hCounter + 1'b1;
+							vsync		<= 1'b0;
+						end
+					else if ( ( pCounter >= lineWidth ) && ( hCounter == lineHeight ) )
+						begin
+							pCounter	<= 1;
+							hCounter	<= 1;
+							vsync		<= 1'b1;
 						end
 					else
 						begin
 							pCounter <= pCounter + 1'b1;
 							hCounter <= hCounter;
+							vsync		<= 1'b0;
+
 						end	
 				end
 			
