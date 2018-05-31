@@ -1,5 +1,5 @@
-Analysis & Synthesis report for hdmiImageOverlay
-Thu May 31 00:07:46 2018
+Analysis & Elaboration report for hdmiImageOverlay
+Thu May 31 12:22:23 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -7,38 +7,22 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis IP Cores Summary
- 10. State Machine - |hdmiImageOverlay|i2cInterface:i2c|currentState
- 11. State Machine - |hdmiImageOverlay|hdmiInterface:hdmi|currentState
- 12. Registers Removed During Synthesis
- 13. Removed Registers Triggering Further Register Optimizations
- 14. General Register Statistics
- 15. Inverted Register Statistics
- 16. Multiplexer Restructuring Statistics (Restructuring Performed)
- 17. Source assignments for sld_signaltap:auto_signaltap_0
- 18. Parameter Settings for User Entity Instance: Top-level Entity: |hdmiImageOverlay
- 19. Parameter Settings for User Entity Instance: PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i
- 20. Parameter Settings for User Entity Instance: hdmiInterface:hdmi
- 21. Parameter Settings for User Entity Instance: i2cRegisterConfigure:i2cROM
- 22. Parameter Settings for User Entity Instance: i2cInterface:i2c
- 23. Parameter Settings for User Entity Instance: i2cInterface:i2c|clockGen:clockDivider
- 24. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 25. Port Connectivity Checks: "i2cInterface:i2c"
- 26. Port Connectivity Checks: "i2cRegisterConfigure:i2cROM"
- 27. Port Connectivity Checks: "PixelPll1080p60:pixelPll"
- 28. Signal Tap Logic Analyzer Settings
- 29. Post-Synthesis Netlist Statistics for Top Partition
- 30. Elapsed Time Per Partition
- 31. Connections to In-System Debugging Instance "auto_signaltap_0"
- 32. Analysis & Synthesis Messages
- 33. Analysis & Synthesis Suppressed Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration IP Cores Summary
+  5. Source assignments for sld_signaltap:auto_signaltap_0
+  6. Parameter Settings for User Entity Instance: Top-level Entity: |hdmiImageOverlay
+  7. Parameter Settings for User Entity Instance: PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i
+  8. Parameter Settings for User Entity Instance: hdmiInterface:hdmi
+  9. Parameter Settings for User Entity Instance: i2cRegisterConfigure:i2cROM
+ 10. Parameter Settings for User Entity Instance: i2cInterface:i2c
+ 11. Parameter Settings for User Entity Instance: i2cInterface:i2c|clockGen:clockDivider
+ 12. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 13. Analysis & Elaboration Settings
+ 14. Port Connectivity Checks: "PixelPll1080p60:pixelPll"
+ 15. Signal Tap Logic Analyzer Settings
+ 16. Analysis & Elaboration Messages
+ 17. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -61,114 +45,22 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 31 00:07:46 2018       ;
-; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
-; Revision Name                   ; hdmiImageOverlay                            ;
-; Top-level Entity Name           ; hdmiImageOverlay                            ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 637                                         ;
-; Total pins                      ; 39                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 262,144                                     ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 1                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
-+---------------------------------------------------------------------------------+--------------------+--------------------+
-; Option                                                                          ; Setting            ; Default Value      ;
-+---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CSEBA6U23I7DK     ;                    ;
-; Top-level entity name                                                           ; hdmiImageOverlay   ; hdmiImageOverlay   ;
-; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
-; Use smart compilation                                                           ; Off                ; Off                ;
-; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
-; Enable compact report table                                                     ; Off                ; Off                ;
-; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
-; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
-; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
-; Preserve fewer node names                                                       ; On                 ; On                 ;
-; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
-; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
-; State Machine Processing                                                        ; Auto               ; Auto               ;
-; Safe State Machine                                                              ; Off                ; Off                ;
-; Extract Verilog State Machines                                                  ; On                 ; On                 ;
-; Extract VHDL State Machines                                                     ; On                 ; On                 ;
-; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
-; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
-; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
-; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
-; Parallel Synthesis                                                              ; On                 ; On                 ;
-; DSP Block Balancing                                                             ; Auto               ; Auto               ;
-; NOT Gate Push-Back                                                              ; On                 ; On                 ;
-; Power-Up Don't Care                                                             ; On                 ; On                 ;
-; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
-; Remove Duplicate Registers                                                      ; On                 ; On                 ;
-; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
-; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
-; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
-; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
-; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
-; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
-; Optimization Technique                                                          ; Balanced           ; Balanced           ;
-; Carry Chain Length                                                              ; 70                 ; 70                 ;
-; Auto Carry Chains                                                               ; On                 ; On                 ;
-; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
-; Auto ROM Replacement                                                            ; On                 ; On                 ;
-; Auto RAM Replacement                                                            ; On                 ; On                 ;
-; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
-; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
-; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
-; Strict RAM Replacement                                                          ; Off                ; Off                ;
-; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
-; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
-; Auto Resource Sharing                                                           ; Off                ; Off                ;
-; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
-; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
-; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
-; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
-; Report Parameter Settings                                                       ; On                 ; On                 ;
-; Report Source Assignments                                                       ; On                 ; On                 ;
-; Report Connectivity Checks                                                      ; On                 ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
-; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
-; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
-; HDL message level                                                               ; Level2             ; Level2             ;
-; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
-; Clock MUX Protection                                                            ; On                 ; On                 ;
-; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
-; Block Design Naming                                                             ; Auto               ; Auto               ;
-; SDC constraint protection                                                       ; Off                ; Off                ;
-; Synthesis Effort                                                                ; Auto               ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
-; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
-; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
-; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
-; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
-; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
-+---------------------------------------------------------------------------------+--------------------+--------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Thu May 31 12:22:23 2018       ;
+; Quartus Prime Version         ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                 ; hdmiImageOverlay                            ;
+; Top-level Entity Name         ; hdmiImageOverlay                            ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
 
 
 +------------------------------------------+
@@ -177,198 +69,18 @@ refer to the applicable agreement for further details.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                                                                                                            ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
-; File Name with User-Entered Path                                   ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                                                                                                                                              ; Library         ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
-; ../HDL Files/hdmiInterface.v                                       ; yes             ; User Verilog HDL File                        ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiInterface.v                                                                ;                 ;
-; ../HDL Files/i2cRegisterConfigure.v                                ; yes             ; User Verilog HDL File                        ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cRegisterConfigure.v                                                         ;                 ;
-; ../HDL Files/i2cInterface.v                                        ; yes             ; User Verilog HDL File                        ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cInterface.v                                                                 ;                 ;
-; ../HDL Files/hdmiImageOverlay.v                                    ; yes             ; User Verilog HDL File                        ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v                                                             ;                 ;
-; ../HDL Files/dataWrite.v                                           ; yes             ; User Verilog HDL File                        ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/dataWrite.v                                                                    ;                 ;
-; ../HDL Files/clockGen.v                                            ; yes             ; User Verilog HDL File                        ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/clockGen.v                                                                     ;                 ;
-; pixelPLL/pixelPLL_0002.v                                           ; yes             ; User Verilog HDL File                        ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL/pixelPLL_0002.v                                           ; pixelPLL        ;
-; PixelPll1080p60.v                                                  ; yes             ; User Wizard-Generated File                   ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60.v                                                  ; PixelPll1080p60 ;
-; PixelPll1080p60/PixelPll1080p60_0002.v                             ; yes             ; User Verilog HDL File                        ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60/PixelPll1080p60_0002.v                             ; PixelPll1080p60 ;
-; altera_pll.v                                                       ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/altera_pll.v                                                                                                                                                          ;                 ;
-; sld_signaltap.vhd                                                  ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/sld_signaltap.vhd                                                                                                                                                     ;                 ;
-; sld_signaltap_impl.vhd                                             ; yes             ; Encrypted Megafunction                       ; g:/software/quartus/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                                                                                                                                                ;                 ;
-; sld_ela_control.vhd                                                ; yes             ; Encrypted Megafunction                       ; g:/software/quartus/quartus/libraries/megafunctions/sld_ela_control.vhd                                                                                                                                                   ;                 ;
-; lpm_shiftreg.tdf                                                   ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/lpm_shiftreg.tdf                                                                                                                                                      ;                 ;
-; lpm_constant.inc                                                   ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/lpm_constant.inc                                                                                                                                                      ;                 ;
-; dffeea.inc                                                         ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/dffeea.inc                                                                                                                                                            ;                 ;
-; aglobal171.inc                                                     ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/aglobal171.inc                                                                                                                                                        ;                 ;
-; sld_ela_trigger.tdf                                                ; yes             ; Encrypted Megafunction                       ; g:/software/quartus/quartus/libraries/megafunctions/sld_ela_trigger.tdf                                                                                                                                                   ;                 ;
-; db/sld_ela_trigger_5kp.tdf                                         ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/sld_ela_trigger_5kp.tdf                                         ;                 ;
-; db/sld_reserved_hdmiimageoverlay_auto_signaltap_0_1_4e4b.v         ; yes             ; Encrypted Auto-Generated Megafunction        ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/sld_reserved_hdmiimageoverlay_auto_signaltap_0_1_4e4b.v         ;                 ;
-; sld_mbpmg.vhd                                                      ; yes             ; Encrypted Megafunction                       ; g:/software/quartus/quartus/libraries/megafunctions/sld_mbpmg.vhd                                                                                                                                                         ;                 ;
-; sld_ela_trigger_flow_mgr.vhd                                       ; yes             ; Encrypted Megafunction                       ; g:/software/quartus/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd                                                                                                                                          ;                 ;
-; sld_buffer_manager.vhd                                             ; yes             ; Encrypted Megafunction                       ; g:/software/quartus/quartus/libraries/megafunctions/sld_buffer_manager.vhd                                                                                                                                                ;                 ;
-; altsyncram.tdf                                                     ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/altsyncram.tdf                                                                                                                                                        ;                 ;
-; stratix_ram_block.inc                                              ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                                                                                                 ;                 ;
-; lpm_mux.inc                                                        ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/lpm_mux.inc                                                                                                                                                           ;                 ;
-; lpm_decode.inc                                                     ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/lpm_decode.inc                                                                                                                                                        ;                 ;
-; a_rdenreg.inc                                                      ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/a_rdenreg.inc                                                                                                                                                         ;                 ;
-; altrom.inc                                                         ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/altrom.inc                                                                                                                                                            ;                 ;
-; altram.inc                                                         ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/altram.inc                                                                                                                                                            ;                 ;
-; altdpram.inc                                                       ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/altdpram.inc                                                                                                                                                          ;                 ;
-; db/altsyncram_ik84.tdf                                             ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/altsyncram_ik84.tdf                                             ;                 ;
-; db/decode_tma.tdf                                                  ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/decode_tma.tdf                                                  ;                 ;
-; db/mux_7hb.tdf                                                     ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/mux_7hb.tdf                                                     ;                 ;
-; altdpram.tdf                                                       ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/altdpram.tdf                                                                                                                                                          ;                 ;
-; memmodes.inc                                                       ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/others/maxplus2/memmodes.inc                                                                                                                                                        ;                 ;
-; a_hdffe.inc                                                        ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/a_hdffe.inc                                                                                                                                                           ;                 ;
-; alt_le_rden_reg.inc                                                ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/alt_le_rden_reg.inc                                                                                                                                                   ;                 ;
-; altsyncram.inc                                                     ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/altsyncram.inc                                                                                                                                                        ;                 ;
-; lpm_mux.tdf                                                        ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/lpm_mux.tdf                                                                                                                                                           ;                 ;
-; muxlut.inc                                                         ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/muxlut.inc                                                                                                                                                            ;                 ;
-; bypassff.inc                                                       ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/bypassff.inc                                                                                                                                                          ;                 ;
-; altshift.inc                                                       ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/altshift.inc                                                                                                                                                          ;                 ;
-; db/mux_glc.tdf                                                     ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/mux_glc.tdf                                                     ;                 ;
-; lpm_decode.tdf                                                     ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/lpm_decode.tdf                                                                                                                                                        ;                 ;
-; declut.inc                                                         ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/declut.inc                                                                                                                                                            ;                 ;
-; lpm_compare.inc                                                    ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/lpm_compare.inc                                                                                                                                                       ;                 ;
-; db/decode_vnf.tdf                                                  ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/decode_vnf.tdf                                                  ;                 ;
-; lpm_counter.tdf                                                    ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/lpm_counter.tdf                                                                                                                                                       ;                 ;
-; lpm_add_sub.inc                                                    ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/lpm_add_sub.inc                                                                                                                                                       ;                 ;
-; cmpconst.inc                                                       ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/cmpconst.inc                                                                                                                                                          ;                 ;
-; lpm_counter.inc                                                    ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/lpm_counter.inc                                                                                                                                                       ;                 ;
-; alt_counter_stratix.inc                                            ; yes             ; Megafunction                                 ; g:/software/quartus/quartus/libraries/megafunctions/alt_counter_stratix.inc                                                                                                                                               ;                 ;
-; db/cntr_85j.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/cntr_85j.tdf                                                    ;                 ;
-; db/cntr_49i.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/cntr_49i.tdf                                                    ;                 ;
-; db/cmpr_e9c.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/cmpr_e9c.tdf                                                    ;                 ;
-; db/cntr_kri.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/cntr_kri.tdf                                                    ;                 ;
-; db/cmpr_99c.tdf                                                    ; yes             ; Auto-Generated Megafunction                  ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/cmpr_99c.tdf                                                    ;                 ;
-; sld_rom_sr.vhd                                                     ; yes             ; Encrypted Megafunction                       ; g:/software/quartus/quartus/libraries/megafunctions/sld_rom_sr.vhd                                                                                                                                                        ;                 ;
-; sld_jtag_endpoint_adapter.vhd                                      ; yes             ; Encrypted Megafunction                       ; g:/software/quartus/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd                                                                                                                                         ;                 ;
-; sld_jtag_endpoint_adapter_impl.sv                                  ; yes             ; Encrypted Megafunction                       ; g:/software/quartus/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv                                                                                                                                     ;                 ;
-; sld_hub.vhd                                                        ; yes             ; Encrypted Megafunction                       ; g:/software/quartus/quartus/libraries/megafunctions/sld_hub.vhd                                                                                                                                                           ; altera_sld      ;
-; db/ip/sld9845aecd/alt_sld_fab.v                                    ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/alt_sld_fab.v                                    ; alt_sld_fab     ;
-; db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab.v             ; yes             ; Encrypted Auto-Found Verilog HDL File        ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab     ;
-; db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; yes             ; Auto-Found SystemVerilog HDL File            ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab     ;
-; db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab     ;
-; db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; yes             ; Encrypted Auto-Found VHDL File               ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab     ;
-; db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab     ;
-; sld_jtag_hub.vhd                                                   ; yes             ; Encrypted Megafunction                       ; g:/software/quartus/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                                                                                                                                      ;                 ;
-+--------------------------------------------------------------------+-----------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
-
-
-+------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                            ;
-+---------------------------------------------+--------------------------+
-; Resource                                    ; Usage                    ;
-+---------------------------------------------+--------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 396                      ;
-;                                             ;                          ;
-; Combinational ALUT usage for logic          ; 492                      ;
-;     -- 7 input functions                    ; 0                        ;
-;     -- 6 input functions                    ; 100                      ;
-;     -- 5 input functions                    ; 104                      ;
-;     -- 4 input functions                    ; 54                       ;
-;     -- <=3 input functions                  ; 234                      ;
-;                                             ;                          ;
-; Dedicated logic registers                   ; 637                      ;
-;                                             ;                          ;
-; I/O pins                                    ; 39                       ;
-; Total MLAB memory bits                      ; 0                        ;
-; Total block memory bits                     ; 262144                   ;
-;                                             ;                          ;
-; Total DSP Blocks                            ; 0                        ;
-;                                             ;                          ;
-; Total PLLs                                  ; 1                        ;
-;     -- PLLs                                 ; 1                        ;
-;                                             ;                          ;
-; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
-; Maximum fan-out                             ; 410                      ;
-; Total fan-out                               ; 5231                     ;
-; Average fan-out                             ; 4.18                     ;
-+---------------------------------------------+--------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
-+-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+-----------------+
-; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                                                                            ; Entity Name                                           ; Library Name    ;
-+-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+-----------------+
-; |hdmiImageOverlay                                                                                                                       ; 492 (0)             ; 637 (0)                   ; 262144            ; 0          ; 39   ; 0            ; |hdmiImageOverlay                                                                                                                                                                                                                                                                                                                                                                                              ; hdmiImageOverlay                                      ; work            ;
-;    |PixelPll1080p60:pixelPll|                                                                                                           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|PixelPll1080p60:pixelPll                                                                                                                                                                                                                                                                                                                                                                     ; PixelPll1080p60                                       ; PixelPll1080p60 ;
-;       |PixelPll1080p60_0002:pixelpll1080p60_inst|                                                                                       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst                                                                                                                                                                                                                                                                                                                           ; PixelPll1080p60_0002                                  ; PixelPll1080p60 ;
-;          |altera_pll:altera_pll_i|                                                                                                      ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i                                                                                                                                                                                                                                                                                                   ; altera_pll                                            ; work            ;
-;    |hdmiInterface:hdmi|                                                                                                                 ; 78 (78)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|hdmiInterface:hdmi                                                                                                                                                                                                                                                                                                                                                                           ; hdmiInterface                                         ; work            ;
-;    |i2cInterface:i2c|                                                                                                                   ; 27 (17)             ; 29 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|i2cInterface:i2c                                                                                                                                                                                                                                                                                                                                                                             ; i2cInterface                                          ; work            ;
-;       |clockGen:clockDivider|                                                                                                           ; 10 (10)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|i2cInterface:i2c|clockGen:clockDivider                                                                                                                                                                                                                                                                                                                                                       ; clockGen                                              ; work            ;
-;    |sld_hub:auto_hub|                                                                                                                   ; 94 (1)              ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                                                                             ; sld_hub                                               ; altera_sld      ;
-;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 93 (0)              ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                                                                             ; alt_sld_fab_with_jtag_input                           ; altera_sld      ;
-;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 93 (0)              ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                                                                          ; alt_sld_fab                                           ; alt_sld_fab     ;
-;             |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                                                       ; 93 (1)              ; 91 (5)                    ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                                                                      ; alt_sld_fab_alt_sld_fab                               ; alt_sld_fab     ;
-;                |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                                                            ; 92 (0)              ; 86 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                                                                          ; alt_sld_fab_alt_sld_fab_sldfabric                     ; alt_sld_fab     ;
-;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 92 (59)             ; 86 (58)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                                                                             ; sld_jtag_hub                                          ; work            ;
-;                      |sld_rom_sr:hub_info_reg|                                                                                          ; 15 (15)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg                                                     ; sld_rom_sr                                            ; work            ;
-;                      |sld_shadow_jsm:shadow_jsm|                                                                                        ; 18 (18)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm                                                   ; sld_shadow_jsm                                        ; altera_sld      ;
-;    |sld_signaltap:auto_signaltap_0|                                                                                                     ; 293 (2)             ; 484 (3)                   ; 262144            ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                                                                                                               ; sld_signaltap                                         ; work            ;
-;       |sld_signaltap_impl:sld_signaltap_body|                                                                                           ; 291 (0)             ; 481 (0)                   ; 262144            ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body                                                                                                                                                                                                                                                                                                                         ; sld_signaltap_impl                                    ; work            ;
-;          |sld_signaltap_implb:sld_signaltap_body|                                                                                       ; 291 (67)            ; 481 (102)                 ; 262144            ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body                                                                                                                                                                                                                                                                                  ; sld_signaltap_implb                                   ; work            ;
-;             |altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|                                                            ; 2 (0)               ; 106 (106)                 ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem                                                                                                                                                                                                                   ; altdpram                                              ; work            ;
-;                |lpm_decode:wdecoder|                                                                                                    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder                                                                                                                                                                                               ; lpm_decode                                            ; work            ;
-;                   |decode_vnf:auto_generated|                                                                                           ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder|decode_vnf:auto_generated                                                                                                                                                                     ; decode_vnf                                            ; work            ;
-;             |altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|                                                                           ; 26 (0)              ; 4 (0)                     ; 262144            ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram                                                                                                                                                                                                                                  ; altsyncram                                            ; work            ;
-;                |altsyncram_ik84:auto_generated|                                                                                         ; 26 (0)              ; 4 (4)                     ; 262144            ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_ik84:auto_generated                                                                                                                                                                                                   ; altsyncram_ik84                                       ; work            ;
-;                   |decode_tma:decode2|                                                                                                  ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_ik84:auto_generated|decode_tma:decode2                                                                                                                                                                                ; decode_tma                                            ; work            ;
-;                   |mux_7hb:mux3|                                                                                                        ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_ik84:auto_generated|mux_7hb:mux3                                                                                                                                                                                      ; mux_7hb                                               ; work            ;
-;             |lpm_shiftreg:segment_offset_config_deserialize|                                                                            ; 0 (0)               ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|lpm_shiftreg:segment_offset_config_deserialize                                                                                                                                                                                                                                   ; lpm_shiftreg                                          ; work            ;
-;             |lpm_shiftreg:status_register|                                                                                              ; 17 (17)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|lpm_shiftreg:status_register                                                                                                                                                                                                                                                     ; lpm_shiftreg                                          ; work            ;
-;             |serial_crc_16:\tdo_crc_gen:tdo_crc_calc|                                                                                   ; 4 (4)               ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|serial_crc_16:\tdo_crc_gen:tdo_crc_calc                                                                                                                                                                                                                                          ; serial_crc_16                                         ; work            ;
-;             |sld_buffer_manager:sld_buffer_manager_inst|                                                                                ; 112 (112)           ; 94 (94)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst                                                                                                                                                                                                                                       ; sld_buffer_manager                                    ; work            ;
-;             |sld_ela_control:ela_control|                                                                                               ; 3 (1)               ; 22 (1)                    ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control                                                                                                                                                                                                                                                      ; sld_ela_control                                       ; work            ;
-;                |lpm_shiftreg:trigger_config_deserialize|                                                                                ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|lpm_shiftreg:trigger_config_deserialize                                                                                                                                                                                                              ; lpm_shiftreg                                          ; work            ;
-;                |sld_ela_trigger:\multi_level_advanced_trigger_gen:advanced_trigger_wrapper|                                             ; 1 (0)               ; 6 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger:\multi_level_advanced_trigger_gen:advanced_trigger_wrapper                                                                                                                                                                           ; sld_ela_trigger                                       ; work            ;
-;                   |sld_ela_trigger_5kp:auto_generated|                                                                                  ; 1 (0)               ; 6 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger:\multi_level_advanced_trigger_gen:advanced_trigger_wrapper|sld_ela_trigger_5kp:auto_generated                                                                                                                                        ; sld_ela_trigger_5kp                                   ; work            ;
-;                      |sld_reserved_hdmiImageOverlay_auto_signaltap_0_1_4e4b:mgl_prim1|                                                  ; 1 (1)               ; 6 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger:\multi_level_advanced_trigger_gen:advanced_trigger_wrapper|sld_ela_trigger_5kp:auto_generated|sld_reserved_hdmiImageOverlay_auto_signaltap_0_1_4e4b:mgl_prim1                                                                        ; sld_reserved_hdmiImageOverlay_auto_signaltap_0_1_4e4b ; work            ;
-;                         |lpm_shiftreg:config_shiftreg_2|                                                                                ; 0 (0)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger:\multi_level_advanced_trigger_gen:advanced_trigger_wrapper|sld_ela_trigger_5kp:auto_generated|sld_reserved_hdmiImageOverlay_auto_signaltap_0_1_4e4b:mgl_prim1|lpm_shiftreg:config_shiftreg_2                                         ; lpm_shiftreg                                          ; work            ;
-;                         |lpm_shiftreg:config_shiftreg_3|                                                                                ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger:\multi_level_advanced_trigger_gen:advanced_trigger_wrapper|sld_ela_trigger_5kp:auto_generated|sld_reserved_hdmiImageOverlay_auto_signaltap_0_1_4e4b:mgl_prim1|lpm_shiftreg:config_shiftreg_3                                         ; lpm_shiftreg                                          ; work            ;
-;                         |sld_mbpmg:mbpm_1|                                                                                              ; 0 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger:\multi_level_advanced_trigger_gen:advanced_trigger_wrapper|sld_ela_trigger_5kp:auto_generated|sld_reserved_hdmiImageOverlay_auto_signaltap_0_1_4e4b:mgl_prim1|sld_mbpmg:mbpm_1                                                       ; sld_mbpmg                                             ; work            ;
-;                            |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:0:sm1|                                                      ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger:\multi_level_advanced_trigger_gen:advanced_trigger_wrapper|sld_ela_trigger_5kp:auto_generated|sld_reserved_hdmiImageOverlay_auto_signaltap_0_1_4e4b:mgl_prim1|sld_mbpmg:mbpm_1|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:0:sm1 ; sld_sbpmg                                             ; work            ;
-;                |sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity|                                                          ; 1 (1)               ; 11 (1)                    ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity                                                                                                                                                                                        ; sld_ela_trigger_flow_mgr                              ; work            ;
-;                   |lpm_shiftreg:trigger_config_deserialize|                                                                             ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity|lpm_shiftreg:trigger_config_deserialize                                                                                                                                                ; lpm_shiftreg                                          ; work            ;
-;             |sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|                                          ; 40 (9)              ; 98 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst                                                                                                                                                                                                 ; sld_offload_buffer_mgr                                ; work            ;
-;                |lpm_counter:read_pointer_counter|                                                                                       ; 17 (0)              ; 17 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter                                                                                                                                                                ; lpm_counter                                           ; work            ;
-;                   |cntr_85j:auto_generated|                                                                                             ; 17 (17)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter|cntr_85j:auto_generated                                                                                                                                        ; cntr_85j                                              ; work            ;
-;                |lpm_counter:status_advance_pointer_counter|                                                                             ; 8 (0)               ; 6 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter                                                                                                                                                      ; lpm_counter                                           ; work            ;
-;                   |cntr_49i:auto_generated|                                                                                             ; 8 (8)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter|cntr_49i:auto_generated                                                                                                                              ; cntr_49i                                              ; work            ;
-;                |lpm_counter:status_read_pointer_counter|                                                                                ; 3 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter                                                                                                                                                         ; lpm_counter                                           ; work            ;
-;                   |cntr_kri:auto_generated|                                                                                             ; 3 (3)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter|cntr_kri:auto_generated                                                                                                                                 ; cntr_kri                                              ; work            ;
-;                |lpm_shiftreg:info_data_shift_out|                                                                                       ; 0 (0)               ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:info_data_shift_out                                                                                                                                                                ; lpm_shiftreg                                          ; work            ;
-;                |lpm_shiftreg:ram_data_shift_out|                                                                                        ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                                                                                 ; lpm_shiftreg                                          ; work            ;
-;                |lpm_shiftreg:status_data_shift_out|                                                                                     ; 1 (1)               ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                                                                              ; lpm_shiftreg                                          ; work            ;
-;             |sld_rom_sr:crc_rom_sr|                                                                                                     ; 20 (20)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                                                                            ; sld_rom_sr                                            ; work            ;
-+-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+-----------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                                            ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
-; Name                                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_ik84:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 131072       ; 2            ; 131072       ; 2            ; 262144 ; None ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
-
-
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                                                                                                                                                                                       ;
+; Analysis & Elaboration IP Cores Summary                                                                                                                                                                                                                                                                                                                                                                                     ;
 +--------+--------------+---------+--------------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                                                                                         ; IP Include File   ;
 +--------+--------------+---------+--------------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
@@ -380,145 +92,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Altera ; Signal Tap   ; N/A     ; N/A          ; Licensed     ; |hdmiImageOverlay|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger:\multi_level_advanced_trigger_gen:advanced_trigger_wrapper|sld_ela_trigger_5kp:auto_generated|sld_reserved_hdmiImageOverlay_auto_signaltap_0_1_4e4b:mgl_prim1 ;                   ;
 ; Altera ; altera_pll   ; 17.1    ; N/A          ; N/A          ; |hdmiImageOverlay|PixelPll1080p60:pixelPll                                                                                                                                                                                                                                                                                              ; PixelPll1080p60.v ;
 +--------+--------------+---------+--------------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
-
-
-Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |hdmiImageOverlay|i2cInterface:i2c|currentState                                                                                                                                                                                                                                                                                                                                                                                       ;
-+---------------------------------+-----------------------+-----------------------+----------------------+----------------------+-----------------------+-----------------------+----------------------+----------------------+--------------------------+----------------------------+----------------------------+-----------------------+------------------------+---------------------------------+----------------------------+--------------------+
-; Name                            ; currentState.i2cStop2 ; currentState.i2cStop1 ; currentState.i2cAck4 ; currentState.i2cAck3 ; currentState.i2cAck22 ; currentState.i2cAck21 ; currentState.i2cAck2 ; currentState.i2cAck1 ; currentState.i2cClockLow ; currentState.i2cClockHigh2 ; currentState.i2cClockHigh1 ; currentState.i2cShift ; currentState.i2cEnable ; currentState.i2cInitialiseDelay ; currentState.i2cInitialise ; currentState.00000 ;
-+---------------------------------+-----------------------+-----------------------+----------------------+----------------------+-----------------------+-----------------------+----------------------+----------------------+--------------------------+----------------------------+----------------------------+-----------------------+------------------------+---------------------------------+----------------------------+--------------------+
-; currentState.00000              ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                    ; 0                    ; 0                        ; 0                          ; 0                          ; 0                     ; 0                      ; 0                               ; 0                          ; 0                  ;
-; currentState.i2cInitialise      ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                    ; 0                    ; 0                        ; 0                          ; 0                          ; 0                     ; 0                      ; 0                               ; 1                          ; 1                  ;
-; currentState.i2cInitialiseDelay ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                    ; 0                    ; 0                        ; 0                          ; 0                          ; 0                     ; 0                      ; 1                               ; 0                          ; 1                  ;
-; currentState.i2cEnable          ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                    ; 0                    ; 0                        ; 0                          ; 0                          ; 0                     ; 1                      ; 0                               ; 0                          ; 1                  ;
-; currentState.i2cShift           ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                    ; 0                    ; 0                        ; 0                          ; 0                          ; 1                     ; 0                      ; 0                               ; 0                          ; 1                  ;
-; currentState.i2cClockHigh1      ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                    ; 0                    ; 0                        ; 0                          ; 1                          ; 0                     ; 0                      ; 0                               ; 0                          ; 1                  ;
-; currentState.i2cClockHigh2      ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                    ; 0                    ; 0                        ; 1                          ; 0                          ; 0                     ; 0                      ; 0                               ; 0                          ; 1                  ;
-; currentState.i2cClockLow        ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                    ; 0                    ; 1                        ; 0                          ; 0                          ; 0                     ; 0                      ; 0                               ; 0                          ; 1                  ;
-; currentState.i2cAck1            ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                    ; 1                    ; 0                        ; 0                          ; 0                          ; 0                     ; 0                      ; 0                               ; 0                          ; 1                  ;
-; currentState.i2cAck2            ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 1                    ; 0                    ; 0                        ; 0                          ; 0                          ; 0                     ; 0                      ; 0                               ; 0                          ; 1                  ;
-; currentState.i2cAck21           ; 0                     ; 0                     ; 0                    ; 0                    ; 0                     ; 1                     ; 0                    ; 0                    ; 0                        ; 0                          ; 0                          ; 0                     ; 0                      ; 0                               ; 0                          ; 1                  ;
-; currentState.i2cAck22           ; 0                     ; 0                     ; 0                    ; 0                    ; 1                     ; 0                     ; 0                    ; 0                    ; 0                        ; 0                          ; 0                          ; 0                     ; 0                      ; 0                               ; 0                          ; 1                  ;
-; currentState.i2cAck3            ; 0                     ; 0                     ; 0                    ; 1                    ; 0                     ; 0                     ; 0                    ; 0                    ; 0                        ; 0                          ; 0                          ; 0                     ; 0                      ; 0                               ; 0                          ; 1                  ;
-; currentState.i2cAck4            ; 0                     ; 0                     ; 1                    ; 0                    ; 0                     ; 0                     ; 0                    ; 0                    ; 0                        ; 0                          ; 0                          ; 0                     ; 0                      ; 0                               ; 0                          ; 1                  ;
-; currentState.i2cStop1           ; 0                     ; 1                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                    ; 0                    ; 0                        ; 0                          ; 0                          ; 0                     ; 0                      ; 0                               ; 0                          ; 1                  ;
-; currentState.i2cStop2           ; 1                     ; 0                     ; 0                    ; 0                    ; 0                     ; 0                     ; 0                    ; 0                    ; 0                        ; 0                          ; 0                          ; 0                     ; 0                      ; 0                               ; 0                          ; 1                  ;
-+---------------------------------+-----------------------+-----------------------+----------------------+----------------------+-----------------------+-----------------------+----------------------+----------------------+--------------------------+----------------------------+----------------------------+-----------------------+------------------------+---------------------------------+----------------------------+--------------------+
-
-
-Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |hdmiImageOverlay|hdmiInterface:hdmi|currentState                                                                                                                            ;
-+------------------------------+------------------------------+--------------------------+----------------------------+-------------------------+-------------------------+--------------------+
-; Name                         ; currentState.startBlankFrame ; currentState.activeVideo ; currentState.endBlankHSync ; currentState.vSyncState ; currentState.startFrame ; currentState.00000 ;
-+------------------------------+------------------------------+--------------------------+----------------------------+-------------------------+-------------------------+--------------------+
-; currentState.00000           ; 0                            ; 0                        ; 0                          ; 0                       ; 0                       ; 0                  ;
-; currentState.startFrame      ; 0                            ; 0                        ; 0                          ; 0                       ; 1                       ; 1                  ;
-; currentState.vSyncState      ; 0                            ; 0                        ; 0                          ; 1                       ; 0                       ; 1                  ;
-; currentState.endBlankHSync   ; 0                            ; 0                        ; 1                          ; 0                       ; 0                       ; 1                  ;
-; currentState.activeVideo     ; 0                            ; 1                        ; 0                          ; 0                       ; 0                       ; 1                  ;
-; currentState.startBlankFrame ; 1                            ; 0                        ; 0                          ; 0                       ; 0                       ; 1                  ;
-+------------------------------+------------------------------+--------------------------+----------------------------+-------------------------+-------------------------+--------------------+
-
-
-+-------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                        ;
-+--------------------------------------------------+----------------------------------------+
-; Register name                                    ; Reason for Removal                     ;
-+--------------------------------------------------+----------------------------------------+
-; i2cInterface:i2c|currentState.i2cInitialise      ; Lost fanout                            ;
-; i2cInterface:i2c|currentState.i2cInitialiseDelay ; Lost fanout                            ;
-; i2cInterface:i2c|currentState~2                  ; Lost fanout                            ;
-; i2cInterface:i2c|currentState~3                  ; Lost fanout                            ;
-; i2cInterface:i2c|currentState~4                  ; Lost fanout                            ;
-; i2cInterface:i2c|currentState~5                  ; Lost fanout                            ;
-; i2cInterface:i2c|currentState~6                  ; Lost fanout                            ;
-; hdmiInterface:hdmi|currentState~2                ; Lost fanout                            ;
-; hdmiInterface:hdmi|currentState~3                ; Lost fanout                            ;
-; hdmiInterface:hdmi|currentState~4                ; Lost fanout                            ;
-; hdmiInterface:hdmi|currentState~5                ; Lost fanout                            ;
-; hdmiInterface:hdmi|currentState~6                ; Lost fanout                            ;
-; i2cInterface:i2c|currentState.i2cEnable          ; Stuck at GND due to stuck port data_in ;
-; i2cInterface:i2c|currentState.00000              ; Stuck at GND due to stuck port data_in ;
-; i2cInterface:i2c|currentState.i2cStop2           ; Lost fanout                            ;
-; i2cInterface:i2c|SDAOut                          ; Stuck at VCC due to stuck port data_in ;
-; i2cInterface:i2c|endOK                           ; Stuck at VCC due to stuck port data_in ;
-; i2cRegisterConfigure:i2cROM|addressCounter[0..3] ; Stuck at GND due to stuck port clock   ;
-; i2cInterface:i2c|dataCounter[0..4]               ; Lost fanout                            ;
-; Total Number of Removed Registers = 26           ;                                        ;
-+--------------------------------------------------+----------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                           ;
-+-----------------------------------------+---------------------------+---------------------------------------------------------------------------------+
-; Register name                           ; Reason for Removal        ; Registers Removed due to This Register                                          ;
-+-----------------------------------------+---------------------------+---------------------------------------------------------------------------------+
-; i2cInterface:i2c|currentState.00000     ; Stuck at GND              ; i2cInterface:i2c|endOK, i2cRegisterConfigure:i2cROM|addressCounter[3],          ;
-;                                         ; due to stuck port data_in ; i2cRegisterConfigure:i2cROM|addressCounter[2],                                  ;
-;                                         ;                           ; i2cRegisterConfigure:i2cROM|addressCounter[1],                                  ;
-;                                         ;                           ; i2cRegisterConfigure:i2cROM|addressCounter[0], i2cInterface:i2c|dataCounter[3], ;
-;                                         ;                           ; i2cInterface:i2c|dataCounter[4]                                                 ;
-; i2cInterface:i2c|currentState.i2cEnable ; Stuck at GND              ; i2cInterface:i2c|currentState.i2cStop2, i2cInterface:i2c|SDAOut,                ;
-;                                         ; due to stuck port data_in ; i2cInterface:i2c|dataCounter[1], i2cInterface:i2c|dataCounter[0],               ;
-;                                         ;                           ; i2cInterface:i2c|dataCounter[2]                                                 ;
-+-----------------------------------------+---------------------------+---------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 637   ;
-; Number of registers using Synchronous Clear  ; 168   ;
-; Number of registers using Synchronous Load   ; 167   ;
-; Number of registers using Asynchronous Clear ; 225   ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 417   ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Inverted Register Statistics                                                                                                                                                                                                                                                                                                              ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; hdmiInterface:hdmi|hCounter[0]                                                                                                                                                                                                                                                                                                  ; 10      ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
-; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 3       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[15]                                                                                                                                                  ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[16]                                                                                                                                                  ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[17]                                                                                                                                                  ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[12]                                                                                                                                                  ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[13]                                                                                                                                                  ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[14]                                                                                                                                                  ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[9]                                                                                                                                                   ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[10]                                                                                                                                                  ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[11]                                                                                                                                                  ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[6]                                                                                                                                                   ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[7]                                                                                                                                                   ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[8]                                                                                                                                                   ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[0]                                                                                                                                                   ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[1]                                                                                                                                                   ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[2]                                                                                                                                                   ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[3]                                                                                                                                                   ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[4]                                                                                                                                                   ; 1       ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[5]                                                                                                                                                   ; 1       ;
-; Total number of inverted registers = 21                                                                                                                                                                                                                                                                                         ;         ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 9:1                ; 11 bits   ; 66 LEs        ; 0 LEs                ; 66 LEs                 ; Yes        ; |hdmiImageOverlay|hdmiInterface:hdmi|hCounter[1]  ;
-; 9:1                ; 12 bits   ; 72 LEs        ; 48 LEs               ; 24 LEs                 ; Yes        ; |hdmiImageOverlay|hdmiInterface:hdmi|pCounter[10] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
 +-------------------------------------------------------+
@@ -918,22 +491,91 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------+
-; Port Connectivity Checks: "i2cInterface:i2c" ;
-+-------+-------+----------+-------------------+
-; Port  ; Type  ; Severity ; Details           ;
-+-------+-------+----------+-------------------+
-; i2cGo ; Input ; Info     ; Stuck at GND      ;
-+-------+-------+----------+-------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "i2cRegisterConfigure:i2cROM"                                                               ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                             ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; writeOutput ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                           ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEBA6U23I7DK     ;                    ;
+; Top-level entity name                                                           ; hdmiImageOverlay   ; hdmiImageOverlay   ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------+
@@ -955,135 +597,54 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
 
 
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 62                          ;
-;     ENA SCLR          ; 11                          ;
-;     SCLR              ; 11                          ;
-;     plain             ; 40                          ;
-; arriav_io_obuf        ; 1                           ;
-; arriav_lcell_comb     ; 107                         ;
-;     arith             ; 31                          ;
-;         1 data inputs ; 31                          ;
-;     normal            ; 76                          ;
-;         0 data inputs ; 2                           ;
-;         2 data inputs ; 8                           ;
-;         3 data inputs ; 9                           ;
-;         4 data inputs ; 16                          ;
-;         5 data inputs ; 18                          ;
-;         6 data inputs ; 23                          ;
-; boundary_port         ; 40                          ;
-; generic_pll           ; 1                           ;
-;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.26                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                     ;
-+--------------------------------------------+---------------+-----------+--------------------------------+-------------------+--------------------------------------------+---------+
-; Name                                       ; Type          ; Status    ; Partition Name                 ; Netlist Type Used ; Actual Connection                          ; Details ;
-+--------------------------------------------+---------------+-----------+--------------------------------+-------------------+--------------------------------------------+---------+
-; i2cInterface:i2c|clockGen:clockDivider|clk ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; i2cInterface:i2c|clockGen:clockDivider|clk ; N/A     ;
-; i2cScl                                     ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; i2cInterface:i2c|SCL                       ; N/A     ;
-; i2cSda                                     ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; i2cSda                                     ; N/A     ;
-; sw[0]                                      ; pre-synthesis ; connected ; Top                            ; post-synthesis    ; sw[0]                                      ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|gnd                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~GND        ; N/A     ;
-; auto_signaltap_0|vcc                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC        ; N/A     ;
-; auto_signaltap_0|vcc                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC        ; N/A     ;
-; auto_signaltap_0|vcc                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC        ; N/A     ;
-; auto_signaltap_0|vcc                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC        ; N/A     ;
-; auto_signaltap_0|vcc                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC        ; N/A     ;
-; auto_signaltap_0|vcc                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC        ; N/A     ;
-; auto_signaltap_0|vcc                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC        ; N/A     ;
-; auto_signaltap_0|vcc                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC        ; N/A     ;
-; auto_signaltap_0|vcc                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC        ; N/A     ;
-; auto_signaltap_0|vcc                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC        ; N/A     ;
-; auto_signaltap_0|vcc                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC        ; N/A     ;
-; auto_signaltap_0|vcc                       ; post-fitting  ; connected ; sld_signaltap:auto_signaltap_0 ; post-synthesis    ; sld_signaltap:auto_signaltap_0|~VCC        ; N/A     ;
-+--------------------------------------------+---------------+-----------+--------------------------------+-------------------+--------------------------------------------+---------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Thu May 31 00:07:16 2018
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off hdmiImageOverlay -c hdmiImageOverlay
+    Info: Processing started: Thu May 31 12:21:47 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off hdmiImageOverlay -c hdmiImageOverlay --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /users/alexander/documents/university/2018/semester 1/eeet2162 advanced digital design 1/major project/fpga-hdmi-image-overlay/hdl files/hdmiinterface.v
-    Info (12023): Found entity 1: hdmiInterface File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiInterface.v Line: 26
-Info (12021): Found 1 design units, including 1 entities, in source file /users/alexander/documents/university/2018/semester 1/eeet2162 advanced digital design 1/major project/fpga-hdmi-image-overlay/hdl files/i2cregisterconfigure.v
-    Info (12023): Found entity 1: i2cRegisterConfigure File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cRegisterConfigure.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /users/alexander/documents/university/2018/semester 1/eeet2162 advanced digital design 1/major project/fpga-hdmi-image-overlay/hdl files/vsync.v
-    Info (12023): Found entity 1: vsync File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/vsync.v Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /users/alexander/documents/university/2018/semester 1/eeet2162 advanced digital design 1/major project/fpga-hdmi-image-overlay/hdl files/i2cinterface.v
-    Info (12023): Found entity 1: i2cInterface File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cInterface.v Line: 26
-Info (12021): Found 1 design units, including 1 entities, in source file /users/alexander/documents/university/2018/semester 1/eeet2162 advanced digital design 1/major project/fpga-hdmi-image-overlay/hdl files/hsync.v
-    Info (12023): Found entity 1: hsync File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hsync.v Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /users/alexander/documents/university/2018/semester 1/eeet2162 advanced digital design 1/major project/fpga-hdmi-image-overlay/hdl files/hdmiimageoverlay.v
-    Info (12023): Found entity 1: hdmiImageOverlay File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file /users/alexander/documents/university/2018/semester 1/eeet2162 advanced digital design 1/major project/fpga-hdmi-image-overlay/hdl files/de.v
-    Info (12023): Found entity 1: DE File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/DE.v Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file /users/alexander/documents/university/2018/semester 1/eeet2162 advanced digital design 1/major project/fpga-hdmi-image-overlay/hdl files/datawrite.v
-    Info (12023): Found entity 1: dataWrite File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/dataWrite.v Line: 14
-Info (12021): Found 1 design units, including 1 entities, in source file /users/alexander/documents/university/2018/semester 1/eeet2162 advanced digital design 1/major project/fpga-hdmi-image-overlay/hdl files/counter.v
-    Info (12023): Found entity 1: counter File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/counter.v Line: 30
-Info (12021): Found 1 design units, including 1 entities, in source file /users/alexander/documents/university/2018/semester 1/eeet2162 advanced digital design 1/major project/fpga-hdmi-image-overlay/hdl files/clockgen.v
-    Info (12023): Found entity 1: clockGen File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/clockGen.v Line: 32
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/keane/files/2018/advanced digital design/major_project/fpga-hdmi-image-overlay/hdl files/hdmiinterface.v
+    Info (12023): Found entity 1: hdmiInterface File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiInterface.v Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file /users/keane/files/2018/advanced digital design/major_project/fpga-hdmi-image-overlay/hdl files/i2cregisterconfigure.v
+    Info (12023): Found entity 1: i2cRegisterConfigure File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cRegisterConfigure.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/keane/files/2018/advanced digital design/major_project/fpga-hdmi-image-overlay/hdl files/vsync.v
+    Info (12023): Found entity 1: vsync File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/vsync.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/keane/files/2018/advanced digital design/major_project/fpga-hdmi-image-overlay/hdl files/i2cinterface.v
+    Info (12023): Found entity 1: i2cInterface File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cInterface.v Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file /users/keane/files/2018/advanced digital design/major_project/fpga-hdmi-image-overlay/hdl files/hsync.v
+    Info (12023): Found entity 1: hsync File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/hsync.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/keane/files/2018/advanced digital design/major_project/fpga-hdmi-image-overlay/hdl files/hdmiimageoverlay.v
+    Info (12023): Found entity 1: hdmiImageOverlay File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file /users/keane/files/2018/advanced digital design/major_project/fpga-hdmi-image-overlay/hdl files/de.v
+    Info (12023): Found entity 1: DE File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/DE.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/keane/files/2018/advanced digital design/major_project/fpga-hdmi-image-overlay/hdl files/datawrite.v
+    Info (12023): Found entity 1: dataWrite File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/dataWrite.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /users/keane/files/2018/advanced digital design/major_project/fpga-hdmi-image-overlay/hdl files/counter.v
+    Info (12023): Found entity 1: counter File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/counter.v Line: 30
+Info (12021): Found 1 design units, including 1 entities, in source file /users/keane/files/2018/advanced digital design/major_project/fpga-hdmi-image-overlay/hdl files/clockgen.v
+    Info (12023): Found entity 1: clockGen File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/clockGen.v Line: 32
 Info (12021): Found 1 design units, including 1 entities, in source file pixelpll.v
-    Info (12023): Found entity 1: pixelPLL File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL.v Line: 8
+    Info (12023): Found entity 1: pixelPLL File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL.v Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file pixelpll/pixelpll_0002.v
-    Info (12023): Found entity 1: pixelPLL_0002 File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL/pixelPLL_0002.v Line: 2
+    Info (12023): Found entity 1: pixelPLL_0002 File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/pixelPLL/pixelPLL_0002.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file pixelpll1080p60.v
-    Info (12023): Found entity 1: PixelPll1080p60 File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60.v Line: 8
+    Info (12023): Found entity 1: PixelPll1080p60 File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60.v Line: 8
 Info (12021): Found 1 design units, including 1 entities, in source file pixelpll1080p60/pixelpll1080p60_0002.v
-    Info (12023): Found entity 1: PixelPll1080p60_0002 File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60/PixelPll1080p60_0002.v Line: 2
+    Info (12023): Found entity 1: PixelPll1080p60_0002 File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60/PixelPll1080p60_0002.v Line: 2
 Info (12127): Elaborating entity "hdmiImageOverlay" for the top level hierarchy
-Warning (10034): Output port "sdaSel" at hdmiImageOverlay.v(37) has no driver File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 37
-Warning (10034): Output port "i2cSclDebug" at hdmiImageOverlay.v(38) has no driver File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 38
-Warning (10034): Output port "i2cSdaDebug" at hdmiImageOverlay.v(40) has no driver File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 40
-Info (12128): Elaborating entity "PixelPll1080p60" for hierarchy "PixelPll1080p60:pixelPll" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 78
-Info (12128): Elaborating entity "PixelPll1080p60_0002" for hierarchy "PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60.v Line: 20
-Info (12128): Elaborating entity "altera_pll" for hierarchy "PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60/PixelPll1080p60_0002.v Line: 85
+Warning (10034): Output port "sdaSel" at hdmiImageOverlay.v(37) has no driver File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 37
+Warning (10034): Output port "i2cSclDebug" at hdmiImageOverlay.v(38) has no driver File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 38
+Warning (10034): Output port "i2cSdaDebug" at hdmiImageOverlay.v(40) has no driver File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 40
+Info (12128): Elaborating entity "PixelPll1080p60" for hierarchy "PixelPll1080p60:pixelPll" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 78
+Info (12128): Elaborating entity "PixelPll1080p60_0002" for hierarchy "PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60.v Line: 20
+Info (12128): Elaborating entity "altera_pll" for hierarchy "PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60/PixelPll1080p60_0002.v Line: 85
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
-Info (12130): Elaborated megafunction instantiation "PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60/PixelPll1080p60_0002.v Line: 85
-Info (12133): Instantiated megafunction "PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60/PixelPll1080p60_0002.v Line: 85
+Info (12130): Elaborated megafunction instantiation "PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60/PixelPll1080p60_0002.v Line: 85
+Info (12133): Instantiated megafunction "PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/PixelPll1080p60/PixelPll1080p60_0002.v Line: 85
     Info (12134): Parameter "fractional_vco_multiplier" = "true"
     Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
     Info (12134): Parameter "operation_mode" = "direct"
@@ -1144,39 +705,39 @@ Info (12133): Instantiated megafunction "PixelPll1080p60:pixelPll|PixelPll1080p6
     Info (12134): Parameter "duty_cycle17" = "50"
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
-Info (12128): Elaborating entity "hdmiInterface" for hierarchy "hdmiInterface:hdmi" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 102
-Info (10264): Verilog HDL Case Statement information at hdmiInterface.v(90): all case item expressions in this case statement are onehot File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiInterface.v Line: 90
-Info (12128): Elaborating entity "dataWrite" for hierarchy "dataWrite:dataWrite_module" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 193
-Info (12128): Elaborating entity "i2cRegisterConfigure" for hierarchy "i2cRegisterConfigure:i2cROM" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 205
-Info (12128): Elaborating entity "i2cInterface" for hierarchy "i2cInterface:i2c" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 218
-Info (12128): Elaborating entity "clockGen" for hierarchy "i2cInterface:i2c|clockGen:clockDivider" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cInterface.v Line: 73
+Info (12128): Elaborating entity "hdmiInterface" for hierarchy "hdmiInterface:hdmi" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 102
+Info (10264): Verilog HDL Case Statement information at hdmiInterface.v(90): all case item expressions in this case statement are onehot File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiInterface.v Line: 90
+Info (12128): Elaborating entity "dataWrite" for hierarchy "dataWrite:dataWrite_module" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 193
+Info (12128): Elaborating entity "i2cRegisterConfigure" for hierarchy "i2cRegisterConfigure:i2cROM" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 205
+Info (12128): Elaborating entity "i2cInterface" for hierarchy "i2cInterface:i2c" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 218
+Info (12128): Elaborating entity "clockGen" for hierarchy "i2cInterface:i2c|clockGen:clockDivider" File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/HDL Files/i2cInterface.v Line: 73
 Info (12021): Found 1 design units, including 1 entities, in source file db/sld_ela_trigger_5kp.tdf
-    Info (12023): Found entity 1: sld_ela_trigger_5kp File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/sld_ela_trigger_5kp.tdf Line: 25
+    Info (12023): Found entity 1: sld_ela_trigger_5kp File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/sld_ela_trigger_5kp.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sld_reserved_hdmiimageoverlay_auto_signaltap_0_1_4e4b.v
-    Info (12023): Found entity 1: sld_reserved_hdmiImageOverlay_auto_signaltap_0_1_4e4b File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/sld_reserved_hdmiimageoverlay_auto_signaltap_0_1_4e4b.v Line: 28
+    Info (12023): Found entity 1: sld_reserved_hdmiImageOverlay_auto_signaltap_0_1_4e4b File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/sld_reserved_hdmiimageoverlay_auto_signaltap_0_1_4e4b.v Line: 28
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ik84.tdf
-    Info (12023): Found entity 1: altsyncram_ik84 File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/altsyncram_ik84.tdf Line: 31
+    Info (12023): Found entity 1: altsyncram_ik84 File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/altsyncram_ik84.tdf Line: 31
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_tma.tdf
-    Info (12023): Found entity 1: decode_tma File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/decode_tma.tdf Line: 22
+    Info (12023): Found entity 1: decode_tma File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/decode_tma.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_7hb.tdf
-    Info (12023): Found entity 1: mux_7hb File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/mux_7hb.tdf Line: 22
+    Info (12023): Found entity 1: mux_7hb File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/mux_7hb.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_glc.tdf
-    Info (12023): Found entity 1: mux_glc File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/mux_glc.tdf Line: 22
+    Info (12023): Found entity 1: mux_glc File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/mux_glc.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_vnf.tdf
-    Info (12023): Found entity 1: decode_vnf File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/decode_vnf.tdf Line: 22
+    Info (12023): Found entity 1: decode_vnf File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/decode_vnf.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_85j.tdf
-    Info (12023): Found entity 1: cntr_85j File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/cntr_85j.tdf Line: 25
+    Info (12023): Found entity 1: cntr_85j File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/cntr_85j.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_49i.tdf
-    Info (12023): Found entity 1: cntr_49i File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/cntr_49i.tdf Line: 27
+    Info (12023): Found entity 1: cntr_49i File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/cntr_49i.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_e9c.tdf
-    Info (12023): Found entity 1: cmpr_e9c File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/cmpr_e9c.tdf Line: 22
+    Info (12023): Found entity 1: cmpr_e9c File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/cmpr_e9c.tdf Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_kri.tdf
-    Info (12023): Found entity 1: cntr_kri File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/cntr_kri.tdf Line: 27
+    Info (12023): Found entity 1: cntr_kri File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/cntr_kri.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_99c.tdf
-    Info (12023): Found entity 1: cmpr_99c File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/cmpr_99c.tdf Line: 22
+    Info (12023): Found entity 1: cmpr_99c File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/cmpr_99c.tdf Line: 22
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2018.05.31.00:07:36 Progress: Loading sld9845aecd/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2018.05.31.12:22:14 Progress: Loading sld9845aecd/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -1187,83 +748,35 @@ Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification
 Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
 Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld9845aecd/alt_sld_fab.v
-    Info (12023): Found entity 1: alt_sld_fab File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/alt_sld_fab.v Line: 9
+    Info (12023): Found entity 1: alt_sld_fab File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/alt_sld_fab.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab.v
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_ident.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
 Info (12021): Found 2 design units, including 1 entities, in source file db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
-    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 102
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
-    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/db/ip/sld9845aecd/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "data[0]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[1]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[2]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[3]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[4]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[5]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[6]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[7]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[8]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[9]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[10]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[11]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[12]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[13]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[14]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[15]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[16]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[17]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[18]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[19]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[20]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[21]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[22]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "data[23]" is stuck at VCC File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 34
-    Warning (13410): Pin "sdaSel" is stuck at GND File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 37
-    Warning (13410): Pin "i2cSclDebug" is stuck at GND File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 38
-    Warning (13410): Pin "i2cSdaDebug" is stuck at GND File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 40
-Info (286031): Timing-Driven Synthesis is running on partition "Top"
-Info (17049): 18 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 16 assignments for entity "pixelPLL" -- entity does not exist in design
     Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_pll -entity pixelPLL -sip pixelPLL.sip -library lib_pixelPLL was ignored
     Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 17.1 -entity pixelPLL -sip pixelPLL.sip -library lib_pixelPLL was ignored
     Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV mwpim -entity pixelPLL -sip pixelPLL.sip -library lib_pixelPLL was ignored
 Warning (20013): Ignored 317 assignments for entity "pixelPLL_0002" -- entity does not exist in design
-Info (144001): Generated suppressed messages file C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/output_files/hdmiImageOverlay.map.smsg
-Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 36 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 12 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning: RST port on the PLL is not properly connected on instance PixelPll1080p60:pixelPll|PixelPll1080p60_0002:pixelpll1080p60_inst|altera_pll:altera_pll_i|general[0].gpll. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: g:/software/quartus/quartus/libraries/megafunctions/altera_pll.v Line: 748
-    Info: Must be connected
-Warning (21074): Design contains 5 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "key0" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 27
-    Warning (15610): No output dependent on input pin "key1" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 28
-    Warning (15610): No output dependent on input pin "sw[1]" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 29
-    Warning (15610): No output dependent on input pin "sw[2]" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 29
-    Warning (15610): No output dependent on input pin "sw[3]" File: C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/HDL Files/hdmiImageOverlay.v Line: 29
-Info (21057): Implemented 963 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 32 output pins
-    Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 886 logic cells
-    Info (21064): Implemented 32 RAM segments
-    Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
-    Info: Peak virtual memory: 758 megabytes
-    Info: Processing ended: Thu May 31 00:07:46 2018
-    Info: Elapsed time: 00:00:30
-    Info: Total CPU time (on all processors): 00:00:54
+Info (144001): Generated suppressed messages file C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/output_files/hdmiImageOverlay.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 4917 megabytes
+    Info: Processing ended: Thu May 31 12:22:23 2018
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:01:06
 
 
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/Alexander/Documents/University/2018/Semester 1/EEET2162 Advanced Digital Design 1/Major Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/output_files/hdmiImageOverlay.map.smsg.
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in C:/Users/Keane/Files/2018/Advanced Digital Design/Major_Project/FPGA-HDMI-Image-Overlay/Quartus Project Files/output_files/hdmiImageOverlay.map.smsg.
 
 
